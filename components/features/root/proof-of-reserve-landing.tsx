@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { DiagonalPattern } from "@/components/slant-dashes-svg";
 
 export function ProofOfReserveLanding() {
   return (
@@ -10,7 +11,7 @@ export function ProofOfReserveLanding() {
         {/* Header */}
         <div className="text-center mb-20">
           <h2 className="text-4xl lg:text-5xl font-lora font-normal text-[#004040] mb-6">
-            Proof of Reserve
+            <span className="font-bold">Proof</span> of Reserve
           </h2>
           <p className="text-lg font-noto-sans font-normal text-[#475569] max-w-3xl mx-auto leading-relaxed">
             Every token is fully backed 1:1 by investment-grade bond ETFs, held by
@@ -134,33 +135,13 @@ export function ProofOfReserveLanding() {
 
       {/* Diagonal blue lines at bottom */}
       <div className="relative z-10 w-full mt-20">
-        <svg
-          width="100%"
-          height="40"
-          viewBox="0 0 1440 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <pattern
-            id="diagonalLines"
-            x="0"
-            y="0"
-            width="20"
-            height="40"
-            patternUnits="userSpaceOnUse"
-          >
-            <line
-              x1="0"
-              y1="0"
-              x2="20"
-              y2="40"
-              stroke="#A7C6ED"
-              strokeWidth="2"
-            />
-          </pattern>
-          <rect width="100%" height="40" fill="url(#diagonalLines)" />
-        </svg>
+        <DiagonalPattern 
+          width="100%" 
+          height={34} 
+          color="#A7C6ED" 
+          strokeWidth={2} 
+          spacing={14} 
+        />
       </div>
     </section>
   );

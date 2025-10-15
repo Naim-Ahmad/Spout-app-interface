@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { DiagonalPattern } from "@/components/slant-dashes-svg";
 
 const steps = [
   {
@@ -52,7 +53,7 @@ export function HowSpoutWorks() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-lora font-normal text-[#004040] mb-6">
-            How Spout works
+            How <span className="font-bold">Spout</span> works
           </h2>
           <p className="text-lg lg:text-xl font-noto-sans text-[#334155] max-w-4xl mx-auto">
             Spout bridges the gap between traditional finance and DeFi by tokenizing investment-grade corporate
@@ -129,33 +130,13 @@ export function HowSpoutWorks() {
 
       {/* Diagonal blue lines at bottom */}
       <div className="relative z-10 w-full mt-40">
-        <svg
-          width="100%"
-          height="40"
-          viewBox="0 0 1440 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <pattern
-            id="diagonalLinesHowWorks"
-            x="0"
-            y="0"
-            width="20"
-            height="40"
-            patternUnits="userSpaceOnUse"
-          >
-            <line
-              x1="0"
-              y1="0"
-              x2="20"
-              y2="40"
-              stroke="#A7C6ED"
-              strokeWidth="2"
-            />
-          </pattern>
-          <rect width="100%" height="40" fill="url(#diagonalLinesHowWorks)" />
-        </svg>
+        <DiagonalPattern 
+          width="100%" 
+          height={34} 
+          color="#A7C6ED" 
+          strokeWidth={2} 
+          spacing={14} 
+        />
       </div>
     </section>
   );

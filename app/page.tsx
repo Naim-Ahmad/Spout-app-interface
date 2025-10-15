@@ -3,6 +3,9 @@ import {
   HeroSection,
   HowSpoutWorks,
   ProofOfReserveLanding,
+  UnlockingFinance,
+  InvestmentDifferent,
+  InTheNews,
   FeaturesSection,
   ProofOfReserveSection,
   ProofOfReserveCards,
@@ -29,6 +32,21 @@ export default function HomePage() {
       {/* Proof of Reserve Section */}
       <div className="relative z-10 w-full">
         <ProofOfReserveLanding />
+      </div>
+
+      {/* Unlocking Finance Section */}
+      <div className="relative z-10 w-full">
+        <UnlockingFinance />
+      </div>
+
+      {/* Investment Different Section */}
+      <div className="relative z-10 w-full">
+        <InvestmentDifferent />
+      </div>
+
+      {/* In The News Section */}
+      <div className="relative z-10 w-full">
+        <InTheNews />
       </div>
 
       {/* Features Section */}
