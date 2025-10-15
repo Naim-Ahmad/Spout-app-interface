@@ -13,12 +13,17 @@ export function HeroSection() {
   const screenSize = useScreenSize();
 
   return (
-    <section className="w-full flex flex-col relative min-h-screen overflow-hidden">
-      {/* Background grid pattern */}
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:35px_35px]"></div>
+    <section className="w-full flex flex-col relative overflow-hidden bg-gray-50">
+      {/* Hero content wrapper with grid background */}
+      <div className="relative w-full">
+        {/* Background grid pattern - only for hero area */}
+        <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:35px_35px]"></div>
+        
+        {/* Gradient fade overlay - fades from bottom (visible) to top (hidden) */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-t from-transparent from-0% via-transparent via-75% to-gray-50 to-100%"></div>
 
-      {/* Main content */}
-      <div className="relative z-10 w-full max-w-[1800px] mx-auto px-16 pt-20 pb-0 flex flex-col lg:flex-row items-start justify-between gap-0">
+        {/* Main content */}
+        <div className="relative z-10 w-full max-w-[1800px] mx-auto px-16 pt-20 pb-0 flex flex-col lg:flex-row items-start justify-between gap-0">
         {/* Left column - Text content */}
         <div className="w-full lg:w-[55%] mb-12 lg:mb-0">
           <div className="max-w-5xl">
@@ -77,6 +82,7 @@ export function HeroSection() {
       {/* Compatible Networks Section */}
       <div className="relative z-10 w-full max-w-[1800px] mx-auto px-16 mb-6">
         <PartnerTicker />
+      </div>
       </div>
 
       {/* Slant Dashes */}

@@ -51,11 +51,11 @@ export function PartnerTicker() {
   }, [isPaused]);
 
   return (
-    <div className="w-full rounded-lg border border-blue-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+    <div className="w-full rounded-lg border border-gray-300 overflow-hidden shadow-md">
       <div className="flex items-center">
         {/* Fixed "Compatible With Leading Networks" box */}
-        <div className="bg-white rounded-l-lg px-8 py-5 border-r border-blue-200 flex-shrink-0 shadow-sm">
-          <h3 className="text-lg font-noto-sans text-[#334155] font-semibold text-center leading-tight tracking-tight">
+        <div className="bg-white rounded-l-lg px-8 py-6 border-r border-gray-300 flex-shrink-0">
+          <h3 className="text-lg font-noto-sans text-[#334155] font-semibold text-center leading-tight">
             Compatible With<br />
             Leading Networks
           </h3>
@@ -63,7 +63,7 @@ export function PartnerTicker() {
         
         {/* Animated partner logos */}
         <div 
-          className="flex-1 overflow-hidden bg-gradient-to-r from-white via-blue-50/20 to-white"
+          className="flex-1 overflow-hidden bg-white"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -89,19 +89,18 @@ export function PartnerTicker() {
                   className="focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 rounded group"
                   aria-label={partner.alt}
                 >
-                  <div className="bg-white/80 backdrop-blur-sm px-20 py-5 border-r border-blue-200/60 transition-all duration-300 ease-out flex items-center justify-center min-w-[120px] hover:bg-blue-50 hover:shadow-inner relative">
+                  <div className="bg-white px-20 py-6 border-r border-gray-200 transition-all duration-300 ease-out flex items-center justify-center min-w-[180px] hover:bg-gray-50 relative">
                     <Image
                       src={partner.src}
                       alt={partner.alt}
-                      width={48}
-                      height={48}
-                      className="h-12 w-12 object-contain filter brightness-0 saturate-100 transition-all duration-300 ease-out group-hover:scale-110 group-hover:brightness-[0.3]"
-                      style={{ 
-                        filter: 'brightness(0) saturate(100%) invert(20%) sepia(8%) saturate(1352%) hue-rotate(201deg) brightness(95%) contrast(86%)'
+                      width={80}
+                      height={80}
+                      className="h-16 w-auto max-w-[120px] object-contain transition-all duration-300 ease-out group-hover:scale-105 opacity-60 grayscale brightness-0 saturate-0"
+                      style={{
+                        filter: 'brightness(0) saturate(100%) invert(44%) sepia(10%) saturate(697%) hue-rotate(183deg) brightness(95%) contrast(88%)'
                       }}
                       draggable={false}
                     />
-                    <div className="absolute inset-0 bg-blue-400/0 group-hover:bg-blue-400/5 transition-colors duration-300 rounded"></div>
                   </div>
                 </Link>
               ))}
