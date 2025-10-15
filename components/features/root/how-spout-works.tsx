@@ -96,13 +96,13 @@ export function HowSpoutWorks() {
               {/* Content - alternates left/right */}
               <div className={`flex items-center border-gray-300 py-6 px-6 ${index % 2 === 0 ? "lg:order-1 lg:border-r" : "lg:order-2 lg:border-l"}`}>
                 <div>
-                  <div className="inline-block bg-blue-100 text-[#004040] px-4 py-2 rounded text-base font-semibold mb-4">
+                  <div className="inline-block bg-blue-100 text-[#004040] px-3 py-1.5 rounded text-sm font-semibold mb-3">
                     {step.number}
                   </div>
-                  <h3 className="text-3xl lg:text-4xl font-lora font-normal text-[#004040] mb-4">
+                  <h3 className="text-2xl lg:text-3xl font-lora font-normal text-[#004040] mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-lg lg:text-xl font-noto-sans text-[#475569] leading-relaxed">
+                  <p className="text-base lg:text-lg font-noto-sans font-normal text-[#475569] leading-relaxed">
                     {step.description}
                   </p>
                 </div>
