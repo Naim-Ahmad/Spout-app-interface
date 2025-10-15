@@ -126,6 +126,37 @@ export function HowSpoutWorks() {
           ))}
         </div>
       </div>
+
+      {/* Diagonal blue lines at bottom */}
+      <div className="relative z-10 w-full mt-40">
+        <svg
+          width="100%"
+          height="40"
+          viewBox="0 0 1440 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <pattern
+            id="diagonalLinesHowWorks"
+            x="0"
+            y="0"
+            width="20"
+            height="40"
+            patternUnits="userSpaceOnUse"
+          >
+            <line
+              x1="0"
+              y1="0"
+              x2="20"
+              y2="40"
+              stroke="#A7C6ED"
+              strokeWidth="2"
+            />
+          </pattern>
+          <rect width="100%" height="40" fill="url(#diagonalLinesHowWorks)" />
+        </svg>
+      </div>
     </section>
   );
 }
