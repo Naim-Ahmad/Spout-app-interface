@@ -1,6 +1,8 @@
 import BgGrain from "@/components/bg-grain-svg";
 import {
   HeroSection,
+  HowSpoutWorks,
+  ProofOfReserveLanding,
   FeaturesSection,
   ProofOfReserveSection,
   ProofOfReserveCards,
@@ -19,23 +21,15 @@ export default function HomePage() {
         <HeroSection />
       </div>
 
+      {/* How Spout Works Section */}
+      <div className="relative z-10 w-full">
+        <HowSpoutWorks />
+      </div>
+
       {/* Proof of Reserve Section */}
-      <section className="relative z-10 py-24 bg-gradient-to-b from-neutral-800 to-emerald-800 overflow-hidden">
-        <ProofOfReserveSection />
-
-        <ProofOfReserveCards />
-
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-emerald-200/30">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <InvestmentGradeSecuritySection />
-              <TransparentReservesSection />
-            </div>
-          </div>
-        </div>
-
-        <CallToActionSection />
-      </section>
+      <div className="relative z-10 w-full">
+        <ProofOfReserveLanding />
+      </div>
 
       {/* Features Section */}
       <div className="relative z-10 w-full">

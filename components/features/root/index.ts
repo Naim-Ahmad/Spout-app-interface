@@ -1,5 +1,7 @@
 export { AnnouncementBar } from "./announcement-bar";
 export { HeroSection } from "./hero-section";
+export { HowSpoutWorks } from "./how-spout-works";
+export { ProofOfReserveLanding } from "./proof-of-reserve-landing";
 export { FeaturesSection } from "./features-section";
 export { ProofOfReserveSection } from "./proof-of-reserve-section";
 export { ProofOfReserveCards } from "./proof-of-reserve-cards";

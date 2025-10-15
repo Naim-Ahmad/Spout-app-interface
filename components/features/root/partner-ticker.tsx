@@ -95,10 +95,7 @@ export function PartnerTicker() {
                       alt={partner.alt}
                       width={80}
                       height={80}
-                      className="h-16 w-auto max-w-[120px] object-contain transition-all duration-300 ease-out group-hover:scale-105 opacity-60 grayscale brightness-0 saturate-0"
-                      style={{
-                        filter: 'brightness(0) saturate(100%) invert(44%) sepia(10%) saturate(697%) hue-rotate(183deg) brightness(95%) contrast(88%)'
-                      }}
+                      className="h-16 w-auto max-w-[120px] object-contain transition-all duration-300 ease-out group-hover:scale-105"
                       draggable={false}
                     />
                   </div>
