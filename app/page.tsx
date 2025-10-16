@@ -7,6 +7,7 @@ import {
   InvestmentDifferent,
   InTheNews,
   FAQSection,
+  CTASection,
   FeaturesSection,
   ProofOfReserveSection,
   ProofOfReserveCards,
@@ -53,6 +54,11 @@ export default function HomePage() {
       {/* FAQ Section */}
       <div className="relative z-10 w-full">
         <FAQSection />
+      </div>
+
+      {/* CTA Section */}
+      <div className="relative z-10 w-full">
+        <CTASection />
       </div>
 
       {/* Features Section */}

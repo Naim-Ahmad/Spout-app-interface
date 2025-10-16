@@ -14,3 +14,4 @@ export { HowItWorksSection } from "./how-it-works-section";
 export { InvestmentDifferent } from "./investment-different";
 export { InTheNews } from "./in-the-news";
 export { FAQSection } from "./faq-section";
+export { CTASection } from "./cta-section";
