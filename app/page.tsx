@@ -6,6 +6,7 @@ import {
   UnlockingFinance,
   InvestmentDifferent,
   InTheNews,
+  FAQSection,
   FeaturesSection,
   ProofOfReserveSection,
   ProofOfReserveCards,
@@ -47,6 +48,11 @@ export default function HomePage() {
       {/* In The News Section */}
       <div className="relative z-10 w-full">
         <InTheNews />
+      </div>
+
+      {/* FAQ Section */}
+      <div className="relative z-10 w-full">
+        <FAQSection />
       </div>
 
       {/* Features Section */}

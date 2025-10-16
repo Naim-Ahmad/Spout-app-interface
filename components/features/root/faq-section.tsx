@@ -1,0 +1,116 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { DiagonalPattern } from "@/components/slant-dashes-svg";
+
+export function FAQSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const faqs = [
+    {
+      question: "How does Spout bring traditional assets like bonds to DeFi?",
+      answer: "Spout brings traditional assets like bonds to DeFi by tokenizing U.S. investment-grade ETFs into secure, yield-bearing tokens backed 1:1 by real assets.",
+    },
+    {
+      question: "What guarantees that Spout tokens are secure and fully backed?",
+      answer: "Every Spout token is backed 1:1 by investment-grade bond ETFs held by qualified U.S. custodians. We provide full transparency through on-chain proof-of-reserve verification, ensuring complete accountability and security for all tokenized assets.",
+    },
+    {
+      question: "How can investors generate yield through Spout's platform?",
+      answer: "Investors generate yield by holding Spout tokens, which accrue interest from the underlying bond ETFs. The yield is distributed automatically to token holders, providing a consistent 5-8% return while maintaining full liquidity and DeFi composability.",
+    },
+  ];
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <section className="w-full bg-gray-50 py-20 relative">
+      {/* Section content */}
+      <div className="w-full max-w-7xl mx-auto px-8 lg:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Left Column - Header */}
+          <div>
+            <div className="text-sm font-medium text-[#475569] mb-4 tracking-wider">
+              [ FAQ ]
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-lora font-normal text-[#004040] mb-6">
+              Frequently asked<br />questions
+            </h2>
+            <p className="text-lg font-noto-sans font-normal text-[#475569] leading-relaxed">
+              Everything you need to know about Spout and<br />how we're changing decentralized investing.
+            </p>
+          </div>
+
+          {/* Right Column - FAQ Items */}
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-white border border-gray-300 rounded-lg overflow-hidden"
+              >
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                >
+                  <span className="text-lg font-noto-sans font-medium text-[#004040] pr-4">
+                    {faq.question}
+                  </span>
+                  <svg
+                    className={`w-6 h-6 text-[#004040] flex-shrink-0 transition-transform ${
+                      openIndex === index ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                {openIndex === index && (
+                  <div className="px-6 pb-5 pt-2 border-t border-gray-200">
+                    <p className="text-base font-noto-sans text-[#475569] leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
+
+            {/* Read More Button */}
+            <div className="pt-4">
+              <Link
+                href="/faq"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-300 rounded-lg text-[#004040] font-noto-sans font-medium hover:bg-gray-50 transition-colors"
+              >
+                Read More
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Diagonal blue lines at bottom */}
+      <div className="relative z-10 w-full mt-20">
+        <DiagonalPattern 
+          width="100%" 
+          height={34} 
+          color="#A7C6ED" 
+          strokeWidth={2} 
+          spacing={14} 
+        />
+      </div>
+    </section>
+  );
+}
+

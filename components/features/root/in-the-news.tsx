@@ -7,22 +7,22 @@ import { DiagonalPattern } from "@/components/slant-dashes-svg";
 export function InTheNews() {
   const newsItems = [
     {
-      logo: "/news/morningstar.png",
-      publication: "Morningstar",
-      date: "SEP 4, 2025",
-      url: "#",
+      logo: "/news/ap-news.png",
+      publication: "AP News",
+      date: "JAN 15, 2025",
+      url: "https://apnews.com/press-release/globenewswire-mobile/onepiece-labs-solana-accelerator-officially-launches-f2e8e0a2478df30533933fdfe8f07a5e",
     },
     {
-      logo: "/news/business-insider.png",
+      logo: "/landingpage/spout-business-insder.svg",
       publication: "Business Insider",
-      date: "SEP 1, 2025",
-      url: "#",
+      date: "JAN 15, 2025",
+      url: "https://markets.businessinsider.com/news/stocks/onepiece-labs-solana-accelerator-officially-launches-1035128439",
     },
     {
-      logo: "/news/bezinga.png",
-      publication: "Bezinga",
-      date: "AUG 23, 2025",
-      url: "#",
+      logo: "/landingpage/marketwatch-spout.webp",
+      publication: "MarketWatch",
+      date: "JAN 15, 2025",
+      url: "https://www.marketwatch.com/press-release/onepiece-labs-solana-accelerator-officially-launches-7b06ee13?mod=search_headline",
     },
   ];
 
@@ -44,7 +44,7 @@ export function InTheNews() {
         {/* News Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {newsItems.map((item, index) => (
-            <div key={index} className="relative bg-white border border-gray-300 rounded-lg overflow-hidden">
+            <div key={index} className="relative bg-white border border-gray-300 rounded-lg">
               {/* Top-left diamond */}
               <div className="absolute -left-4 -top-4 z-20">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-blue-400">
@@ -73,31 +73,40 @@ export function InTheNews() {
                 </svg>
               </div>
 
-              {/* Logo Area */}
-              <div className="h-48 flex items-center justify-center p-8 bg-white">
-                <Image
-                  src={item.logo}
-                  alt={item.publication}
-                  width={300}
-                  height={120}
-                  className="w-full h-auto max-h-32 object-contain"
-                />
-              </div>
+              {/* Card Content with rounded corners */}
+              <div className="overflow-hidden rounded-lg">
+                {/* Logo Area */}
+                <div className="h-48 flex items-center justify-center p-8 bg-white">
+                  <Image
+                    src={item.logo}
+                    alt={item.publication}
+                    width={300}
+                    height={120}
+                    className="w-full h-auto max-h-32 object-contain"
+                  />
+                </div>
 
-              {/* Publication Info */}
-              <div className="p-6 border-t border-gray-300 flex items-center justify-between">
+                {/* Publication Info */}
+                <div className="p-6 border-t border-gray-300 flex items-center justify-between">
                 <Link
                   href={item.url}
-                  className="flex items-center gap-2 text-[#004040] font-noto-sans font-medium hover:text-[#003030] transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded text-[#004040] font-noto-sans font-medium hover:bg-blue-100 transition-colors"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
+                  <Image
+                    src="/landingpage/spout-book.svg"
+                    alt="Article"
+                    width={20}
+                    height={20}
+                    className="w-5 h-5"
+                  />
                   {item.publication}
                 </Link>
                 <span className="text-sm font-noto-sans text-[#475569]">
                   {item.date}
                 </span>
+                </div>
               </div>
             </div>
           ))}

@@ -97,13 +97,13 @@ export function UnlockingFinance() {
             </ul>
 
             {/* Benefits icon */}
-            <div className="absolute bottom-4 right-4">
+            <div className="absolute bottom-6 right-6">
               <Image
                 src="/landingpage/spout-benefits.svg"
                 alt="Benefits"
-                width={120}
-                height={120}
-                className="w-28 h-28 opacity-60"
+                width={180}
+                height={180}
+                className="w-40 h-40 opacity-60"
               />
             </div>
           </div>
@@ -112,8 +112,8 @@ export function UnlockingFinance() {
           <div className="bg-white border border-gray-300 rounded-lg p-8 relative">
             <div className="flex items-center gap-3 mb-4">
               <Image
-                src="/landingpage/spout-lock.svg"
-                alt="Lock"
+  src="/landingpage/spout-lock-complete-new.svg"
+              alt="Lock"
                 width={24}
                 height={24}
                 className="w-6 h-6"
@@ -143,13 +143,13 @@ export function UnlockingFinance() {
             </ul>
 
             {/* Lock icon */}
-            <div className="absolute bottom-4 right-4">
+            <div className="absolute bottom-3 right-6">
               <Image
-                src="/landingpage/spout-lock-complete.svg"
+                src="/landingpage/spout-lock-white.svg"
                 alt="Lock"
-                width={200}
-                height={200}
-                className="w-48 h-48"
+                width={160}
+                height={160}
+                className="w-36 h-36"
               />
             </div>
           </div>

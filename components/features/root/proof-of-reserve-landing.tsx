@@ -31,7 +31,7 @@ export function ProofOfReserveLanding() {
         </div>
 
         {/* Statistics Section */}
-        <div className="relative bg-white border border-gray-300 rounded-lg shadow-sm px-8 py-6">
+        <div className="relative bg-white border border-gray-300 rounded-lg shadow-sm px-4 py-3 max-w-[1100px] mx-auto">
           {/* Top-left diamond */}
           <div className="hidden lg:block absolute -left-4 -top-4 z-20">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-blue-400">
@@ -51,9 +51,9 @@ export function ProofOfReserveLanding() {
             <Image
               src="/landingpage/spout-lock.svg"
               alt="Lock"
-              width={56}
-              height={56}
-              className="w-14 h-14"
+              width={40}
+              height={40}
+              className="w-10 h-10"
             />
           </div>
           <div className="hidden lg:block absolute -left-4 -bottom-4 z-30">
@@ -67,9 +67,9 @@ export function ProofOfReserveLanding() {
             <Image
               src="/landingpage/spout-coins.svg"
               alt="Coins"
-              width={56}
-              height={56}
-              className="w-14 h-14"
+              width={40}
+              height={40}
+              className="w-10 h-10"
             />
           </div>
           <div className="hidden lg:block absolute -right-4 -bottom-4 z-30">
@@ -78,9 +78,9 @@ export function ProofOfReserveLanding() {
             </svg>
           </div>
 
-          <div className="flex items-center justify-center gap-6">
+          <div className="flex items-center justify-center gap-4">
             {/* Assets On-Chain */}
-            <div className="flex-1 flex items-center gap-3 border border-gray-200 rounded-lg px-6 py-4">
+            <div className="flex items-center gap-3 border border-gray-200 rounded-lg px-10 py-4">
               <div className="flex items-center justify-center w-10 h-10">
                 <Image
                   src="/landingpage/spout-bank.svg"
@@ -97,7 +97,7 @@ export function ProofOfReserveLanding() {
             </div>
 
             {/* Investments Tokenized */}
-            <div className="flex-1 flex items-center gap-3 border border-gray-200 rounded-lg px-6 py-4">
+            <div className="flex items-center gap-3 border border-gray-200 rounded-lg px-10 py-4">
               <div className="flex items-center justify-center w-10 h-10">
                 <Image
                   src="/landingpage/spout-category.svg"
@@ -114,7 +114,7 @@ export function ProofOfReserveLanding() {
             </div>
 
             {/* Proof-of-Reserve Verified */}
-            <div className="flex-1 flex items-center gap-3 border border-gray-200 rounded-lg px-6 py-4">
+            <div className="flex items-center gap-3 border border-gray-200 rounded-lg px-10 py-4">
               <div className="flex items-center justify-center w-10 h-10">
                 <Image
                   src="/landingpage/spout-shield-tick.svg"
