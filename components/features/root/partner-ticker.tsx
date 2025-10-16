@@ -28,26 +28,63 @@ const partners = [
 ];
 
 export function PartnerTicker() {
-  const [offset, setOffset] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const tickerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const speed = 0.5;
+  const offsetRef = useRef<number>(0);
+  const segmentWidthRef = useRef<number>(0);
+  const isVisibleRef = useRef<boolean>(true);
+  const speed = 0.5; // px per frame
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    const updateSegmentWidth = () => {
+      if (contentRef.current) {
+        // We rendered partners array 3 times → one segment is 1/3 of total width
+        segmentWidthRef.current = contentRef.current.scrollWidth / 3;
+      }
+    };
+    updateSegmentWidth();
+    window.addEventListener("resize", updateSegmentWidth);
+
+    // Pause animation when ticker not in viewport
+    const observer = new IntersectionObserver(
+      (entries) => {
+        isVisibleRef.current = entries[0]?.isIntersecting ?? true;
+      },
+      { threshold: 0.1 },
+    );
+    if (tickerRef.current) observer.observe(tickerRef.current);
+
     let frame: number;
     const animate = () => {
-      if (contentRef.current && !isPaused) {
-        const scrollWidth = contentRef.current.scrollWidth / 2;
-        setOffset((prev) => {
-          const next = prev - speed;
-          return Math.abs(next) >= scrollWidth ? 0 : next;
-        });
+      if (
+        !prefersReducedMotion &&
+        !isPaused &&
+        isVisibleRef.current &&
+        tickerRef.current
+      ) {
+        let next = offsetRef.current - speed;
+        const segment = segmentWidthRef.current || 0;
+        if (segment > 0 && Math.abs(next) >= segment) {
+          next = 0; // reset to start of first segment
+        }
+        offsetRef.current = next;
+        // Avoid React state updates; mutate style directly for smoothness
+        tickerRef.current.style.transform = `translate3d(${next}px,0,0)`;
       }
       frame = requestAnimationFrame(animate);
     };
     frame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(frame);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("resize", updateSegmentWidth);
+      if (tickerRef.current) observer.disconnect();
+    };
   }, [isPaused]);
 
   return (
@@ -70,10 +107,7 @@ export function PartnerTicker() {
           <div
             ref={tickerRef}
             className="flex items-center will-change-transform"
-            style={{ 
-              transform: `translateX(${offset}px)`,
-              transition: isPaused ? 'none' : 'none'
-            }}
+            style={{ transform: "translate3d(0,0,0)" }}
           >
             <div
               ref={contentRef}
