@@ -7,7 +7,7 @@ import { DiagonalPattern } from "@/components/slant-dashes-svg";
 export function InTheNews() {
   const newsItems = [
     {
-      logo: "/news/ap-news.png",
+      logo: "/landingpage/spout-ap.webp",
       publication: "AP News",
       date: "JAN 15, 2025",
       url: "https://apnews.com/press-release/globenewswire-mobile/onepiece-labs-solana-accelerator-officially-launches-f2e8e0a2478df30533933fdfe8f07a5e",
@@ -29,7 +29,7 @@ export function InTheNews() {
   return (
     <section className="w-full bg-gray-50 py-20 relative">
       {/* Section content */}
-      <div className="w-full max-w-[1800px] mx-auto px-16">
+      <div className="w-full max-w-[1800px] mx-auto px-4 md:px-8 lg:px-16">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-lora font-normal text-[#004040] mb-6">
@@ -42,7 +42,7 @@ export function InTheNews() {
         </div>
 
         {/* News Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
           {newsItems.map((item, index) => (
             <div key={index} className="relative bg-white border border-gray-300 rounded-lg">
               {/* Top-left diamond */}
@@ -87,12 +87,12 @@ export function InTheNews() {
                 </div>
 
                 {/* Publication Info */}
-                <div className="p-6 border-t border-gray-300 flex items-center justify-between">
+                <div className="p-4 md:p-6 border-t border-gray-300 flex items-center gap-2 md:gap-4">
                 <Link
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded text-[#004040] font-noto-sans font-medium hover:bg-blue-100 transition-colors"
+                  className="flex items-center gap-2 px-3 py-2 md:px-4 bg-blue-50 border border-blue-200 rounded text-[#004040] font-noto-sans text-sm md:text-base font-medium hover:bg-blue-100 transition-colors flex-shrink-0"
                 >
                   <Image
                     src="/landingpage/spout-book.svg"
@@ -103,7 +103,7 @@ export function InTheNews() {
                   />
                   {item.publication}
                 </Link>
-                <span className="text-sm font-noto-sans text-[#475569]">
+                <span className="text-xs md:text-sm font-noto-sans text-[#475569] ml-auto whitespace-nowrap">
                   {item.date}
                 </span>
                 </div>
