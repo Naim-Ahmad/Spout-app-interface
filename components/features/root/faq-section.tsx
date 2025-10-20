@@ -51,7 +51,7 @@ export function FAQSection() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="border border-gray-300 rounded-lg overflow-hidden"
+                className="border bg-white border-gray-300 rounded-none overflow-hidden"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
@@ -77,7 +77,7 @@ export function FAQSection() {
                   </svg>
                 </button>
                 {openIndex === index && (
-                  <div className="px-6 pb-5 pt-2 border-t border-gray-200">
+                  <div className="px-6 pb-5 pt-2 border-t bg-white border-gray-200">
                     <p className="text-base font-noto-sans text-[#475569] leading-relaxed">
                       {faq.answer}
                     </p>

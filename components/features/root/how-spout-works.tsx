@@ -103,7 +103,7 @@ export function HowSpoutWorks() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch border border-gray-300 rounded-none overflow-hidden mb-6 last:mb-0"
             >
               {/* Content - alternates left/right */}
-              <div className={`flex items-center border-gray-300 py-6 px-6 ${index % 2 === 0 ? "lg:order-1 lg:border-r" : "lg:order-2 lg:border-l"}`}>
+              <div className={`flex items-center bg-white border-gray-300 py-6 px-6 ${index % 2 === 0 ? "lg:order-1 lg:border-r" : "lg:order-2 lg:border-l"}`}>
                 <div>
                   <div className="inline-block bg-blue-100 text-[#004040] px-3 py-1.5 rounded text-sm font-semibold mb-3">
                     {step.number}
@@ -118,9 +118,9 @@ export function HowSpoutWorks() {
               </div>
 
               {/* Image - alternates right/left */}
-              <div className={`flex justify-center items-center relative bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:35px_35px] px-6 py-6 ${index % 2 === 0 ? "lg:order-2" : "lg:order-1"}`}>
+              <div className={`flex justify-center bg-white items-center relative bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:35px_35px] px-6 py-6 ${index % 2 === 0 ? "lg:order-2" : "lg:order-1"}`}>
                 {/* Gradient fade overlay - fades from bottom (visible) to top (hidden) */}
-                <div className="absolute inset-0 bg-gradient-to-t from-transparent from-0% via-transparent via-75% to-gray-50 to-100% pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-transparent from-0% via-transparent via-50% to-gray-50 to-100% pointer-events-none"></div>
                 <div className="w-full max-w-[250px] h-[250px] relative z-10 flex items-center justify-center">
                   <Image
                     src={step.image}

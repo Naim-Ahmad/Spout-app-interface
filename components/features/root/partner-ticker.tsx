@@ -88,7 +88,7 @@ export function PartnerTicker() {
   }, [isPaused]);
 
   return (
-    <div className="w-full rounded-lg border border-gray-300 overflow-hidden shadow-md">
+    <div className="w-full rounded-lg border border-gray-300 overflow-hidden">
       <div className="flex items-center">
         {/* Fixed "Compatible With Leading Networks" box */}
         <div className="bg-white rounded-l-lg px-8 py-6 border-r border-gray-300 flex-shrink-0">
@@ -123,7 +123,7 @@ export function PartnerTicker() {
                   className="focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 rounded group"
                   aria-label={partner.alt}
                 >
-                  <div className="bg-white px-20 py-6 border-r border-gray-200 transition-all duration-300 ease-out flex items-center justify-center min-w-[180px] hover:bg-gray-50 relative">
+                  <div className="bg-white px-20 py-4 border-r border-gray-200 transition-all duration-300 ease-out flex items-center justify-center min-w-[180px] hover:bg-gray-50 relative">
                     <Image
                       src={partner.src}
                       alt={partner.alt}
