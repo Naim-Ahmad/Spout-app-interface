@@ -24,7 +24,7 @@ export function HeroSection() {
         <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:35px_35px]"></div>
         
         {/* Gradient fade overlay - fades from bottom (visible) to top (hidden) */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-t from-transparent from-0% via-transparent via-75% to-gray-50 to-100%"></div>
+        {/* <div className="absolute inset-0 z-[1] bg-gradient-to-t from-transparent from-0% via-transparent via-75% to-gray-50 to-100%"></div> */}
 
         {/* Main content */}
         <div className="relative z-10 w-full max-w-[1800px] mx-auto px-16 pt-20 pb-0 flex flex-col lg:flex-row items-start justify-between gap-0">
@@ -32,13 +32,13 @@ export function HeroSection() {
         <div className="w-full lg:w-[55%] mb-12 lg:mb-0">
           <div className="max-w-5xl">
             {/* Main heading */}
-            <h1 className="text-4xl lg:text-6xl font-lora font-normal text-[#004040] mb-8 leading-tight">
-              The platform for what's next in<br />
-              decentralized investing
+            <h1 className="text-3xl lg:text-5xl font-lora font-normal text-[#004040] mb-8 leading-tight">
+              The platform for what's next<br />
+              in decentralized investing
             </h1>
             
             {/* Description */}
-            <p className="text-xl lg:text-2xl font-noto-sans text-[#334155] mb-12 leading-relaxed">
+            <p className="text-lg lg:text-xl font-noto-sans text-[#334155] mb-12 leading-relaxed">
               Spout makes U.S. investment-grade assets like bonds and equities available
               as secure, yield-bearing tokens, fully backed 1:1 by real ETFs.
             </p>

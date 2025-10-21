@@ -83,7 +83,7 @@ export function InTheNews() {
               {/* Card Content with rounded corners */}
               <div className="overflow-hidden rounded-lg">
                 {/* Logo Area */}
-                <div className="h-48 flex items-center justify-center p-8">
+                <div className="h-48 flex bg-white items-center justify-center p-8">
                   <Image
                     src={item.logo}
                     alt={item.publication}

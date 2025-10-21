@@ -40,7 +40,7 @@ export function ProofOfReserveLanding() {
         </div>
 
         {/* Statistics Section */}
-        <div className="relative  border border-gray-300 rounded-lg shadow-sm px-4 py-6 lg:py-3 max-w-[1100px] mx-auto">
+        <div className="relative bg-white border border-gray-300 rounded-lg shadow-sm px-4 py-6 lg:py-3 max-w-[1100px] mx-auto">
           {/* Top-left diamond */}
           <div className="hidden lg:block absolute -left-3 -top-3 z-20">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-blue-300">
@@ -89,7 +89,7 @@ export function ProofOfReserveLanding() {
 
           <div className="flex flex-col lg:flex-row items-center justify-center gap-4">
             {/* Assets On-Chain */}
-            <div className="flex items-center gap-3 border border-gray-200 rounded-lg px-6 lg:px-10 py-4 w-full lg:w-auto">
+            <div className="flex items-center gap-3 border border-gray-200 rounded-none px-6 lg:px-10 py-4 w-full lg:w-auto">
               <div className="flex items-center justify-center w-10 h-10 flex-shrink-0">
                 <Image
                   src={spoutBank}
@@ -106,7 +106,7 @@ export function ProofOfReserveLanding() {
             </div>
 
             {/* Investments Tokenized */}
-            <div className="flex items-center gap-3 border border-gray-200 rounded-lg px-6 lg:px-10 py-4 w-full lg:w-auto">
+            <div className="flex items-center gap-3 border border-gray-200 rounded-none px-6 lg:px-10 py-4 w-full lg:w-auto">
               <div className="flex items-center justify-center w-10 h-10 flex-shrink-0">
                 <Image
                   src={spoutCategory}
@@ -123,7 +123,7 @@ export function ProofOfReserveLanding() {
             </div>
 
             {/* Proof-of-Reserve Verified */}
-            <div className="flex items-center gap-3 border border-gray-200 rounded-lg px-6 lg:px-10 py-4 w-full lg:w-auto">
+            <div className="flex items-center gap-3 border border-gray-200 rounded-none px-6 lg:px-10 py-4 w-full lg:w-auto">
               <div className="flex items-center justify-center w-10 h-10 flex-shrink-0">
                 <Image
                   src={spoutShieldTick}
