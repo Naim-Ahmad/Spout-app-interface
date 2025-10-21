@@ -35,6 +35,16 @@ const partners = [
     alt: "Ripple",
     link: "https://ripple.com/",
   },
+  {
+    src: "/partners/Pharos.svg",
+    alt: "Pharos",
+    link: "https://pharosnetwork.xyz/",
+  },
+  // {
+  //   src: "/partners/faroswap-full.svg",
+  //   alt: "Faroswap",
+  //   link: "https://faroswap.xyz/",
+  // }
 ];
 
 export function PartnerTicker() {
@@ -44,7 +54,7 @@ export function PartnerTicker() {
   const offsetRef = useRef<number>(0);
   const segmentWidthRef = useRef<number>(0);
   const isVisibleRef = useRef<boolean>(true);
-  const speed = 0.5; // px per frame
+  const speed = 0.6; // px per frame
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
