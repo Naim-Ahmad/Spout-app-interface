@@ -8,7 +8,7 @@ import { JoinMailingList } from "./join-mailing-list";
 import { PartnerTicker } from "./partner-ticker";
 import Image from "next/image";
 import { DiagonalPattern } from "@/components/slant-dashes-svg";
-import spoutWaterTokens from "@/components/svg-assets/landingpage/spout-water-tokens.svg";
+import spoutWaterTokens from "@/components/svg-assets/spout-water-tokens-opt.svg";
 import BgGrain from "@/components/bg-grain-svg";
 
 export function HeroSection() {
