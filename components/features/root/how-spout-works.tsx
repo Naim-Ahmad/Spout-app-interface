@@ -140,11 +140,17 @@ export function HowSpoutWorks() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch border border-gray-300 rounded-none overflow-hidden mb-6 last:mb-0"
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch border-gray-300 rounded-none overflow-hidden mb-6 last:mb-0 relative ${
+                index === 0 
+                  ? "border border-t border-l border-r border-b" 
+                  : "border-l border-r border-b"
+              }`}
             >
+              {/* Vertical divider line */}
+              <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-300 transform -translate-x-1/2"></div>
               {/* Content - alternates left/right */}
               <div
-                className={`flex items-center bg-white border-gray-300 py-6 px-6 ${index % 2 === 0 ? "lg:order-1 lg:border-r" : "lg:order-2 lg:border-l"}`}
+                className={`flex items-center bg-white py-6 px-6 min-h-[300px] ${index % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}
               >
                 <div>
                   <div className="inline-block bg-blue-100 text-[#004040] px-3 py-1.5 rounded text-sm font-semibold mb-3">
@@ -161,7 +167,7 @@ export function HowSpoutWorks() {
 
               {/* Image - alternates right/left */}
               <div
-                className={`flex justify-center bg-white items-center relative bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:35px_35px] px-6 py-6 ${index % 2 === 0 ? "lg:order-2" : "lg:order-1"}`}
+                className={`flex justify-center bg-white items-center relative bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:35px_35px] px-6 py-6 min-h-[300px] ${index % 2 === 0 ? "lg:order-2" : "lg:order-1"}`}
               >
                 {/* Gradient fade overlay - fades from bottom (visible) to top (hidden) */}
                 <div className="absolute inset-0 bg-gradient-to-t from-transparent from-0% via-transparent via-50% to-gray-50 to-100% pointer-events-none"></div>
