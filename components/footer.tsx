@@ -91,9 +91,9 @@ export const Footer: React.FC<FooterProps> = ({
       {/* Vertical lines for footer */}
       <div className="absolute inset-0 pointer-events-none z-0">
         {/* Left vertical line */}
-        <div className="absolute left-4 top-0 bottom-0 w-[2px] bg-[#A7C6ED]"></div>
+        <div className="absolute left-4 top-0 bottom-0 w-[1.5px] bg-[#A7C6ED]"></div>
         {/* Right vertical line */}
-        <div className="absolute right-4 top-0 bottom-0 w-[2px] bg-[#A7C6ED]"></div>
+        <div className="absolute right-4 top-0 bottom-0 w-[1.5px] bg-[#A7C6ED]"></div>
       </div>
       <div className="container mx-auto flex flex-col lg:flex-row justify-between w-full gap-12 py-12 px-6 lg:px-16 max-w-7xl relative z-10">
         {/* Left side - Logo and copyright */}
@@ -192,7 +192,7 @@ export const Footer: React.FC<FooterProps> = ({
       </div>
 
       {/* Disclaimer Section */}
-      <div className="border-t-[2px] border-[#A7C6ED] relative z-10">
+      <div className="border-t-[1.5px] border-[#A7C6ED] relative z-10">
         {/* Top-left diamond */}
         <div className="hidden lg:block absolute left-2 -top-2 z-20">
           <svg

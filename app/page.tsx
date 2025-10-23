@@ -18,9 +18,9 @@ export default function HomePage() {
         {/* Vertical lines on both sides */}
         <div className="fixed inset-0 pointer-events-none z-0">
           {/* Left vertical line */}
-          <div className="absolute left-4 top-0 bottom-0 w-[2px] bg-[#A7C6ED]"></div>
+          <div className="absolute left-4 top-0 bottom-0 w-[1.5px] bg-[#A7C6ED]"></div>
           {/* Right vertical line */}
-          <div className="absolute right-4 top-0 bottom-0 w-[2px] bg-[#A7C6ED]"></div>
+          <div className="absolute right-4 top-0 bottom-0 w-[1.5px] bg-[#A7C6ED]"></div>
         </div>
         {/* Hero Section */}
         <div className="relative z-10 w-full">

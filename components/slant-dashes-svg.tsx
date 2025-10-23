@@ -4,7 +4,7 @@ export const DiagonalPattern = ({
   width = "100%",
   height = 34,
   color = "#A7C6ED",
-  strokeWidth = 2,
+  strokeWidth = 1.5,
   spacing = 14,
 }) => {
   // Convert width to number if it's a string with px
@@ -37,6 +37,15 @@ export const DiagonalPattern = ({
 
   return (
     <div className="relative border-[1px] border-[#A7C6ED] rounded-none shadow-sm">
+      {/* Horizontal border extensions to connect with vertical page lines */}
+      {/* Top border extension - left side */}
+      <div className="absolute -left-16 top-0 w-16 h-[1.5px] bg-[#A7C6ED]"></div>
+      {/* Top border extension - right side */}
+      <div className="absolute -right-16 top-0 w-16 h-[1.5px] bg-[#A7C6ED]"></div>
+      {/* Bottom border extension - left side */}
+      <div className="absolute -left-16 bottom-0 w-16 h-[1.5px] bg-[#A7C6ED]"></div>
+      {/* Bottom border extension - right side */}
+      <div className="absolute -right-16 bottom-0 w-16 h-[1.5px] bg-[#A7C6ED]"></div>
       {/* Top-left diamond */}
       <div className="hidden lg:block absolute -left-2 -top-2 z-20">
         <svg
@@ -93,6 +102,79 @@ export const DiagonalPattern = ({
 
       {/* Bottom-right diamond */}
       <div className="hidden lg:block absolute -right-2 -bottom-2 z-20">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          className="text-blue-300"
+        >
+          <path
+            d="M12 2L22 12L12 22L2 12L12 2Z"
+            stroke="currentColor"
+            strokeWidth="3"
+            fill="white"
+          />
+        </svg>
+      </div>
+
+      {/* Intersection diamonds where extended borders meet vertical page lines */}
+      {/* Top-left intersection diamond */}
+      <div className="hidden lg:block absolute -left-16 -top-2 z-20">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          className="text-blue-300"
+        >
+          <path
+            d="M12 2L22 12L12 22L2 12L12 2Z"
+            stroke="currentColor"
+            strokeWidth="3"
+            fill="white"
+          />
+        </svg>
+      </div>
+
+      {/* Top-right intersection diamond */}
+      <div className="hidden lg:block absolute -right-16 -top-2 z-20">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          className="text-blue-300"
+        >
+          <path
+            d="M12 2L22 12L12 22L2 12L12 2Z"
+            stroke="currentColor"
+            strokeWidth="3"
+            fill="white"
+          />
+        </svg>
+      </div>
+
+      {/* Bottom-left intersection diamond */}
+      <div className="hidden lg:block absolute -left-16 -bottom-2 z-20">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          className="text-blue-300"
+        >
+          <path
+            d="M12 2L22 12L12 22L2 12L12 2Z"
+            stroke="currentColor"
+            strokeWidth="3"
+            fill="white"
+          />
+        </svg>
+      </div>
+
+      {/* Bottom-right intersection diamond */}
+      <div className="hidden lg:block absolute -right-16 -bottom-2 z-20">
         <svg
           width="16"
           height="16"

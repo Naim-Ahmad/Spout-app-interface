@@ -171,7 +171,7 @@ export function InTheNews() {
           width="100%"
           height={34}
           color="#A7C6ED"
-          strokeWidth={2}
+          strokeWidth={1.5}
           spacing={14}
         />
       </div>
