@@ -10,7 +10,7 @@ const steps = [
     title: "Complete KYC",
     description:
       'Connect your wallet and complete KYC verification to access investment-grade assets. KYC ensures that we are completely compliant with every jurisdiction"',
-    image: "/svg-assets/landingpage/spout-kyc.svg",
+    image: "/svg-assets/kyc-tokens.svg",
     imageAlt: "KYC Verification",
   },
   {
@@ -18,7 +18,7 @@ const steps = [
     title: "Access Public Equities",
     description:
       "Connect your wallet and complete KYC verification to access investment-grade assets. Assets include highly trading equities, including Tesla, Microsoft, Coinbase, etc.",
-    image: "/svg-assets/landingpage/spout-equities.svg",
+    image: "/svg-assets/public-equity.svg",
     imageAlt: "Public Equities",
   },
   {
@@ -26,7 +26,7 @@ const steps = [
     title: "Earn Stable Yields",
     description:
       "Receive consistent returns from underlying bond interest payments. Dividends are automatically reinvested into the respective assets.",
-    image: "/svg-assets/landingpage/spout-money.svg",
+    image: "/svg-assets/stable-yields.svg",
     imageAlt: "Stable Yields",
   },
   {
@@ -34,7 +34,7 @@ const steps = [
     title: "Utilize in DeFi with our Stablecoin",
     description:
       "Use your tokenized assets in DeFi protocols for lending, borrowing, and yield farming. Use your assets as collateral to mint our ERC20 stablecoin that can be used seamlessly across DeFi.",
-    image: "/svg-assets/landingpage/spout-defi.svg",
+    image: "/svg-assets/defi-with-tokens.svg",
     imageAlt: "DeFi Integration",
   },
   {
@@ -42,7 +42,7 @@ const steps = [
     title: "Track Performance",
     description:
       "Monitor your portfolio with real-time analytics and transparent reporting. Trade assets with a UI similar to your traditional brokerage.",
-    image: "/svg-assets/landingpage/spout-performance.svg",
+    image: "/svg-assets/track-performance.svg",
     imageAlt: "Performance Tracking",
   },
 ];

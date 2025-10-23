@@ -71,7 +71,7 @@ export function HeroSection() {
         <div className="w-full lg:w-[45%] flex items-start justify-center lg:justify-end -mt-8">
           <div className="w-full max-w-md lg:max-w-xl">
             <Image
-              src="/svg-assets/spout-water-tokens-opt.svg"
+              src="/svg-assets/landingpage/spout-water-tokens.svg"
               alt="Spout Water Tokens"
               width={550}
               height={550}
