@@ -105,7 +105,7 @@ export function JoinMailingList() {
           >
             <JoinButton
               type="submit"
-              className="bg-[#DAE5F2] hover:bg-[#DAE5F2] data-[hovered]:bg-[#DAE5F2] border-2 border-[#A7C6ED] text-[#3D5678] px-6 py-2 rounded-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-[#DAE5F2] hover:bg-[#DAE5F2] data-[hovered]:bg-[#DAE5F2] border-[1.5px] border-[#A7C6ED] text-[#3D5678] px-6 py-2 rounded-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
               isDisabled={
                 loading || (email.length > 0 && !isValidEmail(email.trim()))
               }

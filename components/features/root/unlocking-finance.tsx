@@ -140,8 +140,8 @@ export function UnlockingFinance() {
 
           {/* DeFi Integration Benefits Card */}
           <div className="border bg-white border-gray-300 rounded-l-none sm:rounded-l-none rounded-r-none sm:rounded-r-none p-4 sm:p-6 lg:p-8 relative">
-            <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-              <svg
+            <div className="flex bg-[#A7C6ED]/35 border border-[#A7C6ED] items-center gap-2 sm:gap-3 mb-3 sm:mb-4 w-fit px-2 py-1 rounded-none">
+              {/* <svg
                 className="w-5 h-5 sm:w-6 sm:h-6 text-[#004040]"
                 fill="none"
                 stroke="currentColor"
@@ -153,8 +153,15 @@ export function UnlockingFinance() {
                   strokeWidth={2}
                   d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                 />
-              </svg>
-              <h3 className="text-lg sm:text-xl font-noto-sans font-semibold text-[#004040]">
+              </svg> */}
+              <Image
+                src="/svg-assets/icon-shield-security.svg"
+                alt="Shield"
+                width={24}
+                height={24}
+                className="w-5 h-5 sm:w-6 sm:h-6"
+              />
+              <h3 className="text-lg sm:text-xl font-noto-sans font-semibold text-[#3D5678]">
                 DeFi Integration Benefits
               </h3>
             </div>
@@ -195,7 +202,7 @@ export function UnlockingFinance() {
 
           {/* DeFi Security & Transparency Card */}
           <div className="border-t sm:border-t border-r border-b border-l-0 sm:border-l-0 bg-white border-gray-300 rounded-r-none sm:rounded-r-none rounded-l-none sm:rounded-l-none p-4 sm:p-6 lg:p-8 relative">
-            <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+            <div className="flex bg-[#A7C6ED]/35 border border-[#A7C6ED] items-center gap-2 sm:gap-3 mb-3 sm:mb-4 w-fit px-2 py-1 rounded-none">
               <Image
                 src="/svg-assets/defi-security-transparency.svg"
                 alt="Lock"
@@ -203,7 +210,7 @@ export function UnlockingFinance() {
                 height={24}
                 className="w-5 h-5 sm:w-6 sm:h-6"
               />
-              <h3 className="text-lg sm:text-xl font-noto-sans font-semibold text-[#004040]">
+              <h3 className="text-lg sm:text-xl font-noto-sans font-semibold text-[#3D5678]">
                 DeFi Security & Transparency
               </h3>
             </div>

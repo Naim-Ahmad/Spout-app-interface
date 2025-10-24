@@ -45,6 +45,11 @@ const partners = [
   //   alt: "Faroswap",
   //   link: "https://faroswap.xyz/",
   // }
+  {
+    src: "/partners/injective-logo.svg",
+    alt: "Injective",
+    link: "https://injective.com/",
+  },
 ];
 
 export function PartnerTicker() {
@@ -54,7 +59,7 @@ export function PartnerTicker() {
   const offsetRef = useRef<number>(0);
   const segmentWidthRef = useRef<number>(0);
   const isVisibleRef = useRef<boolean>(true);
-  const speed = 0.6; // px per frame
+  const speed = 0.7; // px per frame
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(

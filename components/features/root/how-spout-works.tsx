@@ -153,7 +153,7 @@ export function HowSpoutWorks() {
                 className={`flex items-center bg-white py-4 sm:py-6 px-4 sm:px-6 min-h-[250px] sm:min-h-[300px] ${index % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}
               >
                 <div>
-                  <div className="inline-block bg-blue-100 text-[#004040] px-2 sm:px-3 py-1 sm:py-1.5 rounded text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
+                  <div className="inline-block bg-[#A7C6ED]/35 border border-[#A7C6ED] text-[#3D5678] px-2 sm:px-3 py-1 sm:py-1.5 rounded-none text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
                     {step.number}
                   </div>
                   <h3 className="text-xl sm:text-2xl lg:text-3xl font-lora font-normal text-[#004040] mb-2 sm:mb-3">
