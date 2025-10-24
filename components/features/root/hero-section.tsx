@@ -32,7 +32,7 @@ export function HeroSection() {
             <div className="max-w-5xl space-y-4 sm:space-y-6">
               {/* Main heading */}
               <h1 className="text-2xl sm:text-3xl lg:text-5xl font-lora font-normal text-[#004040] leading-tight">
-                The platform for what's next
+                The platform for what&apos;s next
                 <br />
                 in decentralized investing
               </h1>
@@ -59,7 +59,7 @@ export function HeroSection() {
 
               {/* Secondary text */}
               <p className="text-xs sm:text-sm lg:text-base font-noto-sans text-[#6b7280] uppercase tracking-wide">
-                [JOIN THE PLATFORM THAT'S MAKING TRADITIONAL CAPITAL MORE
+                [JOIN THE PLATFORM THAT&apos;S MAKING TRADITIONAL CAPITAL MORE
                 EFFICIENT]
               </p>
 

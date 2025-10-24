@@ -50,7 +50,7 @@ export function FAQSection() {
             <p className="text-base sm:text-lg font-noto-sans font-normal text-[#475569] leading-relaxed">
               Everything you need to know about Spout and
               <br />
-              how we're changing decentralized investing.
+              how we&apos;re changing decentralized investing.
             </p>
           </div>
 
