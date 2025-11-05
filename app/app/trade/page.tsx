@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { clientCacheHelpers } from "@/lib/cache/client-cache";
-import TradeHeader from "@/components/features/trade/tradeheader";
 import TradeTokenSelector from "@/components/features/trade/tradetokenselector";
 import TradeChart from "@/components/features/trade/tradechart";
 import TradeForm from "@/components/features/trade/tradeform";
@@ -12,7 +11,7 @@ import { useOrdersContract } from "@/hooks/writes/onChain/useOrders";
 import { waitForTransactionReceipt } from "wagmi/actions";
 import { useTokenBalance } from "@/hooks/view/onChain/useTokenBalance";
 import { useUSDCTokenBalance } from "@/hooks/view/onChain/useUSDCTokenBalance";
-import { useContractAddress, USDC_DECIMALS } from "@/lib/addresses";
+import { useContractAddress } from "@/lib/addresses";
 import { useReadContract } from "wagmi";
 import erc3643ABI from "@/abi/erc3643.json";
 
@@ -43,30 +42,23 @@ const TradePage = () => {
   });
 
   const { address: userAddress } = useAccount();
-  const {
-    balance: tokenBalance,
-    symbol: tokenSymbol,
-    isLoading: balanceLoading,
-    refetch: refetchTokenBalance,
-  } = useTokenBalance(userAddress);
   const ordersAddress = useContractAddress("orders") as `0x${string}`;
   const usdcAddress = useContractAddress("usdc") as `0x${string}`;
   const rwaTokenAddress = useContractAddress("rwatoken") as `0x${string}`;
-  const { approve, isPending: isApprovePending } = useERC20Approve(usdcAddress);
   const {
-    buyAsset,
-    sellAsset,
-    isPending: isOrderPending,
-    isSuccess: isOrderSuccess,
-    error: orderError,
-  } = useOrdersContract();
+    amountUi: tokenBalance,
+    isLoading: balanceLoading,
+    refetch: refetchTokenBalance,
+  } = useTokenBalance(rwaTokenAddress, (userAddress ?? null) as any);
+  const { approve, isPending: isApprovePending } = useERC20Approve(usdcAddress);
+  const { buyAsset, sellAsset, isPending: isOrderPending, isSuccess: isOrderSuccess, error: orderError } = useOrdersContract();
   const config = useConfig();
   const {
-    balance: usdcBalance,
+    amountUi: usdcBalance,
     isLoading: usdcLoading,
-    isError: usdcError,
+    error: usdcError,
     refetch: refetchUSDCBalance,
-  } = useUSDCTokenBalance(userAddress);
+  } = useUSDCTokenBalance();
 
   // Get token decimals dynamically
   const { data: tokenDecimals } = useReadContract({
@@ -198,7 +190,7 @@ const TradePage = () => {
     tokenData.length > 1 ? tokenData[tokenData.length - 2].close : null;
 
   // Use currentPrice (from market data API) as fallback only if chart data is not available
-  const latestPrice = chartLatestPrice || currentPrice;
+  const latestPrice = chartLatestPrice || currentPrice || null;
   const prevPrice =
     chartPrevPrice ||
     (tokenData.length > 0
@@ -281,10 +273,11 @@ const TradePage = () => {
 
     // Validate balance before proceeding
     const sellTokenAmount = parseFloat(sellToken);
-    if (sellTokenAmount > tokenBalance) {
+    const tokenBalanceNum = tokenBalance ? Number(tokenBalance) : 0;
+    if (sellTokenAmount > tokenBalanceNum) {
       console.log("❌ Sell amount exceeds balance:", {
         sellAmount: sellTokenAmount,
-        availableBalance: tokenBalance,
+        availableBalance: tokenBalanceNum,
       });
 
       // Show processing status first
@@ -348,7 +341,6 @@ const TradePage = () => {
 
   return (
     <div className="space-y-8 max-w-5xl mx-auto px-2 md:px-0">
-      <TradeHeader />
       <TradeTokenSelector
         tokens={TOKENS}
         selectedToken={selectedToken}
@@ -369,10 +361,10 @@ const TradePage = () => {
         setSellToken={setSellToken}
         latestPrice={latestPrice}
         priceLoading={priceLoading}
-        usdcBalance={usdcBalance}
-        tokenBalance={tokenBalance}
+        usdcBalance={usdcBalance ? Number(usdcBalance) : 0}
+        tokenBalance={tokenBalance ? Number(tokenBalance) : 0}
         usdcLoading={usdcLoading}
-        usdcError={usdcError}
+        usdcError={Boolean(usdcError)}
         balanceLoading={balanceLoading}
         isApprovePending={isApprovePending}
         isOrderPending={isOrderPending}

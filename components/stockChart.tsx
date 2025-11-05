@@ -69,7 +69,7 @@ export default function StockChart({
     }));
 
     const priceSeries = chart.addSeries(LineSeries, {
-      color: "#a7c6ed",
+      color: "#004040",
       lineWidth: 2,
     });
     priceSeries.setData(priceData);
@@ -87,7 +87,7 @@ export default function StockChart({
       filteredData.map((d) => ({
         time: Math.floor(new Date(d.time).getTime() / 1000) as any,
         value: d.volume,
-        color: d.close >= d.open ? "#00404033" : "#a7c6ed66",
+        color: d.close >= d.open ? "#00404033" : "#00404066",
       })),
     );
     volumeRef.current = volumeSeries;
@@ -135,6 +135,7 @@ export default function StockChart({
                 variant={timeRange === "7d" ? "default" : "outline"}
                 size="sm"
                 onClick={() => setTimeRange("7d")}
+                className={timeRange === "7d" ? "bg-[#004040] hover:bg-[#004040] text-white" : ""}
               >
                 7D
               </Button>
@@ -142,6 +143,7 @@ export default function StockChart({
                 variant={timeRange === "30d" ? "default" : "outline"}
                 size="sm"
                 onClick={() => setTimeRange("30d")}
+                className={timeRange === "30d" ? "bg-[#004040] hover:bg-[#004040] text-white" : ""}
               >
                 30D
               </Button>
@@ -149,6 +151,7 @@ export default function StockChart({
                 variant={timeRange === "90d" ? "default" : "outline"}
                 size="sm"
                 onClick={() => setTimeRange("90d")}
+                className={timeRange === "90d" ? "bg-[#004040] hover:bg-[#004040] text-white" : ""}
               >
                 90D
               </Button>

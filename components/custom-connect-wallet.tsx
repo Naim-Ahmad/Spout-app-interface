@@ -17,7 +17,6 @@ const CustomConnectButton = () => {
   const { disconnectAsync } = useDisconnect();
   const { isConnected } = useAccount();
 
-  // Automatically switch to Pharos when wallet connects
   useEffect(() => {
     if (isConnected) {
       checkAndSwitchNetwork().catch((error: Error) => {
@@ -49,11 +48,7 @@ const CustomConnectButton = () => {
           <div
             {...(!ready && {
               "aria-hidden": true,
-              style: {
-                opacity: 0,
-                pointerEvents: "none",
-                userSelect: "none",
-              },
+              style: { opacity: 0, pointerEvents: "none", userSelect: "none" },
             })}
           >
             {(() => {
@@ -73,13 +68,7 @@ const CustomConnectButton = () => {
                   <DropdownMenuTrigger asChild>
                     <button className="flex focus:outline-none text-black items-center gap-2 bg-emerald-700/20 hover:bg-emerald-700/35 rounded-xl py-0.5 pl-0.5 pr-4 border-0 border-gray-600/50 transition-colors">
                       <div className="w-8 h-8 rounded-xl">
-                        <Image
-                          src="/1.png"
-                          className="w-full h-full"
-                          width={32}
-                          height={32}
-                          alt="Profile_Image"
-                        />
+                        <Image src="/1.png" className="w-full h-full" width={32} height={32} alt="Profile_Image" />
                       </div>
                       <span className="text-sm capitalize font-semibold text-muted-foreground">
                         {account.displayName}
@@ -87,25 +76,16 @@ const CustomConnectButton = () => {
                     </button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end" className="w-56 bg-white">
-                    <DropdownMenuItem
-                      onClick={() => copyAddress(account.address)}
-                      className="cursor-pointer"
-                    >
+                    <DropdownMenuItem onClick={() => copyAddress(account.address)} className="cursor-pointer">
                       <Copy className="mr-2 h-4 w-4" />
                       Copy Address
                     </DropdownMenuItem>
-                    <DropdownMenuItem
-                      onClick={handleAccountDetails}
-                      className="cursor-pointer"
-                    >
+                    <DropdownMenuItem onClick={handleAccountDetails} className="cursor-pointer">
                       <User className="mr-2 h-4 w-4" />
                       Account Details
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem
-                      onClick={handleLogout}
-                      className="cursor-pointer text-red-600"
-                    >
+                    <DropdownMenuItem onClick={handleLogout} className="cursor-pointer text-red-600">
                       <LogOut className="mr-2 h-4 w-4" />
                       Logout
                     </DropdownMenuItem>

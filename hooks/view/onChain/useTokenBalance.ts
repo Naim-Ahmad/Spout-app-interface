@@ -1,42 +1,25 @@
 import { useReadContract } from "wagmi";
-import erc3643ABI from "@/abi/erc3643.json";
-import { useContractAddress } from "@/lib/addresses";
+import erc20ABI from "@/abi/erc20.json";
 
-export function useTokenBalance(address: string | undefined) {
-  const tokenAddress = useContractAddress("SpoutLQDtoken");
-
-  // Get decimals
-  const { data: decimals } = useReadContract({
-    address: tokenAddress as `0x${string}`,
-    abi: erc3643ABI.abi,
-    functionName: "decimals",
-  });
-
-  // Get balance
-  const {
-    data: balance,
-    isError,
-    isLoading,
-    refetch,
-  } = useReadContract({
-    address: tokenAddress as `0x${string}`,
-    abi: erc3643ABI.abi,
+export function useTokenBalance(token: `0x${string}` | null, owner: `0x${string}` | null) {
+  const canRead = Boolean(token && owner);
+  const { data: balance, isLoading: balLoading, error: balError, refetch } = useReadContract({
+    address: canRead ? (token as `0x${string}`) : undefined,
+    abi: erc20ABI as any,
     functionName: "balanceOf",
-    args: [address],
+    args: canRead ? [owner as `0x${string}`] : undefined,
+    query: { enabled: canRead },
+  });
+  const { data: decimals } = useReadContract({
+    address: canRead ? (token as `0x${string}`) : undefined,
+    abi: erc20ABI as any,
+    functionName: "decimals",
+    query: { enabled: canRead },
   });
 
-  // Get token symbol
-  const { data: symbol } = useReadContract({
-    address: tokenAddress as `0x${string}`,
-    abi: erc3643ABI.abi,
-    functionName: "symbol",
-  });
+  const amountRaw = balance ? (balance as bigint).toString() : null;
+  const dec = typeof decimals === "number" ? decimals : Number(decimals ?? 0);
+  const amountUi = balance != null && dec >= 0 ? ((Number(balance) / 10 ** dec).toString()) : null;
 
-  return {
-    balance: balance && decimals ? Number(balance) / 10 ** Number(decimals) : 0,
-    symbol: symbol as string | undefined,
-    isError,
-    isLoading,
-    refetch,
-  };
+  return { amountRaw, decimals: dec, amountUi, isLoading: balLoading, error: balError ? String(balError) : null, refetch };
 }

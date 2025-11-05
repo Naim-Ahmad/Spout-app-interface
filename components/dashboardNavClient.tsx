@@ -22,15 +22,37 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useSidebar } from "@/components/ui/sidebar";
 import Image from "next/image";
-import CustomConnectWallet from "@/components/custom-connect-wallet";
-import React from "react";
-import { useAccount } from "wagmi";
+import React, { useEffect, useMemo, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { useAccount, useBalance, useDisconnect } from "wagmi";
+import { useConnectModal } from "@rainbow-me/rainbowkit";
 
 export function DashboardSidebarNavClient() {
   const { open } = useSidebar();
   const router = useRouter();
   const pathname = usePathname();
-  const { isConnected } = useAccount();
+  const { address, isConnected } = useAccount();
+  const { disconnect } = useDisconnect();
+  const { openConnectModal } = useConnectModal();
+  const [balanceSol, setBalanceSol] = useState<string | null>(null);
+  const [isBalanceLoading, setIsBalanceLoading] = useState(false);
+
+  const shortAddress = useMemo(() => {
+    return address ? `${address.slice(0, 6)}...${address.slice(-4)}` : null;
+  }, [address]);
+
+  const { data: bal, isLoading: balLoading } = useBalance({ address, query: { enabled: Boolean(address) } });
+  useEffect(() => {
+    setIsBalanceLoading(balLoading);
+    if (!balLoading && bal) {
+      const balance = Number(bal.value) / 10 ** bal.decimals;
+      // Format to show max 6 decimal places, removing trailing zeros
+      const formattedBalance = balance.toFixed(6).replace(/\.?0+$/, '');
+      setBalanceSol(`${formattedBalance} ${bal.symbol}`);
+    } else if (!address) {
+      setBalanceSol(null);
+    }
+  }, [bal, balLoading, address]);
 
   const isActive = (path: string) => {
     if (path === "/app") {
@@ -85,20 +107,17 @@ export function DashboardSidebarNavClient() {
             <SidebarMenuButton className="flex items-center gap-3 opacity-75 cursor-not-allowed">
               <BarChart3 className="h-4 w-4" />
               <span>Earn</span>
-              <Badge variant="secondary" className="ml-auto">
+              <Badge
+                variant="secondary"
+                className="ml-auto bg-secondary/20 text-[#004040] border border-secondary"
+              >
                 Soon
               </Badge>
             </SidebarMenuButton>
           </SidebarMenuItem>
           <SidebarMenuItem>
-            <SidebarMenuButton
-              asChild
-              isActive={isActive("/app/proof-of-reserve")}
-            >
-              <Link
-                href="/app/proof-of-reserve"
-                className="flex items-center gap-3"
-              >
+            <SidebarMenuButton asChild isActive={isActive("/app/proof-of-reserve")}>
+              <Link href="/app/proof-of-reserve" className="flex items-center gap-3">
                 <TrendingUp className="h-4 w-4" />
                 <span>Proof of Reserve</span>
               </Link>
@@ -108,7 +127,10 @@ export function DashboardSidebarNavClient() {
             <SidebarMenuButton className="flex items-center gap-3 opacity-75 cursor-not-allowed">
               <Store className="h-4 w-4" />
               <span>Markets</span>
-              <Badge variant="secondary" className="ml-auto">
+              <Badge
+                variant="secondary"
+                className="ml-auto bg-secondary/20 text-[#004040] border border-secondary"
+              >
                 Soon
               </Badge>
             </SidebarMenuButton>
@@ -125,19 +147,37 @@ export function DashboardSidebarNavClient() {
       </SidebarContent>
       <SidebarFooter className="p-4 border-t">
         <div className="space-y-3">
-          {/* Connection status indicator */}
-          <div className="flex items-center gap-3 px-2 py-1">
-            <div
-              className={`w-2 h-2 rounded-full ${isConnected ? "bg-green-500" : "bg-red-500"}`}
-            ></div>
-            <span
-              className={`text-sm ${isConnected ? "text-gray-600" : "text-red-600"}`}
+          {/* EVM connect button or wallet pill */}
+          {!isConnected ? (
+            <Button
+              onClick={() => openConnectModal && openConnectModal()}
+              className="mt-3 bg-black text-white text-sm rounded-none px-4 py-2 border border-gray-600/50 hover:bg-black/90 focus:outline-none w-full justify-center"
             >
-              {isConnected ? "Signed in" : "Not connected"}
-            </span>
-          </div>
-          <CustomConnectWallet />
-          {/* <SignOutButton className="w-full flex items-center gap-3 px-2 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md transition-colors">
+              Connect Wallet
+            </Button>
+          ) : (
+            <div className="mt-3 flex items-center justify-between gap-3 rounded-none border border-gray-200 bg-gray-50 px-3 py-2">
+              <div className="flex min-w-0 items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-green-500" />
+                <div className="flex flex-col min-w-0">
+                  <span className="text-xs text-gray-600 truncate">
+                    {shortAddress}
+                  </span>
+                  <span className="text-xs font-medium text-gray-900">
+                    {isBalanceLoading ? "Loading…" : balanceSol ?? "—"}
+                  </span>
+                </div>
+              </div>
+              <Button
+                variant="secondary"
+                onClick={() => disconnect()}
+                className="shrink-0 text-xs rounded-none"
+              >
+                Disconnect
+              </Button>
+            </div>
+          )}
+          {/* <SignOutButton className="w-full flex items-center gap-3 px-2 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-none transition-colors">
             <LogOut className="h-4 w-4" />
             <span>Sign Out</span>
           </SignOutButton> */}

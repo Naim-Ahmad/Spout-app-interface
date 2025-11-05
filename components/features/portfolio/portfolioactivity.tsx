@@ -12,10 +12,11 @@ import React from "react";
 
 type ActivityType = {
   id: string;
-  action: string;
-  transactionType: string;
-  amount: number | string;
-  value: number | string;
+  action: "Purchased" | "Sold";
+  transactionType: "BUY" | "SELL";
+  ticker: string;
+  amount: string;
+  value: string;
   time: string;
 };
 
@@ -78,7 +79,7 @@ const PortfolioActivity: React.FC<PortfolioActivityProps> = ({
           </div>
         ) : !activities || activities.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-16">
-            <div className="w-12 h-12 border-2 border-slate-200 rounded-lg flex items-center justify-center mb-4">
+            <div className="w-12 h-12 border-2 border-slate-200 rounded-none flex items-center justify-center mb-4">
               <Activity className="h-5 w-5 text-slate-400" />
             </div>
             <p className="text-sm text-slate-600 font-medium mb-1">
@@ -110,8 +111,8 @@ const PortfolioActivity: React.FC<PortfolioActivityProps> = ({
                   {/* Type Indicator */}
                   <div className="col-span-1 flex items-center">
                     <div
-                      className={`w-3 h-3 rounded-sm ${
-                        activity.action === "Burned"
+                      className={`w-3 h-3 rounded-none ${
+                        activity.action === "Sold"
                           ? "bg-red-500 shadow-red-500/30"
                           : "bg-emerald-500 shadow-emerald-500/30"
                       } shadow-lg`}
@@ -122,13 +123,13 @@ const PortfolioActivity: React.FC<PortfolioActivityProps> = ({
                   <div className="col-span-3 flex flex-col justify-center">
                     <div className="flex items-center space-x-2">
                       <span className="text-sm font-medium text-slate-900">
-                        {activity.action === "Burned" ? "SOLD" : "PURCHASED"}
+                        {activity.action === "Sold" ? "SOLD" : "PURCHASED"}
                       </span>
                       <Badge
                         variant="outline"
                         className="text-xs px-1.5 py-0.5 h-auto"
                       >
-                        SLQD
+                        {activity.ticker}
                       </Badge>
                     </div>
                     <span className="text-xs text-slate-500 mt-0.5">
@@ -147,7 +148,7 @@ const PortfolioActivity: React.FC<PortfolioActivityProps> = ({
                   <div className="col-span-2 flex flex-col justify-center">
                     <span
                       className={`text-sm font-medium ${
-                        activity.action === "Burned"
+                        activity.action === "Sold"
                           ? "text-red-600"
                           : "text-emerald-600"
                       }`}

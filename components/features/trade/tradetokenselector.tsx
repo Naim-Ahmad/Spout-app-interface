@@ -18,7 +18,7 @@ export default function TradeTokenSelector({
           key={token.value}
           variant={selectedToken === token.value ? "default" : "outline"}
           onClick={() => setSelectedToken(token.value)}
-          className="min-w-[80px]"
+          className={`min-w-[80px] ${selectedToken === token.value ? "bg-[#004040] hover:bg-[#004040] text-white" : ""}`}
         >
           {token.label}
         </Button>
