@@ -3,8 +3,9 @@ import { useTokenBalance } from "./useTokenBalance";
 import { useAccount } from "wagmi";
 
 export function useCollateralTokenBalance() {
-  const collateral = useContractAddress("collateral") as `0x${string}`;
+  // Use SLQD token (SpoutLQDtoken) as collateral instead of TCOL
+  const slqdToken = useContractAddress("SpoutLQDtoken") as `0x${string}`;
   const { address } = useAccount();
-  return useTokenBalance(collateral, (address ?? null) as any);
+  return useTokenBalance(slqdToken, (address ?? null) as any);
 }
 

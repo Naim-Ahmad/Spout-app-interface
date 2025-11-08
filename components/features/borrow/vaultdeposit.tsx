@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useVault } from "@/hooks/writes/onChain/useVault";
 import { useCollateralTokenBalance } from "@/hooks/view/onChain/useCollateralTokenBalance";
-import { useMarketData } from "@/hooks/api/useMarketData";
+import { clientCacheHelpers } from "@/lib/cache/client-cache";
 import { waitForTransactionReceipt } from "wagmi/actions";
 import { useConfig } from "wagmi";
 import { toast } from "sonner";
@@ -32,8 +32,79 @@ export function VaultDeposit() {
     isIlkLoading,
   } = useVault();
   const { amountUi: collateralBalance, refetch: refetchCollateralBalance } = useCollateralTokenBalance();
-  const { price: lqdPrice } = useMarketData("LQD");
+  const [tokenData, setTokenData] = useState<any[]>([]);
+  const [currentPrice, setCurrentPrice] = useState<number | null>(null);
+  const [priceLoading, setPriceLoading] = useState(true);
   const config = useConfig();
+  
+  // Fetch chart data (same as trade page)
+  useEffect(() => {
+    async function fetchChartData() {
+      try {
+        const json = await clientCacheHelpers.fetchStockData("LQD");
+        if (json.error) {
+          console.log("📊 Chart data error:", json.error);
+          setTokenData([]);
+        } else {
+          setTokenData(json.data || []);
+        }
+      } catch (e) {
+        console.log("📊 Chart data fetch error:", e);
+        setTokenData([]);
+      }
+    }
+    fetchChartData();
+  }, []);
+
+  // Fetch LQD price using the exact same method as the trade page
+  useEffect(() => {
+    let isMounted = true;
+    let lastKnownPrice: number | null = null;
+
+    async function fetchPriceData() {
+      try {
+        setPriceLoading(true);
+        const json = await clientCacheHelpers.fetchMarketData("LQD");
+        if (!isMounted) return;
+
+        if (json.price && json.price > 0) {
+          // Only update if price has actually changed
+          if (lastKnownPrice !== json.price) {
+            setCurrentPrice(json.price);
+            lastKnownPrice = json.price;
+          }
+        } else {
+          setCurrentPrice(null); // No valid price data
+        }
+      } catch (e) {
+        if (isMounted) {
+          setCurrentPrice(null); // Error fetching price
+        }
+      } finally {
+        if (isMounted) {
+          setPriceLoading(false);
+        }
+      }
+    }
+
+    // Initial fetch
+    fetchPriceData();
+
+    // Refetch every 5 minutes to reduce Vercel compute usage (same as trade page)
+    const interval = setInterval(fetchPriceData, 5 * 60 * 1000);
+
+    return () => {
+      isMounted = false;
+      clearInterval(interval);
+    };
+  }, []);
+
+  // Use chart data as primary source for price (same as trade page)
+  const chartLatestPrice =
+    tokenData.length > 0 ? tokenData[tokenData.length - 1].close : null;
+  
+  // Use currentPrice (from market data API) as fallback only if chart data is not available
+  const lqdPrice = chartLatestPrice || currentPrice || null;
   
   // Collateralisation ratio from deployment (1.5 = 150%)
   // Use the rate from ilkParams if available, otherwise use deployment default
@@ -69,7 +140,7 @@ export function VaultDeposit() {
       return;
     }
 
-    // Collateral token has 18 decimals (TCOL)
+    // Collateral token has 18 decimals (SLQD)
     const amount = BigInt(Math.floor(parseFloat(depositAmount) * 1e18));
     const collBal = collateralBalance ? Number(collateralBalance) : 0;
 
@@ -85,7 +156,7 @@ export function VaultDeposit() {
       toast.loading("Depositing to vault...", { id: "deposit" });
       await waitForTransactionReceipt(config, { hash: txHash });
       
-      toast.success(`Successfully deposited ${depositAmount} TCOL to vault`, { id: "deposit" });
+      toast.success(`Successfully deposited ${depositAmount} SLQD to vault`, { id: "deposit" });
       setDepositAmount("");
       refetchVault();
       refetchCollateralBalance();
@@ -122,7 +193,7 @@ export function VaultDeposit() {
       const txHash = await withdrawCollateral(selectedVaultId, amount);
       await waitForTransactionReceipt(config, { hash: txHash });
       
-      toast.success(`Successfully withdrew ${depositAmount} TCOL from vault`, { id: "withdraw" });
+      toast.success(`Successfully withdrew ${depositAmount} SLQD from vault`, { id: "withdraw" });
       setDepositAmount("");
       refetchVault();
       refetchCollateralBalance();
@@ -209,7 +280,7 @@ export function VaultDeposit() {
         {/* Vault Info Display */}
         <div className="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-2">
           <div className="flex justify-between items-center">
-            <span className="text-sm text-slate-600">Collateral (TCOL)</span>
+            <span className="text-sm text-slate-600">Collateral (SLQD)</span>
             <span className="text-lg font-semibold text-[#004040]">{vaultCollateralFormatted}</span>
           </div>
           {Number(vaultDebtFormatted) > 0 && (
@@ -258,7 +329,7 @@ export function VaultDeposit() {
         {/* Deposit/Withdraw Form */}
         <div className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="amount">Amount (TCOL)</Label>
+            <Label htmlFor="amount">Amount (SLQD)</Label>
             <div className="flex gap-2">
               <Input
                 id="amount"
@@ -279,7 +350,7 @@ export function VaultDeposit() {
               </Button>
             </div>
             <div className="flex justify-between text-xs text-slate-500">
-              <span>Available: {collateralBalanceFormatted} TCOL</span>
+              <span>Available: {collateralBalanceFormatted} SLQD</span>
             </div>
           </div>
 

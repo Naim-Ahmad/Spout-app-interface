@@ -22,7 +22,8 @@ export function useVault() {
   const spotterAddress = useContractAddress("spotter") as `0x${string}` | undefined;
   const gemJoinAddress = useContractAddress("gemJoin") as `0x${string}` | undefined;
   const stablecoinJoinAddress = useContractAddress("stablecoinJoin") as `0x${string}` | undefined;
-  const collateralAddress = useContractAddress("collateral") as `0x${string}` | undefined;
+  // Use SLQD token (SpoutLQDtoken) as collateral instead of TCOL
+  const collateralAddress = useContractAddress("SpoutLQDtoken") as `0x${string}` | undefined;
 
   const { writeContractAsync: createVaultAsync, isPending: isCreateVaultPending, error: createVaultError } = useWriteContract();
   const { writeContractAsync: frobAsync, isPending: isFrobPending, error: frobError } = useWriteContract();
