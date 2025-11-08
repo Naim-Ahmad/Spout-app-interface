@@ -32,6 +32,36 @@ export const contractaddresses = {
     84532: "0x0000000000000000000000000000000000000000", // Base Sepolia - placeholder
     688688: "0x72F88509C53b939a0613c679a0F4768c0444d247", // Pharos Testnet - Blocksense Feed Store for LQD PoR (ID: 101001)
   },
+  // CDP Vault System Contracts
+  vat: {
+    84532: "0x0000000000000000000000000000000000000000", // Base Sepolia - placeholder
+    688688: "0xc0c9AbCaE1E1A8FDBd6D6c58c3Eee1c138186Dd3", // Pharos Testnet - Core accounting contract
+  },
+  spotter: {
+    84532: "0x0000000000000000000000000000000000000000", // Base Sepolia - placeholder
+    688688: "0xE5aC291cBD9a7858813C446628f06DEF839A32aa", // Pharos Testnet - Oracle mock for price feeds
+  },
+  gemJoin: {
+    84532: "0x0000000000000000000000000000000000000000", // Base Sepolia - placeholder
+    688688: "0xFEd968b1b36C2827268eE8816a9F8e36d92b5c34", // Pharos Testnet - Collateral token adapter (LQD ilk)
+  },
+  stablecoinJoin: {
+    84532: "0x0000000000000000000000000000000000000000", // Base Sepolia - placeholder
+    688688: "0x18ad85302B7bbbd1b5F77B902219C3034d0365cd", // Pharos Testnet - Stablecoin adapter for minting/burning
+  },
+  collateral: {
+    84532: "0x0000000000000000000000000000000000000000", // Base Sepolia - placeholder
+    688688: "0x0cd15cD448F6260507d8104354298AdA15CE4097", // Pharos Testnet - MockERC20 (TCOL)
+  },
+  stablecoin: {
+    84532: "0x0000000000000000000000000000000000000000", // Base Sepolia - placeholder
+    688688: "0xb6cEaD376429d8855bd94A7914695AeF4849682c", // Pharos Testnet - MockStablecoin (TST)
+  },
+  // Legacy vault key for backward compatibility
+  vault: {
+    84532: "0x0000000000000000000000000000000000000000", // Base Sepolia - placeholder
+    688688: "0xc0c9AbCaE1E1A8FDBd6D6c58c3Eee1c138186Dd3", // Pharos Testnet - Points to Vat
+  },
   // Add more contracts as needed
 };
 

@@ -267,51 +267,69 @@ export const clientCacheHelpers = {
    * Cached market data fetch
    */
   async fetchMarketData(symbol: string) {
-    return clientCache.getOrFetch(
-      `market-${symbol}`,
-      async () => {
-        const response = await fetch(`/api/marketdata?symbol=${symbol}`);
-        if (!response.ok) {
-          throw new Error(`Failed to fetch market data for ${symbol}`);
-        }
-        return response.json();
-      },
-      5 * 60 * 1000, // 5 minutes client cache - shorter since no server cache
-    );
+    try {
+      return await clientCache.getOrFetch(
+        `market-${symbol}`,
+        async () => {
+          const response = await fetch(`/api/marketdata?symbol=${symbol}`);
+          if (!response.ok) {
+            throw new Error(`Failed to fetch market data for ${symbol}`);
+          }
+          return response.json();
+        },
+        5 * 60 * 1000, // 5 minutes client cache - shorter since no server cache
+      );
+    } catch (error) {
+      // Suppress network errors to prevent error overlay spam
+      console.warn(`⚠️ Failed to fetch market data for ${symbol}:`, error);
+      return { price: null, previousClose: null, error: "Network error" };
+    }
   },
 
   /**
    * Cached stock data fetch
    */
   async fetchStockData(ticker: string) {
-    return clientCache.getOrFetch(
-      `stock-${ticker}`,
-      async () => {
-        const response = await fetch(`/api/stocks/${ticker}`);
-        if (!response.ok) {
-          throw new Error(`Failed to fetch stock data for ${ticker}`);
-        }
-        return response.json();
-      },
-      5 * 60 * 1000, // 5 minutes client cache - shorter since no server cache
-    );
+    try {
+      return await clientCache.getOrFetch(
+        `stock-${ticker}`,
+        async () => {
+          const response = await fetch(`/api/stocks/${ticker}`);
+          if (!response.ok) {
+            throw new Error(`Failed to fetch stock data for ${ticker}`);
+          }
+          return response.json();
+        },
+        5 * 60 * 1000, // 5 minutes client cache - shorter since no server cache
+      );
+    } catch (error) {
+      // Suppress network errors to prevent error overlay spam
+      console.warn(`⚠️ Failed to fetch stock data for ${ticker}:`, error);
+      return { data: [], dataSource: "real", error: "Network error" };
+    }
   },
 
   /**
    * Cached yield data fetch
    */
   async fetchYieldData(symbol: string) {
-    return clientCache.getOrFetch(
-      `yield-${symbol}`,
-      async () => {
-        const response = await fetch(`/api/marketdata/yields?symbol=${symbol}`);
-        if (!response.ok) {
-          throw new Error(`Failed to fetch yield data for ${symbol}`);
-        }
-        return response.json();
-      },
-      15 * 60 * 1000, // 15 minutes client cache for yield data
-    );
+    try {
+      return await clientCache.getOrFetch(
+        `yield-${symbol}`,
+        async () => {
+          const response = await fetch(`/api/marketdata/yields?symbol=${symbol}`);
+          if (!response.ok) {
+            throw new Error(`Failed to fetch yield data for ${symbol}`);
+          }
+          return response.json();
+        },
+        15 * 60 * 1000, // 15 minutes client cache for yield data
+      );
+    } catch (error) {
+      // Suppress network errors to prevent error overlay spam
+      console.warn(`⚠️ Failed to fetch yield data for ${symbol}:`, error);
+      return { yield: null, error: "Network error" };
+    }
   },
 
   /**
@@ -319,22 +337,28 @@ export const clientCacheHelpers = {
    */
   async fetchBatchStockData(tickers: string[]) {
     const cacheKey = `batch-stocks-${tickers.sort().join(",")}`;
-    return clientCache.getOrFetch(
-      cacheKey,
-      async () => {
-        const response = await fetch("/api/stocks/batch", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ tickers }),
-        });
-        if (!response.ok) {
-          throw new Error(`Failed to fetch batch stock data`);
-        }
-        return response.json();
-      },
-      5 * 60 * 1000, // 5 minutes client cache for batch data
-    );
+    try {
+      return await clientCache.getOrFetch(
+        cacheKey,
+        async () => {
+          const response = await fetch("/api/stocks/batch", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ tickers }),
+          });
+          if (!response.ok) {
+            throw new Error(`Failed to fetch batch stock data`);
+          }
+          return response.json();
+        },
+        5 * 60 * 1000, // 5 minutes client cache for batch data
+      );
+    } catch (error) {
+      // Suppress network errors to prevent error overlay spam
+      console.warn(`⚠️ Failed to fetch batch stock data:`, error);
+      return {};
+    }
   },
 };

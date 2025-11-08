@@ -76,6 +76,15 @@ const popularStocks = [
     volume: "0",
     marketCap: "0",
   },
+  {
+    ticker: "LQD",
+    name: "Spout LQD Token",
+    price: 0,
+    change: 0,
+    changePercent: 0,
+    volume: "0",
+    marketCap: "0",
+  },
 ];
 
 export const fetchStockData = async (ticker: string): Promise<StockData> => {
