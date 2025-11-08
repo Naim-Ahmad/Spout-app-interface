@@ -6,8 +6,13 @@ import { Badge } from "@/components/ui/badge";
 import { useVault } from "@/hooks/writes/onChain/useVault";
 import { useAccount } from "wagmi";
 import { Loader2, TrendingUp, TrendingDown } from "lucide-react";
+import { StockData } from "@/lib/types/markets";
 
-export function VaultPositions() {
+interface VaultPositionsProps {
+  selectedEquity?: StockData | null;
+}
+
+export function VaultPositions({ selectedEquity }: VaultPositionsProps) {
   const { userVaultIds, vault, isVaultIdsLoading, isVaultLoading, selectedVaultId, setSelectedVaultId } = useVault();
   const { address } = useAccount();
 

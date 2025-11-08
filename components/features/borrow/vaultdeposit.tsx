@@ -13,8 +13,13 @@ import { useConfig } from "wagmi";
 import { toast } from "sonner";
 import { Loader2, Plus } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { StockData } from "@/lib/types/markets";
 
-export function VaultDeposit() {
+interface VaultDepositProps {
+  selectedEquity?: StockData | null;
+}
+
+export function VaultDeposit({ selectedEquity }: VaultDepositProps) {
   const [depositAmount, setDepositAmount] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
   const {

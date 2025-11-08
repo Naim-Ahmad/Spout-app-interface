@@ -157,8 +157,22 @@ export function EquitySearch({ onSelectEquity, selectedEquity }: EquitySearchPro
         });
         return updatedStocks;
       });
+
+      // Also update selectedEquity if it's LQD and price is not already set
+      if (selectedEquity?.ticker === "LQD" && onSelectEquity && selectedEquity.price !== lqdPrice) {
+        const change = lqdPrevClose ? lqdPrice - lqdPrevClose : null;
+        const changePercent = lqdPrevClose && lqdPrevClose > 0 
+          ? ((lqdPrice - lqdPrevClose) / lqdPrevClose) * 100 
+          : null;
+        onSelectEquity({
+          ...selectedEquity,
+          price: lqdPrice,
+          change: change,
+          changePercent: changePercent,
+        });
+      }
     }
-  }, [lqdPrice, lqdPrevClose, stocks.length]);
+  }, [lqdPrice, lqdPrevClose, stocks.length, selectedEquity, onSelectEquity]);
 
   // Filter stocks based on search term
   const filteredStocks = useMemo(() => {
@@ -215,7 +229,7 @@ export function EquitySearch({ onSelectEquity, selectedEquity }: EquitySearchPro
 
       {/* Search Results Dropdown */}
       {isFocused && (searchTerm || filteredStocks.length > 0) && (
-        <Card className="absolute z-50 w-full mt-2 border border-slate-200 shadow-lg max-h-96 overflow-y-auto">
+        <Card className="absolute z-50 w-96 mt-2 border border-slate-200 shadow-lg max-h-96 overflow-y-auto">
           <CardContent className="p-0">
             {loading ? (
               <div className="p-4 text-center text-sm text-slate-500">
