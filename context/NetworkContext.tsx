@@ -6,7 +6,7 @@ import { useNetworkSwitch } from "@/hooks/use-network-switch";
 import { toast } from "sonner";
 
 interface NetworkContextType {
-  isPharos: boolean;
+  isBase: boolean;
   currentChain: number | undefined;
   checkAndSwitchNetwork: () => Promise<void>;
 }
@@ -25,20 +25,20 @@ export const NetworkProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const { isConnected } = useAccount();
-  const { checkAndSwitchNetwork, isPharos, currentChain } = useNetworkSwitch();
+  const { checkAndSwitchNetwork, isBase, currentChain } = useNetworkSwitch();
 
-  // Automatically switch to Pharos when wallet connects
+  // Automatically switch to Base Sepolia when wallet connects
   useEffect(() => {
     if (isConnected) {
       checkAndSwitchNetwork().catch((error) => {
         console.error("Failed to switch network:", error);
-        toast.error("Failed to switch to Pharos network");
+        toast.error("Failed to switch to Base Sepolia network");
       });
     }
   }, [isConnected, checkAndSwitchNetwork]);
 
   const value: NetworkContextType = {
-    isPharos,
+    isBase,
     currentChain,
     checkAndSwitchNetwork,
   };

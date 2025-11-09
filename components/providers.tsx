@@ -6,7 +6,7 @@ import { WagmiProvider, http } from "wagmi";
 import { RainbowKitProvider, getDefaultConfig } from "@rainbow-me/rainbowkit";
 import { AuthProvider } from "@/context/AuthContext";
 import { NetworkProvider } from "@/context/NetworkContext";
-import { pharos } from "@/lib/chainconfigs/pharos";
+import { base } from "@/lib/chainconfigs/base";
 import { toast } from "sonner";
 import { useAccount } from "wagmi";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
@@ -23,9 +23,9 @@ if (!projectId) {
 const config = getDefaultConfig({
   appName: "Spout Finance",
   projectId: projectId,
-  chains: [pharos],
+  chains: [base],
   transports: {
-    [pharos.id]: http("https://testnet.dplabs-internal.com"),
+    [base.id]: http(),
   },
   ssr: true,
 });

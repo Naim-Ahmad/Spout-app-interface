@@ -224,6 +224,13 @@ export function VaultDeposit({ selectedEquity }: VaultDepositProps) {
   const vaultDebtFormatted = vault ? (Number(vault.art) / 1e18).toFixed(6) : "0.00";
   const collateralBalanceFormatted = collateralBalance ? Number(collateralBalance).toFixed(6) : "0.00";
   
+  // Debug logging to verify balance is fetched correctly
+  useEffect(() => {
+    if (collateralBalance !== null && collateralBalance !== undefined) {
+      console.log("💰 Available Collateral Balance (SLQD):", collateralBalance, "Formatted:", collateralBalanceFormatted);
+    }
+  }, [collateralBalance, collateralBalanceFormatted]);
+  
   // Calculate max borrow amount: (amount * spot) / collateral rate
   // Use depositAmount from input if provided, otherwise use current vault collateral
   const collateralAmountForCalculation = depositAmount && parseFloat(depositAmount) > 0
