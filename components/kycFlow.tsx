@@ -267,21 +267,32 @@ export default function KYCFlow() {
 
       if (!response.ok) {
         let errorMessage = "Failed to get KYC signature";
+        let errorDetails: string | undefined;
         try {
           const contentType = response.headers.get("content-type");
           if (contentType && contentType.includes("application/json")) {
             const errorData = await response.json();
             errorMessage = errorData.error || errorMessage;
+            errorDetails = errorData.details || errorData.message;
+            console.error("KYC API error response:", {
+              error: errorMessage,
+              details: errorDetails,
+              status: errorData.status || response.status,
+            });
           } else {
             const errorText = await response.text();
             console.error("Non-JSON error response:", errorText);
             errorMessage = `Server error (${response.status}): ${response.statusText}`;
+            errorDetails = errorText;
           }
         } catch (parseError) {
           console.error("Error parsing error response:", parseError);
           errorMessage = `Server error (${response.status}): ${response.statusText}`;
         }
-        throw new Error(errorMessage);
+        const fullErrorMessage = errorDetails 
+          ? `${errorMessage}: ${errorDetails}` 
+          : errorMessage;
+        throw new Error(fullErrorMessage);
       }
 
       let data: KYCSignatureResponse;
