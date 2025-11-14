@@ -1,27 +1,21 @@
 "use client";
+import { useAuthContext } from "@/context/AuthContext";
+import { signOut } from "@/lib/supabase/auth";
+import Link from "next/link";
+import { useState } from "react";
 import {
-  Navbar as ResizableNavbar,
-  NavBody,
-  NavItems,
-  NavbarLogo,
   MobileNav,
   MobileNavHeader,
   MobileNavMenu,
+  NavBody,
+  NavItems,
+  NavbarLogo,
+  Navbar as ResizableNavbar,
 } from "./ui/resizable-navbar";
-import React, { useState } from "react";
-import Link from "next/link";
-import { useAuthContext } from "@/context/AuthContext";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-} from "@/components/ui/dropdown-menu";
-import { LogOut } from "lucide-react";
-import { signOut } from "@/lib/supabase/auth";
 const navItems = [
   { name: "HOME", link: "/" },
   { name: "ABOUT US", link: "/company" },
+  { name: "FAQ", link: "/faq" },
   { name: "EARN", link: "/app/earn", soon: true },
 ];
 
