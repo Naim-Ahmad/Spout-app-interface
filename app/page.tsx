@@ -1,14 +1,12 @@
 import {
-  AnnouncementBar,
+  CTASection,
+  FAQSection,
   HeroSection,
   HowSpoutWorks,
+  InTheNews,
+  InvestmentDifferent,
   ProofOfReserveLanding,
   UnlockingFinance,
-  InvestmentDifferent,
-  InTheNews,
-  FAQSection,
-  CTASection,
-  AnimatedFooterSection,
 } from "@/components/features/root";
 
 export default function HomePage() {
@@ -60,11 +58,6 @@ export default function HomePage() {
         {/* CTA Section */}
         <div className="relative z-10 w-full">
           <CTASection />
-        </div>
-
-        {/* Animated Footer */}
-        <div className="relative z-10 w-full">
-          <AnimatedFooterSection />
         </div>
       </div>
     </>
