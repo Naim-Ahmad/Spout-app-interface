@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { DiagonalPattern } from "@/components/slant-dashes-svg";
 import BgGrain from "@/components/bg-grain-svg";
 
@@ -93,6 +94,14 @@ export function FAQSection() {
                 )}
               </div>
             ))}
+            <div className="mt-4 sm:mt-6">
+              <Link
+                href="/faq"
+                className="inline-flex items-center text-sm sm:text-base font-noto-sans font-medium text-[#004040] hover:text-[#003030] transition-colors underline"
+              >
+                See more
+              </Link>
+            </div>
           </div>
         </div>
       </div>
