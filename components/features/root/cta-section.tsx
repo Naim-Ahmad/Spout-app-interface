@@ -1,9 +1,9 @@
 "use client";
 
+import BgGrain from "@/components/bg-grain-svg";
+import { DiagonalPattern } from "@/components/slant-dashes-svg";
 import Image from "next/image";
 import Link from "next/link";
-import { DiagonalPattern } from "@/components/slant-dashes-svg";
-import BgGrain from "@/components/bg-grain-svg";
 
 export function CTASection() {
   return (
@@ -88,7 +88,7 @@ export function CTASection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 items-center">
             {/* Left Content */}
             <div className="space-y-4 sm:space-y-6">
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-lora font-normal text-[#004040] leading-tight">
+              <h2 className="text-2xl capitalize sm:text-3xl lg:text-5xl font-lora font-bold text-[#004040] leading-tight">
                 Ready to Start Earning Stable Yields?
               </h2>
               <p className="text-sm sm:text-base lg:text-lg font-noto-sans text-[#475569] leading-relaxed">

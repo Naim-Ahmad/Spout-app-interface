@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import { DiagonalPattern } from "@/components/slant-dashes-svg";
 import BgGrain from "@/components/bg-grain-svg";
+import { DiagonalPattern } from "@/components/slant-dashes-svg";
+import Image from "next/image";
 
 export function InvestmentDifferent() {
   const features = [
@@ -40,8 +40,8 @@ export function InvestmentDifferent() {
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-8 lg:px-16 pb-8">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-lora font-normal text-[#004040] mb-4 sm:mb-6">
-            How we do <span className="font-medium">Investment</span> different
+          <h2 className="text-3xl capitalize sm:text-4xl lg:text-5xl font-lora font-bold text-[#004040] mb-4 sm:mb-6">
+            How we do <span className="font-bold">Investment</span> different
           </h2>
           <p className="text-base sm:text-lg font-noto-sans font-normal text-[#475569] max-w-4xl mx-auto leading-relaxed">
             Consistent 5-8% returns from regulated corporate debt, with instant

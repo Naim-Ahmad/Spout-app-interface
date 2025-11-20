@@ -1,14 +1,14 @@
 "use client";
 
-import Link from "next/link";
+import BgGrain from "@/components/bg-grain-svg";
+import { DiagonalPattern } from "@/components/slant-dashes-svg";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import { useScreenSize } from "@/hooks/use-screen-size";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import { JoinMailingList } from "./join-mailing-list";
 import { PartnerTicker } from "./partner-ticker";
-import Image from "next/image";
-import { DiagonalPattern } from "@/components/slant-dashes-svg";
-import BgGrain from "@/components/bg-grain-svg";
 
 export function HeroSection() {
   const screenSize = useScreenSize();
@@ -31,10 +31,8 @@ export function HeroSection() {
           <div className="w-full lg:w-[55%] mb-6 sm:mb-12 lg:mb-0">
             <div className="max-w-5xl space-y-4 sm:space-y-6">
               {/* Main heading */}
-              <h1 className="text-2xl sm:text-3xl lg:text-5xl font-lora font-normal text-[#004040] leading-tight">
-                The platform for what&apos;s next
-                <br />
-                in decentralized investing
+              <h1 className="text-2xl capitalize sm:text-3xl lg:text-5xl font-lora font-bold text-[#004040] leading-tight">
+                The platform for what&apos;s next in decentralized investing
               </h1>
 
               {/* Description */}

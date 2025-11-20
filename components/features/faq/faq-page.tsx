@@ -162,7 +162,7 @@ export default function FaqPage() {
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-[56px] font-normal text-spout-primary font-lora leading-tight mb-6">
+              <h1 className="text-4xl font-bold capitalize md:text-5xl lg:text-[56px]  text-spout-primary font-lora leading-tight mb-6">
                 Frequently asked questions
               </h1>
 
@@ -244,7 +244,7 @@ export default function FaqPage() {
 
                   <div className="grid lg:grid-cols-2 gap-0">
                     <div className="p-10 lg:p-14 flex flex-col justify-center">
-                      <h2 className="text-3xl font-semibold text-spout-primary mb-5 leading-tight">
+                      <h2 className="text-3xl font-bold capitalize  text-spout-primary mb-5 leading-tight">
                         Ready to Start Earning Stable Yields?
                       </h2>
                       <p className="text-lg text-spout-text-muted leading-7 mb-8">

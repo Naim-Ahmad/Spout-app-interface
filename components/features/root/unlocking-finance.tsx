@@ -1,9 +1,9 @@
 "use client";
 
+import BgGrain from "@/components/bg-grain-svg";
+import { DiagonalPattern } from "@/components/slant-dashes-svg";
 import Image from "next/image";
 import Link from "next/link";
-import { DiagonalPattern } from "@/components/slant-dashes-svg";
-import BgGrain from "@/components/bg-grain-svg";
 
 export function UnlockingFinance() {
   return (
@@ -14,8 +14,8 @@ export function UnlockingFinance() {
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-lora font-normal text-[#004040] mb-4 sm:mb-6">
-            Unlocking <span className="font-medium">Finance</span> with DeFi
+          <h2 className="text-3xl capitalize sm:text-4xl lg:text-5xl font-lora font-bold text-[#004040] mb-4 sm:mb-6">
+            Unlocking <span className="font-bold">Finance</span> with DeFi
             <br />
             through our stablecoin
           </h2>

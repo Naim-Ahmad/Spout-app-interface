@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { DiagonalPattern } from "@/components/slant-dashes-svg";
 import BgGrain from "@/components/bg-grain-svg";
+import { DiagonalPattern } from "@/components/slant-dashes-svg";
+import { useState } from "react";
 
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -42,7 +42,7 @@ export function FAQSection() {
             <div className="text-xs sm:text-sm font-medium text-[#475569] mb-3 sm:mb-4 tracking-wider">
               [ FAQ ]
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-lora font-normal text-[#004040] mb-4 sm:mb-6">
+            <h2 className="text-3xl capitalize sm:text-4xl lg:text-5xl font-lora font-bold text-[#004040] mb-4 sm:mb-6">
               Frequently asked
               <br />
               questions
