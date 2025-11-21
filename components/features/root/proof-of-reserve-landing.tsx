@@ -16,7 +16,7 @@ export function ProofOfReserveLanding() {
           <h2 className="text-3xl capitalize sm:text-4xl lg:text-5xl font-lora font-bold text-[#004040] mb-4 sm:mb-6">
             <span className="font-bold">Proof</span> of Reserve
           </h2>
-          <p className="text-base sm:text-lg font-noto-sans font-normal text-[#475569] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg tracking-[-0.072px] font-noto-sans font-normal text-[#525252] max-w-3xl mx-auto leading-relaxed">
             Every token is fully backed 1:1 by investment-grade bond ETFs, held
             by qualified U.S. custodians for maximum security.
           </p>
@@ -141,7 +141,7 @@ export function ProofOfReserveLanding() {
                 <div className="text-lg sm:text-xl font-bold text-[#004040]">
                   $200k
                 </div>
-                <div className="text-xs text-[#475569] whitespace-nowrap">
+                <div className="text-xs text-[#525252] whitespace-nowrap">
                   Assets On-Chain
                 </div>
               </div>
@@ -162,7 +162,7 @@ export function ProofOfReserveLanding() {
                 <div className="text-lg sm:text-xl font-bold text-[#004040]">
                   1,124
                 </div>
-                <div className="text-xs text-[#475569] whitespace-nowrap">
+                <div className="text-xs text-[#525252] whitespace-nowrap">
                   Investments Tokenized
                 </div>
               </div>
@@ -183,7 +183,7 @@ export function ProofOfReserveLanding() {
                 <div className="text-lg sm:text-xl font-bold text-[#004040]">
                   100%
                 </div>
-                <div className="text-xs text-[#475569] whitespace-nowrap">
+                <div className="text-xs text-[#525252] whitespace-nowrap">
                   Proof-of-Reserve Verified
                 </div>
               </div>

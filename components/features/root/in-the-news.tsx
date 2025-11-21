@@ -38,7 +38,7 @@ export function InTheNews() {
           <h2 className="text-3xl capitalize sm:text-4xl lg:text-5xl font-lora font-bold text-[#004040] mb-4 sm:mb-6">
             In the <span className="font-bold">News</span>
           </h2>
-          <p className="text-base sm:text-lg font-noto-sans font-normal text-[#475569] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg font-noto-sans font-normal text-[#525252] max-w-3xl mx-auto leading-relaxed">
             Financial media outlets are highlighting our approach to secure,
             regulated
             <br />
@@ -155,7 +155,7 @@ export function InTheNews() {
                     />
                     {item.publication}
                   </Link>
-                  <span className="text-xs sm:text-xs md:text-sm font-noto-sans text-[#475569] sm:ml-auto whitespace-nowrap">
+                  <span className="text-xs sm:text-xs md:text-sm font-noto-sans text-[#525252] sm:ml-auto whitespace-nowrap">
                     {item.date}
                   </span>
                 </div>

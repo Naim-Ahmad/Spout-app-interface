@@ -58,7 +58,7 @@ export function HowSpoutWorks() {
           <h2 className="text-3xl capitalize sm:text-4xl lg:text-5xl font-lora font-bold text-[#004040] mb-4 sm:mb-6">
             How <span className="font-bold">Spout</span> works
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl font-noto-sans text-[#334155] max-w-4xl mx-auto">
+          <p className="text-base sm:text-base lg:text-lg tracking-[-0.072px] font-noto-sans text-[#525252] max-w-4xl mx-auto">
             Spout bridges the gap between traditional finance and DeFi by
             tokenizing investment-grade corporate bonds, providing stable yields
             while maintaining the benefits of blockchain technology.
@@ -156,10 +156,10 @@ export function HowSpoutWorks() {
                   <div className="inline-block bg-[#A7C6ED]/35 border border-[#A7C6ED] text-[#3D5678] px-2 sm:px-3 py-1 sm:py-1.5 rounded-none text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
                     {step.number}
                   </div>
-                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-lora font-normal text-[#004040] mb-2 sm:mb-3">
+                  <h3 className="text-xl sm:text-2xl lg:text-[28px] !leading-7 tracking-[-0.072px] font-noto-sans font-semibold text-[#004040] mb-2 sm:mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-sm sm:text-base lg:text-lg font-noto-sans font-normal text-[#475569] leading-relaxed">
+                  <p className="text-sm sm:text-base lg:text-lg tracking-[-0.072px] font-noto-sans font-normal text-[#525252] leading-relaxed">
                     {step.description}
                   </p>
                 </div>

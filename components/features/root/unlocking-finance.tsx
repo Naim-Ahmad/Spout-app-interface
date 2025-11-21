@@ -14,16 +14,16 @@ export function UnlockingFinance() {
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-3xl capitalize sm:text-4xl lg:text-5xl font-lora font-bold text-[#004040] mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-4xl xl:text-5xl !leading-tight capitalize font-lora font-bold text-[#004040] mb-4 sm:mb-6">
             Unlocking <span className="font-bold">Finance</span> with DeFi
             <br />
             through our stablecoin
           </h2>
-          <p className="text-base sm:text-lg font-noto-sans font-normal text-[#475569] leading-relaxed">
+          <p className="text-base sm:text-lg font-noto-sans font-normal text-[#525252] leading-relaxed">
             Expand access to traditional assets with security, transparency, and
             real yield on-chain.
           </p>
-          <p className="text-base sm:text-lg font-noto-sans font-normal text-[#475569] leading-relaxed">
+          <p className="text-base sm:text-lg font-noto-sans font-normal text-[#525252] leading-relaxed">
             Global access, real yield, full transparency, built for DeFi.
           </p>
         </div>
@@ -166,7 +166,7 @@ export function UnlockingFinance() {
               </h3>
             </div>
 
-            <p className="text-sm sm:text-base font-noto-sans font-normal text-[#475569] mb-4 sm:mb-6 leading-relaxed">
+            <p className="text-sm sm:text-base font-noto-sans font-normal text-[#525252] mb-4 sm:mb-6 leading-relaxed">
               DeFi expands access to traditional assets by enabling
               security-backed lending and diversified exposure, unlocking
               opportunities while bridging traditional and decentralized
@@ -174,15 +174,15 @@ export function UnlockingFinance() {
             </p>
 
             <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6 lg:mb-0">
-              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#475569]">
+              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#525252]">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400"></div>
                 Security-backed lending
               </li>
-              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#475569]">
+              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#525252]">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400"></div>
                 Multi-asset exposure
               </li>
-              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#475569]">
+              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#525252]">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400"></div>
                 Access to real yield
               </li>
@@ -215,22 +215,22 @@ export function UnlockingFinance() {
               </h3>
             </div>
 
-            <p className="text-sm sm:text-base font-noto-sans font-normal text-[#475569] mb-4 sm:mb-6 leading-relaxed">
+            <p className="text-sm sm:text-base font-noto-sans font-normal text-[#525252] mb-4 sm:mb-6 leading-relaxed">
               DeFi combines strong safeguards with full transparency, ensuring
               all assets are protected and fully verifiable while building
               lasting trust and unlocking new opportunities in finance.
             </p>
 
             <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6 lg:mb-0">
-              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#475569]">
+              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#525252]">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400"></div>
                 Institutional-grade asset protection
               </li>
-              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#475569]">
+              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#525252]">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400"></div>
                 Transparent on-chain verification
               </li>
-              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#475569]">
+              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#525252]">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400"></div>
                 Continuous independent audits
               </li>

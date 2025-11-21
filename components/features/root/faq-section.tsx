@@ -39,26 +39,23 @@ export function FAQSection() {
       <BgGrain className="absolute inset-0 w-full h-full z-0" />
       {/* Section content */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 pb-8 sm:pb-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 items-start">
           {/* Left Column - Header */}
           <div>
-            <div className="text-xs sm:text-sm font-medium text-[#475569] mb-3 sm:mb-4 tracking-wider">
+            <div className="text-xs sm:text-sm font-medium text-[#525252] mb-3 sm:mb-4 tracking-wider">
               [ FAQ ]
             </div>
-            <h2 className="text-3xl capitalize sm:text-4xl lg:text-5xl font-lora font-bold text-[#004040] mb-4 sm:mb-6">
-              Frequently asked
-              <br />
-              questions
+            <h2 className="text-3xl capitalize sm:text-3xl lg:text-4xl font-lora font-bold text-[#004040] mb-4 sm:mb-6">
+              Frequently asked questions
             </h2>
-            <p className="text-base sm:text-lg font-noto-sans font-normal text-[#475569] leading-relaxed">
-              Everything you need to know about Spout and
-              <br />
-              how we&apos;re changing decentralized investing.
+            <p className="text-base sm:text-lg font-noto-sans font-normal text-[#525252] leading-relaxed">
+              Everything you need to know about Spout and how we&apos;re
+              changing decentralized investing.
             </p>
           </div>
 
           {/* Right Column - FAQ Items */}
-          <div className="space-y-3 sm:space-y-4">
+          <div className="space-y-3 sm:space-y-4 lg:col-span-2">
             <Accordion
               type="single"
               collapsible
@@ -82,7 +79,7 @@ export function FAQSection() {
                       </div>
                     </AccordionTrigger>
                     {faq.answer && (
-                      <AccordionContent className="px-8 pb-5 pt-3 text-base font-medium text-spout-text-muted leading-7">
+                      <AccordionContent className="px-8 pb-5 pt-3 text-base font-medium text-[#525252] leading-7">
                         {faq.answer}
                       </AccordionContent>
                     )}

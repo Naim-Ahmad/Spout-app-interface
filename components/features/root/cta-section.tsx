@@ -91,7 +91,7 @@ export function CTASection() {
               <h2 className="text-2xl capitalize sm:text-3xl lg:text-5xl font-lora font-bold text-[#004040] leading-tight">
                 Ready to Start Earning Stable Yields?
               </h2>
-              <p className="text-sm sm:text-base lg:text-lg font-noto-sans text-[#475569] leading-relaxed">
+              <p className="text-sm sm:text-base lg:text-lg font-noto-sans text-[#525252] leading-relaxed">
                 Join thousands of users who are already earning consistent
                 returns from investment-grade corporate bonds on the blockchain.
               </p>

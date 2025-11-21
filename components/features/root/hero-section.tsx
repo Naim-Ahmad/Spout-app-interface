@@ -36,7 +36,7 @@ export function HeroSection() {
               </h1>
 
               {/* Description */}
-              <p className="text-sm sm:text-lg lg:text-xl font-noto-sans text-[#334155] leading-relaxed">
+              <p className="text-sm sm:text-base lg:text-lg tracking-[-0.072px] font-noto-sans text-[#525252] ">
                 Spout makes U.S. investment-grade assets like bonds and equities
                 available as secure, yield-bearing tokens, fully backed 1:1 by
                 real ETFs.
@@ -56,7 +56,7 @@ export function HeroSection() {
               </div>
 
               {/* Secondary text */}
-              <p className="text-xs sm:text-sm lg:text-base font-noto-sans text-[#6b7280] uppercase tracking-wide">
+              <p className="text-xs sm:text-sm lg:text-base font-noto-sans text-[#004040] uppercase tracking-wide">
                 [JOIN THE PLATFORM THAT&apos;S MAKING TRADITIONAL CAPITAL MORE
                 EFFICIENT]
               </p>
