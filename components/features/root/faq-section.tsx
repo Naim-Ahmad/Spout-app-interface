@@ -2,10 +2,17 @@
 
 import BgGrain from "@/components/bg-grain-svg";
 import { DiagonalPattern } from "@/components/slant-dashes-svg";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 export function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openItem, setOpenItem] = useState<string>("item-0");
 
   const faqs = [
     {
@@ -25,10 +32,6 @@ export function FAQSection() {
         "Investors generate yield by holding Spout tokens, which accrue yield on price movement or dividends when attached to the underlying asset. The yield is distributed automatically to token holders. Spout tokens will be eligible to serve as collateral in the Spout lending market to efficiently borrow against your assets.",
     },
   ];
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
 
   return (
     <section className="w-full py-4 sm:py-6 lg:py-8 relative">
@@ -56,43 +59,37 @@ export function FAQSection() {
 
           {/* Right Column - FAQ Items */}
           <div className="space-y-3 sm:space-y-4">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="border bg-white border-gray-300 rounded-none overflow-hidden"
-              >
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-                >
-                  <span className="text-sm sm:text-base lg:text-lg font-noto-sans font-medium text-[#004040] pr-2 sm:pr-4">
-                    {faq.question}
-                  </span>
-                  <svg
-                    className={`w-5 h-5 sm:w-6 sm:h-6 text-[#004040] flex-shrink-0 transition-transform ${
-                      openIndex === index ? "rotate-180" : ""
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+            <Accordion
+              type="single"
+              collapsible
+              value={openItem}
+              onValueChange={setOpenItem}
+            >
+              {faqs.map((faq, index) => {
+                const isOpen = openItem === `item-${index}`;
+                return (
+                  <AccordionItem
+                    key={index}
+                    value={`item-${index}`}
+                    className={`border border-spout-border mb-px last:mb-0 ${isOpen ? "bg-white" : "bg-[#FFFDFB]"}`}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-                {openIndex === index && (
-                  <div className="px-4 sm:px-6 pb-4 sm:pb-5 pt-2 border-t bg-white border-gray-200">
-                    <p className="text-sm sm:text-base font-noto-sans text-[#475569] leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
-            ))}
+                    <AccordionTrigger className="px-8 py-5 text-lg font-medium text-black text-left hover:no-underline [&>svg]:hidden">
+                      <div className="flex items-center justify-between w-full">
+                        <span className="pr-4">{faq.question}</span>
+                        <ChevronDown
+                          className={`h-6 w-6 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                        />
+                      </div>
+                    </AccordionTrigger>
+                    {faq.answer && (
+                      <AccordionContent className="px-8 pb-5 pt-3 text-base font-medium text-spout-text-muted leading-7">
+                        {faq.answer}
+                      </AccordionContent>
+                    )}
+                  </AccordionItem>
+                );
+              })}
+            </Accordion>
           </div>
         </div>
       </div>

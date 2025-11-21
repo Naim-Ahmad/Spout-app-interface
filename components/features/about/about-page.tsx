@@ -235,9 +235,11 @@ export default function AboutPage() {
                   <div className="relative">
                     <div className="absolute -top-1.5 -left-1 w-2.5 h-2.5 rotate-45 border-2 border-spout-accent bg-white hidden lg:block"></div>
                     <div className="absolute -bottom-1.5 -left-1 w-2.5 h-2.5 rotate-45 border-2 border-spout-accent bg-white hidden lg:block"></div>
-                    <img
-                      src="https://api.builder.io/api/v1/image/assets/TEMP/ca7c6ff73901d50613be8ccd22c1d83af5b9fed6?width=1074"
-                      alt="Financial building"
+                    <Image
+                      src="/svg-assets/landingpage/spout-wallstreet.png"
+                      alt="Stock Exchange Building"
+                      width={600}
+                      height={400}
                       className="w-full h-full object-cover border-4 border-spout-border min-h-[300px]"
                     />
                   </div>
