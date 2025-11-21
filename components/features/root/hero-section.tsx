@@ -31,7 +31,7 @@ export function HeroSection() {
           <div className="w-full lg:w-[55%] mb-6 sm:mb-12 lg:mb-0">
             <div className="max-w-5xl space-y-4 sm:space-y-6">
               {/* Main heading */}
-              <h1 className="text-2xl capitalize sm:text-3xl lg:text-5xl font-lora font-bold text-[#004040] leading-tight">
+              <h1 className="text-2xl capitalize sm:text-3xl lg:text-5xl font-lora font-bold text-[#004040] !leading-tight">
                 The platform for what&apos;s next in decentralized investing
               </h1>
 
@@ -74,9 +74,8 @@ export function HeroSection() {
               <Image
                 src="/svg-assets/landingpage/spout-water-tokens.svg"
                 alt="Spout Water Tokens"
-                width={550}
-                height={550}
-                className="w-full h-auto"
+                width={452}
+                height={496}
                 priority
               />
             </div>
