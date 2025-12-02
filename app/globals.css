@@ -17,6 +17,8 @@
       Arial,
       "Noto Sans",
       sans-serif;
+    zoom: 0.9;
+    /* font-size: 14px; */
   }
   :root {
     --background: 0 0% 100%;
