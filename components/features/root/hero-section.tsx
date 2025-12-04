@@ -16,7 +16,7 @@ export function HeroSection() {
   return (
     <section className="w-full flex flex-col relative overflow-hidden">
       {/* Background grain for this section */}
-      <BgGrain className="absolute inset-0 w-full h-full z-0" />
+      <BgGrain className="absolute inset-0 w-full h-full z-0 will-change-transform" />
       {/* Hero content wrapper with grid background */}
       <div className="relative w-full">
         {/* Background grid pattern - only for hero area */}

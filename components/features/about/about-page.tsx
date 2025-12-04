@@ -52,11 +52,12 @@ export default function AboutPage() {
     <div className="min-h-screen bg-white relative ">
       {/* Background grain for this section */}
       <BgGrain
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full z-0 will-change-transform"
         style={{
           zIndex: 1,
         }}
       />
+
       <div className="relative z-50">
         {/* Top horizontal line - hidden on mobile */}
         <div className="hidden md:block absolute top-0 left-0 w-full h-[1.5px] bg-[#A7C6ED]"></div>

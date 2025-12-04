@@ -101,7 +101,7 @@ export default function FaqPage() {
     <div className="min-h-screen bg-white relative">
       {/* Background grain for this section */}
       <BgGrain
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full z-0 will-change-transform"
         style={{
           zIndex: 1,
         }}
