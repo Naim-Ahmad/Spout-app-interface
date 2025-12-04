@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState, useCallback, Suspense } from "react";
-import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -9,20 +9,20 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-  TrendingUp,
-  TrendingDown,
-  RefreshCw,
-  Search,
-  Filter,
-  BarChart3,
-  Activity,
-  Zap,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { clientCacheHelpers } from "@/lib/cache/client-cache";
+import {
+  Activity,
+  BarChart3,
+  Filter,
+  RefreshCw,
+  Search,
+  TrendingDown,
+  TrendingUp,
+  Zap,
+} from "lucide-react";
+import Link from "next/link";
+import { Suspense, useCallback, useEffect, useState } from "react";
 
 // Popular stocks with company names - prices will be fetched from API
 const popularStocks = [
@@ -201,7 +201,7 @@ function MarketsPage() {
       });
 
       const validStocks = results.filter(
-        (stock) => stock !== null,
+        (stock) => stock !== null
       ) as StockData[];
       setStocks(validStocks);
       setLastUpdated(new Date());
@@ -221,7 +221,7 @@ function MarketsPage() {
   const filteredStocks = stocks.filter(
     (stock) =>
       stock.ticker.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      stock.name.toLowerCase().includes(searchTerm.toLowerCase()),
+      stock.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const marketStats = [
@@ -235,7 +235,7 @@ function MarketsPage() {
     <div className="space-y-8">
       {/* Header Section */}
       <div className="bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 rounded-none p-8 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.1),transparent_50%)] optimized"></div>
         <div className="relative z-10">
           <div className="flex items-center gap-3 mb-4">
             <Badge

@@ -9,7 +9,7 @@ export function CTASection() {
   return (
     <section className="w-full py-4 sm:py-8 lg:py-12 relative">
       {/* Background grain for this section */}
-      <BgGrain className="absolute inset-0 w-full h-full z-0" />
+      <BgGrain className="absolute inset-0 w-full h-full z-0 optimized" />
       {/* Section content */}
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-8 lg:px-16 pb-8 sm:pb-12 lg:pb-16">
         <div className="relative border border-gray-300 rounded-none shadow-sm pl-4 sm:pl-4 lg:pl-5 pr-4 sm:pr-4 lg:pr-5 py-6 sm:py-8 lg:py-12">
@@ -32,7 +32,7 @@ export function CTASection() {
           </div>
 
           {/* Top-right diamond */}
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -50,7 +50,7 @@ export function CTASection() {
           </div>
 
           {/* Bottom-left diamond */}
-          <div className="hidden sm:block absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-20">
+          <div className="hidden sm:block absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -68,7 +68,7 @@ export function CTASection() {
           </div>
 
           {/* Bottom-right diamond */}
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-20">
+          <div className="hidden sm:block absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -119,7 +119,7 @@ export function CTASection() {
       </div>
 
       {/* Diagonal blue lines at bottom */}
-      <div className="absolute bottom-0 w-full z-10 px-4 py-2">
+      <div className="absolute bottom-0 w-full z-10 px-4 py-2 optimized">
         <DiagonalPattern
           width="100%"
           height={34}

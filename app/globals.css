@@ -133,6 +133,11 @@
 
 @layer components {
   /* Financial data colors */
+  .optimized {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
   .text-gain {
     @apply text-green-600;
   }

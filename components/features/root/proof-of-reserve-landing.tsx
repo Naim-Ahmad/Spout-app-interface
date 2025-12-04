@@ -8,7 +8,7 @@ export function ProofOfReserveLanding() {
   return (
     <section className="w-full py-4 sm:py-6 lg:py-8 relative">
       {/* Background grain for this section */}
-      <BgGrain className="absolute inset-0 w-full h-full z-0 will-change-transform" />
+      <BgGrain className="absolute inset-0 w-full h-full z-0 optimized" />
 
       {/* Section content */}
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 pb-8">
@@ -37,7 +37,7 @@ export function ProofOfReserveLanding() {
         {/* Statistics Section */}
         <div className="relative bg-white border border-gray-300 rounded-none shadow-sm px-4 sm:px-6 py-4 sm:py-6 lg:py-3 max-w-[1100px] mx-auto">
           {/* Top-left diamond */}
-          <div className="hidden sm:block absolute -left-2 sm:-left-3 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute -left-2 sm:-left-3 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -55,7 +55,7 @@ export function ProofOfReserveLanding() {
           </div>
 
           {/* Top-right diamond */}
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -73,7 +73,7 @@ export function ProofOfReserveLanding() {
           </div>
 
           {/* Bottom-left lock and diamond */}
-          <div className="hidden sm:block absolute left-0 bottom-0 z-20">
+          <div className="hidden sm:block absolute left-0 bottom-0 z-20 optimized">
             <Image
               src="/svg-assets/landingpage/spout-lock.svg"
               alt="Lock"
@@ -82,7 +82,7 @@ export function ProofOfReserveLanding() {
               className="w-8 h-8 sm:w-10 sm:h-10"
             />
           </div>
-          <div className="hidden sm:block absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-30">
+          <div className="hidden sm:block absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-30 optimized">
             <svg
               width="16"
               height="16"
@@ -100,7 +100,7 @@ export function ProofOfReserveLanding() {
           </div>
 
           {/* Bottom-right coins and diamond */}
-          <div className="hidden sm:block absolute right-0 bottom-0 z-20">
+          <div className="hidden sm:block absolute right-0 bottom-0 z-20 optimized">
             <Image
               src="/svg-assets/landingpage/spout-coins.svg"
               alt="Coins"
@@ -109,7 +109,7 @@ export function ProofOfReserveLanding() {
               className="w-8 h-8 sm:w-10 sm:h-10"
             />
           </div>
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-30">
+          <div className="hidden sm:block absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-30 optimized">
             <svg
               width="16"
               height="16"

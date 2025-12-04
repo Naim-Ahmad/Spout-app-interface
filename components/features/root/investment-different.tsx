@@ -33,7 +33,7 @@ export function InvestmentDifferent() {
   return (
     <section className="w-full py-4 sm:py-6 lg:py-8 relative">
       {/* Background grain for this section */}
-      <BgGrain className="absolute inset-0 w-full h-full z-0 will-change-transform" />
+      <BgGrain className="absolute inset-0 w-full h-full z-0 optimized" />
       {/* Section content */}
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-8 lg:px-16 pb-8">
         {/* Header */}
@@ -70,7 +70,7 @@ export function InvestmentDifferent() {
           </div>
 
           {/* Top-middle diamond 1 (25%) */}
-          <div className="hidden sm:block absolute left-[25%] -translate-x-1/2 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute left-[25%] -translate-x-1/2 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -88,7 +88,7 @@ export function InvestmentDifferent() {
           </div>
 
           {/* Top-middle diamond 2 (50%) */}
-          <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -106,7 +106,7 @@ export function InvestmentDifferent() {
           </div>
 
           {/* Top-middle diamond 3 (75%) */}
-          <div className="hidden sm:block absolute left-[75%] -translate-x-1/2 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute left-[75%] -translate-x-1/2 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -124,7 +124,7 @@ export function InvestmentDifferent() {
           </div>
 
           {/* Top-right diamond */}
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -142,7 +142,7 @@ export function InvestmentDifferent() {
           </div>
 
           {/* Bottom-left diamond */}
-          <div className="hidden sm:block absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-20">
+          <div className="hidden sm:block absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -160,7 +160,7 @@ export function InvestmentDifferent() {
           </div>
 
           {/* Bottom-middle diamond 1 (25%) */}
-          <div className="hidden sm:block absolute left-[25%] -translate-x-1/2 -bottom-2 sm:-bottom-3 z-20">
+          <div className="hidden sm:block absolute left-[25%] -translate-x-1/2 -bottom-2 sm:-bottom-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -178,7 +178,7 @@ export function InvestmentDifferent() {
           </div>
 
           {/* Bottom-middle diamond 2 (50%) */}
-          <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -bottom-2 sm:-bottom-3 z-20">
+          <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -bottom-2 sm:-bottom-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -196,7 +196,7 @@ export function InvestmentDifferent() {
           </div>
 
           {/* Bottom-middle diamond 3 (75%) */}
-          <div className="hidden sm:block absolute left-[75%] -translate-x-1/2 -bottom-2 sm:-bottom-3 z-20">
+          <div className="hidden sm:block absolute left-[75%] -translate-x-1/2 -bottom-2 sm:-bottom-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -214,7 +214,7 @@ export function InvestmentDifferent() {
           </div>
 
           {/* Bottom-right diamond */}
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-20">
+          <div className="hidden sm:block absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-20 optimized">
             <svg
               width="16"
               height="16"

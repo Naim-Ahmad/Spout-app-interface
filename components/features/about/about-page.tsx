@@ -52,7 +52,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-white relative ">
       {/* Background grain for this section */}
       <BgGrain
-        className="absolute inset-0 w-full h-full z-0 will-change-transform"
+        className="absolute inset-0 w-full h-full z-0 optimized"
         style={{
           zIndex: 1,
         }}

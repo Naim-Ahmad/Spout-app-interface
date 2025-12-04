@@ -28,7 +28,7 @@ export function InTheNews() {
   return (
     <section className="w-full py-4 sm:py-6 lg:py-8 relative">
       {/* Background grain for this section */}
-      <BgGrain className="absolute inset-0 w-full h-full z-0 will-change-transform" />
+      <BgGrain className="absolute inset-0 w-full h-full z-0 optimized" />
 
       {/* Section content */}
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 pb-8">
@@ -53,7 +53,7 @@ export function InTheNews() {
               className="relative border border-gray-300 rounded-none"
             >
               {/* Top-left diamond */}
-              <div className="absolute -left-2 sm:-left-3 -top-2 sm:-top-3 z-20">
+              <div className="absolute -left-2 sm:-left-3 -top-2 sm:-top-3 z-20 optimized">
                 <svg
                   width="16"
                   height="16"
@@ -71,7 +71,7 @@ export function InTheNews() {
               </div>
 
               {/* Top-right diamond */}
-              <div className="absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20">
+              <div className="absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20 optimized">
                 <svg
                   width="16"
                   height="16"
@@ -89,7 +89,7 @@ export function InTheNews() {
               </div>
 
               {/* Bottom-left diamond */}
-              <div className="absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-20">
+              <div className="absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-20 optimized">
                 <svg
                   width="16"
                   height="16"
@@ -107,7 +107,7 @@ export function InTheNews() {
               </div>
 
               {/* Bottom-right diamond */}
-              <div className="absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-20">
+              <div className="absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-20 optimized">
                 <svg
                   width="16"
                   height="16"

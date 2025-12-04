@@ -9,7 +9,7 @@ export function UnlockingFinance() {
   return (
     <section className="w-full py-4 sm:py-6 lg:py-8 relative">
       {/* Background grain for this section */}
-      <BgGrain className="absolute inset-0 w-full h-full z-0 will-change-transform" />
+      <BgGrain className="absolute inset-0 w-full h-full z-0 optimized" />
 
       {/* Section content */}
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
@@ -32,7 +32,7 @@ export function UnlockingFinance() {
         {/* Cards Section */}
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-0 mb-6 sm:mb-8 lg:mb-12">
           {/* Top-left diamond */}
-          <div className="hidden sm:block absolute -left-2 sm:-left-3 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute -left-2 sm:-left-3 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -50,7 +50,7 @@ export function UnlockingFinance() {
           </div>
 
           {/* Top-middle diamond */}
-          <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -68,7 +68,7 @@ export function UnlockingFinance() {
           </div>
 
           {/* Top-right diamond */}
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -86,7 +86,7 @@ export function UnlockingFinance() {
           </div>
 
           {/* Bottom-left diamond */}
-          <div className="hidden sm:block absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-20">
+          <div className="hidden sm:block absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -104,7 +104,7 @@ export function UnlockingFinance() {
           </div>
 
           {/* Bottom-middle diamond */}
-          <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -bottom-2 sm:-bottom-3 z-20">
+          <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -bottom-2 sm:-bottom-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -122,7 +122,7 @@ export function UnlockingFinance() {
           </div>
 
           {/* Bottom-right diamond */}
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-20">
+          <div className="hidden sm:block absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -190,7 +190,7 @@ export function UnlockingFinance() {
             </ul>
 
             {/* Benefits icon */}
-            <div className="flex justify-center lg:absolute lg:bottom-6 lg:right-6">
+            <div className="flex justify-center lg:absolute lg:bottom-6 lg:right-6 optimized">
               <Image
                 src="/svg-assets/defi-integration-benefits.svg"
                 alt="Benefits"
@@ -238,7 +238,7 @@ export function UnlockingFinance() {
             </ul>
 
             {/* Lock icon */}
-            <div className="flex justify-center lg:absolute lg:bottom-3 lg:right-6">
+            <div className="flex justify-center lg:absolute lg:bottom-3 lg:right-6 optimized">
               <Image
                 src="/svg-assets/security-lock.svg"
                 alt="Lock"

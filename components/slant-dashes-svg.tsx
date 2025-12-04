@@ -1,5 +1,3 @@
-import React from "react";
-
 export const DiagonalPattern = ({
   width = "100%",
   height = 34,
@@ -35,7 +33,7 @@ export const DiagonalPattern = ({
         d={`M${startX} ${height}L${startX + height} 0`}
         stroke={color}
         strokeWidth={strokeWidth}
-      />,
+      />
     );
   }
 
@@ -57,7 +55,7 @@ export const DiagonalPattern = ({
         d={`M${startX} ${startY}L${endX} ${endY}`}
         stroke={color}
         strokeWidth={strokeWidth * 1.2} // Slightly thicker for mobile
-      />,
+      />
     );
   }
 
@@ -65,15 +63,15 @@ export const DiagonalPattern = ({
     <div className="relative md:border-[1px] md:border-[#A7C6ED] md:rounded-none md:shadow-sm">
       {/* Horizontal border extensions to connect with vertical page lines - hidden on mobile */}
       {/* Top border extension - left side */}
-      <div className="hidden md:block absolute -left-16 top-0 w-16 h-[1.5px] bg-[#A7C6ED]"></div>
+      <div className="hidden md:block absolute -left-16 top-0 w-16 h-[1.5px] bg-[#A7C6ED] optimized"></div>
       {/* Top border extension - right side */}
-      <div className="hidden md:block absolute -right-16 top-0 w-16 h-[1.5px] bg-[#A7C6ED]"></div>
+      <div className="hidden md:block absolute -right-16 top-0 w-16 h-[1.5px] bg-[#A7C6ED] optimized"></div>
       {/* Bottom border extension - left side */}
-      <div className="hidden md:block absolute -left-16 bottom-0 w-16 h-[1.5px] bg-[#A7C6ED]"></div>
+      <div className="hidden md:block absolute -left-16 bottom-0 w-16 h-[1.5px] bg-[#A7C6ED] optimized"></div>
       {/* Bottom border extension - right side */}
-      <div className="hidden md:block absolute -right-16 bottom-0 w-16 h-[1.5px] bg-[#A7C6ED]"></div>
+      <div className="hidden md:block absolute -right-16 bottom-0 w-16 h-[1.5px] bg-[#A7C6ED] optimized"></div>
       {/* Top-left diamond */}
-      <div className="hidden lg:block absolute -left-2 -top-2 z-20">
+      <div className="hidden lg:block absolute -left-2 -top-2 z-20 optimized">
         <svg
           width="16"
           height="16"
@@ -91,7 +89,7 @@ export const DiagonalPattern = ({
       </div>
 
       {/* Top-right diamond */}
-      <div className="hidden lg:block absolute -right-2 -top-2 z-20">
+      <div className="hidden lg:block absolute -right-2 -top-2 z-20 optimized">
         <svg
           width="16"
           height="16"
@@ -109,7 +107,7 @@ export const DiagonalPattern = ({
       </div>
 
       {/* Bottom-left diamond */}
-      <div className="hidden lg:block absolute -left-2 -bottom-2 z-20">
+      <div className="hidden lg:block absolute -left-2 -bottom-2 z-20 optimized">
         <svg
           width="16"
           height="16"
@@ -127,7 +125,7 @@ export const DiagonalPattern = ({
       </div>
 
       {/* Bottom-right diamond */}
-      <div className="hidden lg:block absolute -right-2 -bottom-2 z-20">
+      <div className="hidden lg:block absolute -right-2 -bottom-2 z-20 optimized">
         <svg
           width="16"
           height="16"
@@ -146,7 +144,7 @@ export const DiagonalPattern = ({
 
       {/* Intersection diamonds where extended borders meet vertical page lines */}
       {/* Top-left intersection diamond */}
-      <div className="hidden lg:block absolute -left-16 -top-2 z-20">
+      <div className="hidden lg:block absolute -left-16 -top-2 z-20 optimized">
         <svg
           width="16"
           height="16"
@@ -164,7 +162,7 @@ export const DiagonalPattern = ({
       </div>
 
       {/* Top-right intersection diamond */}
-      <div className="hidden lg:block absolute -right-16 -top-2 z-20">
+      <div className="hidden lg:block absolute -right-16 -top-2 z-20 optimized">
         <svg
           width="16"
           height="16"
@@ -182,7 +180,7 @@ export const DiagonalPattern = ({
       </div>
 
       {/* Bottom-left intersection diamond */}
-      <div className="hidden lg:block absolute -left-16 -bottom-2 z-20">
+      <div className="hidden lg:block absolute -left-16 -bottom-2 z-20 optimized">
         <svg
           width="16"
           height="16"
@@ -200,7 +198,7 @@ export const DiagonalPattern = ({
       </div>
 
       {/* Bottom-right intersection diamond */}
-      <div className="hidden lg:block absolute -right-16 -bottom-2 z-20">
+      <div className="hidden lg:block absolute -right-16 -bottom-2 z-20 optimized">
         <svg
           width="16"
           height="16"

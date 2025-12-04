@@ -15,34 +15,29 @@ export function HeroSection() {
 
   return (
     <section className="w-full flex flex-col relative overflow-hidden">
-      {/* Background grain for this section */}
-      <BgGrain className="absolute inset-0 w-full h-full z-0 will-change-transform" />
-      {/* Hero content wrapper with grid background */}
-      <div className="relative w-full">
-        {/* Background grid pattern - only for hero area */}
-        <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:35px_35px]"></div>
+      {/* Background grain */}
+      <BgGrain className="absolute inset-0 w-full h-full z-0 optimized" />
 
-        {/* Gradient fade overlay - fades from bottom (visible) to top (hidden) */}
-        {/* <div className="absolute inset-0 z-[1] bg-gradient-to-t from-transparent from-0% via-transparent via-75% to-gray-50 to-100%"></div> */}
+      {/* Hero content wrapper */}
+      <div className="relative w-full">
+        {/* Grid background */}
+        <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:35px_35px] optimized"></div>
 
         {/* Main content */}
         <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-8 lg:px-16 pt-6 sm:pt-12 lg:pt-20 pb-0 flex flex-col lg:flex-row items-start justify-between gap-0">
-          {/* Left column - Text content */}
+          {/* Left column */}
           <div className="w-full lg:w-[55%] mb-6 sm:mb-12 lg:mb-0">
             <div className="max-w-5xl space-y-4 sm:space-y-6">
-              {/* Main heading */}
               <h1 className="text-2xl capitalize sm:text-3xl lg:text-5xl font-lora font-bold text-[#004040] !leading-tight">
                 The platform for what&apos;s next in decentralized investing
               </h1>
 
-              {/* Description */}
               <p className="text-sm sm:text-base lg:text-lg tracking-[-0.072px] font-noto-sans text-[#525252] ">
                 Spout makes U.S. investment-grade assets like bonds and equities
                 available as secure, yield-bearing tokens, fully backed 1:1 by
                 real ETFs.
               </p>
 
-              {/* CTA Button */}
               <div className="pt-2 sm:pt-0">
                 <Link href="/app">
                   <Button
@@ -55,22 +50,20 @@ export function HeroSection() {
                 </Link>
               </div>
 
-              {/* Secondary text */}
               <p className="text-xs sm:text-sm lg:text-base font-noto-sans text-[#004040] uppercase tracking-wide">
                 [JOIN THE PLATFORM THAT&apos;S MAKING TRADITIONAL CAPITAL MORE
                 EFFICIENT]
               </p>
 
-              {/* Mailing List */}
               <div className="max-w-md pt-2 sm:pt-0">
                 <JoinMailingList />
               </div>
             </div>
           </div>
 
-          {/* Right column - SVG graphic */}
+          {/* Right column - image */}
           <div className="w-full lg:w-[45%] flex items-center justify-center lg:justify-end -mt-2 sm:-mt-6 lg:-mt-8">
-            <div className="w-full max-w-[280px] sm:max-w-sm lg:max-w-xl">
+            <div className="w-full max-w-[280px] sm:max-w-sm lg:max-w-xl optimized">
               <Image
                 src="/svg-assets/landingpage/spout-water-tokens.svg"
                 alt="Spout Water Tokens"
@@ -82,19 +75,19 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Compatible Networks Section */}
+        {/* Partner Ticker */}
         <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-8 lg:px-16 mb-3 sm:mb-6">
-          <div className="px-16 hidden md:block">
+          <div className="px-16 hidden md:block optimized">
             <PartnerTicker />
           </div>
-          <div className="block md:hidden">
+          <div className="block md:hidden optimized">
             <PartnerTicker />
           </div>
         </div>
       </div>
 
       {/* Slant Dashes */}
-      <div className="relative z-10 w-full mt-10 px-4 py-2">
+      <div className="relative z-10 w-full mt-10 px-4 py-2 optimized">
         <DiagonalPattern
           width="100%"
           height={34}
