@@ -1,9 +1,7 @@
-"use client";
-
+import BgGrain from "@/components/bg-grain-svg";
+import { DiagonalPattern } from "@/components/slant-dashes-svg";
 import Image from "next/image";
 import Link from "next/link";
-import { DiagonalPattern } from "@/components/slant-dashes-svg";
-import BgGrain from "@/components/bg-grain-svg";
 
 export function InTheNews() {
   const newsItems = [
@@ -30,15 +28,16 @@ export function InTheNews() {
   return (
     <section className="w-full py-4 sm:py-6 lg:py-8 relative">
       {/* Background grain for this section */}
-      <BgGrain className="absolute inset-0 w-full h-full z-0" />
+      <BgGrain className="absolute inset-0 w-full h-full z-0 optimized" />
+
       {/* Section content */}
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 pb-8">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-lora font-normal text-[#004040] mb-4 sm:mb-6">
-            In the <span className="font-medium">News</span>
+          <h2 className="text-3xl capitalize sm:text-4xl lg:text-5xl font-lora font-bold text-[#004040] mb-4 sm:mb-6">
+            In the <span className="font-bold">News</span>
           </h2>
-          <p className="text-base sm:text-lg font-noto-sans font-normal text-[#475569] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg font-noto-sans font-normal text-[#525252] max-w-3xl mx-auto leading-relaxed">
             Financial media outlets are highlighting our approach to secure,
             regulated
             <br />
@@ -54,7 +53,7 @@ export function InTheNews() {
               className="relative border border-gray-300 rounded-none"
             >
               {/* Top-left diamond */}
-              <div className="absolute -left-2 sm:-left-3 -top-2 sm:-top-3 z-20">
+              <div className="absolute -left-2 sm:-left-3 -top-2 sm:-top-3 z-20 optimized">
                 <svg
                   width="16"
                   height="16"
@@ -72,7 +71,7 @@ export function InTheNews() {
               </div>
 
               {/* Top-right diamond */}
-              <div className="absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20">
+              <div className="absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20 optimized">
                 <svg
                   width="16"
                   height="16"
@@ -90,7 +89,7 @@ export function InTheNews() {
               </div>
 
               {/* Bottom-left diamond */}
-              <div className="absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-20">
+              <div className="absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-20 optimized">
                 <svg
                   width="16"
                   height="16"
@@ -108,7 +107,7 @@ export function InTheNews() {
               </div>
 
               {/* Bottom-right diamond */}
-              <div className="absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-20">
+              <div className="absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-20 optimized">
                 <svg
                   width="16"
                   height="16"
@@ -155,7 +154,7 @@ export function InTheNews() {
                     />
                     {item.publication}
                   </Link>
-                  <span className="text-xs sm:text-xs md:text-sm font-noto-sans text-[#475569] sm:ml-auto whitespace-nowrap">
+                  <span className="text-xs sm:text-xs md:text-sm font-noto-sans text-[#525252] sm:ml-auto whitespace-nowrap">
                     {item.date}
                   </span>
                 </div>

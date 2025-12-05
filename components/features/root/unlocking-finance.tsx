@@ -1,29 +1,30 @@
 "use client";
 
+import BgGrain from "@/components/bg-grain-svg";
+import { DiagonalPattern } from "@/components/slant-dashes-svg";
 import Image from "next/image";
 import Link from "next/link";
-import { DiagonalPattern } from "@/components/slant-dashes-svg";
-import BgGrain from "@/components/bg-grain-svg";
 
 export function UnlockingFinance() {
   return (
     <section className="w-full py-4 sm:py-6 lg:py-8 relative">
       {/* Background grain for this section */}
-      <BgGrain className="absolute inset-0 w-full h-full z-0" />
+      <BgGrain className="absolute inset-0 w-full h-full z-0 optimized" />
+
       {/* Section content */}
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-lora font-normal text-[#004040] mb-4 sm:mb-6">
-            Unlocking <span className="font-medium">Finance</span> with DeFi
+          <h2 className="text-2xl sm:text-4xl xl:text-5xl !leading-tight capitalize font-lora font-bold text-[#004040] mb-4 sm:mb-6">
+            Unlocking <span className="font-bold">Finance</span> with DeFi
             <br />
             through our stablecoin
           </h2>
-          <p className="text-base sm:text-lg font-noto-sans font-normal text-[#475569] leading-relaxed">
+          <p className="text-base sm:text-lg font-noto-sans font-normal text-[#525252] leading-relaxed">
             Expand access to traditional assets with security, transparency, and
             real yield on-chain.
           </p>
-          <p className="text-base sm:text-lg font-noto-sans font-normal text-[#475569] leading-relaxed">
+          <p className="text-base sm:text-lg font-noto-sans font-normal text-[#525252] leading-relaxed">
             Global access, real yield, full transparency, built for DeFi.
           </p>
         </div>
@@ -31,7 +32,7 @@ export function UnlockingFinance() {
         {/* Cards Section */}
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-0 mb-6 sm:mb-8 lg:mb-12">
           {/* Top-left diamond */}
-          <div className="hidden sm:block absolute -left-2 sm:-left-3 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute -left-2 sm:-left-3 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -49,7 +50,7 @@ export function UnlockingFinance() {
           </div>
 
           {/* Top-middle diamond */}
-          <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -67,7 +68,7 @@ export function UnlockingFinance() {
           </div>
 
           {/* Top-right diamond */}
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -85,7 +86,7 @@ export function UnlockingFinance() {
           </div>
 
           {/* Bottom-left diamond */}
-          <div className="hidden sm:block absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-20">
+          <div className="hidden sm:block absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -103,7 +104,7 @@ export function UnlockingFinance() {
           </div>
 
           {/* Bottom-middle diamond */}
-          <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -bottom-2 sm:-bottom-3 z-20">
+          <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -bottom-2 sm:-bottom-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -121,7 +122,7 @@ export function UnlockingFinance() {
           </div>
 
           {/* Bottom-right diamond */}
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-20">
+          <div className="hidden sm:block absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -166,7 +167,7 @@ export function UnlockingFinance() {
               </h3>
             </div>
 
-            <p className="text-sm sm:text-base font-noto-sans font-normal text-[#475569] mb-4 sm:mb-6 leading-relaxed">
+            <p className="text-sm sm:text-base font-noto-sans font-normal text-[#525252] mb-4 sm:mb-6 leading-relaxed">
               DeFi expands access to traditional assets by enabling
               security-backed lending and diversified exposure, unlocking
               opportunities while bridging traditional and decentralized
@@ -174,22 +175,22 @@ export function UnlockingFinance() {
             </p>
 
             <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6 lg:mb-0">
-              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#475569]">
+              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#525252]">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400"></div>
                 Security-backed lending
               </li>
-              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#475569]">
+              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#525252]">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400"></div>
                 Multi-asset exposure
               </li>
-              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#475569]">
+              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#525252]">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400"></div>
                 Access to real yield
               </li>
             </ul>
 
             {/* Benefits icon */}
-            <div className="flex justify-center lg:absolute lg:bottom-6 lg:right-6">
+            <div className="flex justify-center lg:absolute lg:bottom-6 lg:right-6 optimized">
               <Image
                 src="/svg-assets/defi-integration-benefits.svg"
                 alt="Benefits"
@@ -215,29 +216,29 @@ export function UnlockingFinance() {
               </h3>
             </div>
 
-            <p className="text-sm sm:text-base font-noto-sans font-normal text-[#475569] mb-4 sm:mb-6 leading-relaxed">
+            <p className="text-sm sm:text-base font-noto-sans font-normal text-[#525252] mb-4 sm:mb-6 leading-relaxed">
               DeFi combines strong safeguards with full transparency, ensuring
               all assets are protected and fully verifiable while building
               lasting trust and unlocking new opportunities in finance.
             </p>
 
             <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6 lg:mb-0">
-              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#475569]">
+              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#525252]">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400"></div>
                 Institutional-grade asset protection
               </li>
-              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#475569]">
+              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#525252]">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400"></div>
                 Transparent on-chain verification
               </li>
-              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#475569]">
+              <li className="flex items-center gap-2 text-xs sm:text-sm font-noto-sans text-[#525252]">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400"></div>
                 Continuous independent audits
               </li>
             </ul>
 
             {/* Lock icon */}
-            <div className="flex justify-center lg:absolute lg:bottom-3 lg:right-6">
+            <div className="flex justify-center lg:absolute lg:bottom-3 lg:right-6 optimized">
               <Image
                 src="/svg-assets/security-lock.svg"
                 alt="Lock"

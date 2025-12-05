@@ -1,46 +1,47 @@
 "use client";
 import BgGrain from "@/components/bg-grain-svg";
 import { DiagonalPattern } from "@/components/slant-dashes-svg";
+import lovish from "@/public/HeadshotLovish.jpg";
+import marc from "@/public/HeadshotMarc.png";
+import mihir from "@/public/HeadshotMihir.png";
+import pauljan from "@/public/HeadshotPJ.png";
+import paul from "@/public/HeadshotPaul.jpg";
 import { Linkedin, Mail, Twitter } from "lucide-react";
+import Image, { StaticImageData } from "next/image";
 
 const teamMembers = [
   {
     name: "Marc Ryan",
     title: "Co-Founder & CEO",
-    image:
-      "https://api.builder.io/api/v1/image/assets/TEMP/e0ae0178649a874dc6664eb99c8a8ba9e4d23ded?width=750",
+    image: marc,
     description:
       "Former tech investment banker at HSBC, covering fintech and software. Founder of FlipVault, a web3 bartering platform. Angel investor in several blockchain AI companies, including Theoriq, PIN AI, and GAIB AI.",
   },
   {
     name: "Paul van Mierlo",
     title: "Co-Founder & CTO",
-    image:
-      "https://api.builder.io/api/v1/image/assets/TEMP/a481f42d238f07ce417a4ddaa3c1f10132dbe4ce?width=750",
+    image: paul,
     description:
       "Paul brings years of expertise in programming having won major hackathon competitions on different blockchain ecosystems with privacy, payments and DeFi solutions.",
   },
   {
     name: "Paul Jan Reijn",
     title: "Co-Founder & General Counsel",
-    image:
-      "https://api.builder.io/api/v1/image/assets/TEMP/4975d9cf16a84c36520671b01c2aeb739fa3f40f?width=750",
+    image: pauljan,
     description:
       "Legal counsel with years of experience in software. Architect of the legal framework for various succesful software products, such as payments and factory automation.",
   },
   {
     name: "Mihir Sahu",
     title: "Head of Privacy",
-    image:
-      "https://api.builder.io/api/v1/image/assets/TEMP/a75d86d96a89872d00a755bf43f6667c3c52835a?width=750",
+    image: mihir,
     description:
       "Web3 engineer with expertise in privacy, cross-chain systems, and decentralized finance. Experience at Inco building TEE-powered applications for confidential DeFi and payments, and recognized at major hackathon competitions.",
   },
   {
     name: "Lovish Badlani",
     title: "Head of Engineering",
-    image:
-      "https://api.builder.io/api/v1/image/assets/TEMP/07964e1fabdc6cb2ac986d211e6c7a52ab937771?width=750",
+    image: lovish,
     description:
       "Former BlackRock engineer, experienced in scaling institutional fintech apps. Led engineering at DEX token launchpad with 150K+ users, $150M+ TVL. Skilled in EVM chains and Solana deployment, recognized at global hackathons.",
   },
@@ -51,11 +52,12 @@ export default function AboutPage() {
     <div className="min-h-screen bg-white relative ">
       {/* Background grain for this section */}
       <BgGrain
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full z-0 optimized"
         style={{
           zIndex: 1,
         }}
       />
+
       <div className="relative z-50">
         {/* Top horizontal line - hidden on mobile */}
         <div className="hidden md:block absolute top-0 left-0 w-full h-[1.5px] bg-[#A7C6ED]"></div>
@@ -114,7 +116,7 @@ export default function AboutPage() {
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-[56px] font-normal text-spout-primary font-lora leading-tight mb-6">
+              <h1 className="text-4xl capitalize md:text-5xl lg:text-[56px] font-bold text-spout-primary font-lora leading-tight mb-6">
                 Our Story
               </h1>
 
@@ -143,8 +145,8 @@ export default function AboutPage() {
 
           {/* Meet the Team Section */}
           <section className="py-16 px-6 md:px-12 lg:px-24">
-            <h2 className="text-4xl font-lora text-spout-primary text-center mb-12">
-              Meet the <span className="font-medium">Team</span>
+            <h2 className="text-4xl capitalize font-bold font-lora text-spout-primary text-center mb-12">
+              Meet the <span className="font-bold">Team</span>
             </h2>
 
             {/* Team Grid - First Row (3 members) */}
@@ -189,7 +191,7 @@ export default function AboutPage() {
 
                 <div className="grid lg:grid-cols-2 gap-0">
                   <div className="p-10 lg:p-14 flex flex-col justify-center">
-                    <h2 className="text-3xl font-semibold text-spout-primary mb-5 leading-tight">
+                    <h2 className="text-3xl capitalize font-bold text-spout-primary mb-5 leading-tight">
                       Ready to Start Earning Stable Yields?
                     </h2>
                     <p className="text-lg text-spout-text-muted leading-7 mb-8">
@@ -234,9 +236,11 @@ export default function AboutPage() {
                   <div className="relative">
                     <div className="absolute -top-1.5 -left-1 w-2.5 h-2.5 rotate-45 border-2 border-spout-accent bg-white hidden lg:block"></div>
                     <div className="absolute -bottom-1.5 -left-1 w-2.5 h-2.5 rotate-45 border-2 border-spout-accent bg-white hidden lg:block"></div>
-                    <img
-                      src="https://api.builder.io/api/v1/image/assets/TEMP/ca7c6ff73901d50613be8ccd22c1d83af5b9fed6?width=1074"
-                      alt="Financial building"
+                    <Image
+                      src="/svg-assets/landingpage/spout-wallstreet.png"
+                      alt="Stock Exchange Building"
+                      width={600}
+                      height={400}
                       className="w-full h-full object-cover border-4 border-spout-border min-h-[300px]"
                     />
                   </div>
@@ -269,7 +273,7 @@ function TeamCard({
 }: {
   name: string;
   title: string;
-  image: string;
+  image: StaticImageData;
   description: string;
 }) {
   return (
@@ -283,7 +287,14 @@ function TeamCard({
 
         {/* Image Section */}
         <div className="relative w-full h-56 overflow-hidden border-b border-spout-border">
-          <img src={image} alt={name} className="w-full h-full object-cover" />
+          <Image
+            src={image}
+            alt={name}
+            fill
+            objectFit="cover"
+            objectPosition="50% 24%"
+            className="w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-black/5 mix-blend-overlay"></div>
         </div>
 

@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ArrowRight, ChevronDown } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 const faqData = [
@@ -100,7 +101,7 @@ export default function FaqPage() {
     <div className="min-h-screen bg-white relative">
       {/* Background grain for this section */}
       <BgGrain
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full z-0 optimized"
         style={{
           zIndex: 1,
         }}
@@ -162,7 +163,7 @@ export default function FaqPage() {
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-[56px] font-normal text-spout-primary font-lora leading-tight mb-6">
+              <h1 className="text-4xl font-bold capitalize md:text-5xl lg:text-[56px]  text-spout-primary font-lora leading-tight mb-6">
                 Frequently asked questions
               </h1>
 
@@ -244,7 +245,7 @@ export default function FaqPage() {
 
                   <div className="grid lg:grid-cols-2 gap-0">
                     <div className="p-10 lg:p-14 flex flex-col justify-center">
-                      <h2 className="text-3xl font-semibold text-spout-primary mb-5 leading-tight">
+                      <h2 className="text-3xl font-bold capitalize  text-spout-primary mb-5 leading-tight">
                         Ready to Start Earning Stable Yields?
                       </h2>
                       <p className="text-lg text-spout-text-muted leading-7 mb-8">
@@ -261,10 +262,12 @@ export default function FaqPage() {
                     <div className="relative ">
                       <div className="absolute -top-1.5 -left-1 w-2.5 h-2.5 rotate-45 border-2 border-spout-accent bg-white hidden lg:block"></div>
                       <div className="absolute -bottom-1.5 -left-1 w-2.5 h-2.5 rotate-45 border-2 border-spout-accent bg-white hidden lg:block"></div>
-                      <img
-                        src="/bank_image.png"
-                        alt="Financial building"
-                        className="w-full h-full object-cover border-2 border-spout-border"
+                      <Image
+                        src="/svg-assets/landingpage/spout-wallstreet.png"
+                        alt="Stock Exchange Building"
+                        width={600}
+                        height={400}
+                        className="w-full h-full object-cover border-4 border-spout-border min-h-[300px]"
                       />
                     </div>
                   </div>

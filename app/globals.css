@@ -17,6 +17,8 @@
       Arial,
       "Noto Sans",
       sans-serif;
+    zoom: 0.9;
+    /* font-size: 14px; */
   }
   :root {
     --background: 0 0% 100%;
@@ -131,6 +133,11 @@
 
 @layer components {
   /* Financial data colors */
+  .optimized {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
   .text-gain {
     @apply text-green-600;
   }

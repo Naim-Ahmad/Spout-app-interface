@@ -1,9 +1,15 @@
 "use client";
 
+<<<<<<< HEAD
 import { useState } from "react";
 import Link from "next/link";
 import { DiagonalPattern } from "@/components/slant-dashes-svg";
+=======
+>>>>>>> FAQandAbout
 import BgGrain from "@/components/bg-grain-svg";
+import { DiagonalPattern } from "@/components/slant-dashes-svg";
+import Link from "next/link";
+import { useState } from "react";
 
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -34,7 +40,7 @@ export function FAQSection() {
   return (
     <section className="w-full py-4 sm:py-6 lg:py-8 relative">
       {/* Background grain for this section */}
-      <BgGrain className="absolute inset-0 w-full h-full z-0" />
+      <BgGrain className="absolute inset-0 w-full h-full z-0 optimized" />
       {/* Section content */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 pb-8 sm:pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
@@ -94,12 +100,36 @@ export function FAQSection() {
                 )}
               </div>
             ))}
+<<<<<<< HEAD
             <div className="mt-4 sm:mt-6">
               <Link
                 href="/faq"
                 className="inline-flex items-center text-sm sm:text-base font-noto-sans font-medium text-[#004040] hover:text-[#003030] transition-colors underline"
               >
                 See more
+=======
+
+            <div className="flex justify-start lg:justify-end">
+              <Link
+                href="/faq"
+                className="inline-flex bg-white p-2 sm:p-3 border rounded-md border-gray-300 items-center gap-1 sm:gap-2 text-black font-medium text-sm sm:text-base hover:text-[#003030] transition-colors"
+              >
+                Read More
+                {/* make it use react icons */}
+                <svg
+                  className="w-4 h-4 sm:w-5 sm:h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+>>>>>>> FAQandAbout
               </Link>
             </div>
           </div>
