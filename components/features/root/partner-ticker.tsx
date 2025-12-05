@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 const partners = [
   {
@@ -63,7 +63,7 @@ export function PartnerTicker() {
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
+      "(prefers-reduced-motion: reduce)"
     ).matches;
 
     const updateSegmentWidth = () => {
@@ -80,7 +80,7 @@ export function PartnerTicker() {
       (entries) => {
         isVisibleRef.current = entries[0]?.isIntersecting ?? true;
       },
-      { threshold: 0.1 },
+      { threshold: 0.1 }
     );
     const tickerNode = tickerRef.current;
     if (tickerNode) observer.observe(tickerNode);
@@ -118,13 +118,13 @@ export function PartnerTicker() {
     <div className="w-full rounded-lg border border-gray-300 relative">
       {/* Horizontal lines extending from center to screen edges */}
       {/* Left side line */}
-      <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[50vw] w-[50vw] h-[1.5px] bg-[#A7C6ED] z-10"></div>
+      <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[50vw] w-[50vw] h-[1.5px] bg-[#A7C6ED] z-10 optimized"></div>
       {/* Right side line */}
-      <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-[50vw] w-[50vw] h-[1.5px] bg-[#A7C6ED] z-10"></div>
-      
+      <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-[50vw] w-[50vw] h-[1.5px] bg-[#A7C6ED] z-10 optimized"></div>
+
       {/* Diamonds at intersection points with vertical page lines */}
       {/* Left intersection diamond - positioned at left vertical page line */}
-      <div className="hidden md:block absolute -left-[120px] top-1/2 -translate-y-1/2 z-20">
+      <div className="hidden md:block absolute -left-[120px] top-1/2 -translate-y-1/2 z-20 optimized">
         <svg
           width="16"
           height="16"
@@ -140,9 +140,9 @@ export function PartnerTicker() {
           />
         </svg>
       </div>
-      
+
       {/* Right intersection diamond - positioned at right vertical page line */}
-      <div className="hidden md:block absolute -right-[120px] top-1/2 -translate-y-1/2 z-20">
+      <div className="hidden md:block absolute -right-[120px] top-1/2 -translate-y-1/2 z-20 optimized">
         <svg
           width="16"
           height="16"
@@ -176,7 +176,7 @@ export function PartnerTicker() {
         >
           <div
             ref={tickerRef}
-            className="flex items-center will-change-transform"
+            className="flex items-center optimized"
             style={{ transform: "translate3d(0,0,0)" }}
           >
             <div ref={contentRef} className="flex items-center shrink-0">

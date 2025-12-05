@@ -1,8 +1,6 @@
-"use client";
-
-import Image from "next/image";
-import { DiagonalPattern } from "@/components/slant-dashes-svg";
 import BgGrain from "@/components/bg-grain-svg";
+import { DiagonalPattern } from "@/components/slant-dashes-svg";
+import Image from "next/image";
 
 export function InvestmentDifferent() {
   const features = [
@@ -35,15 +33,15 @@ export function InvestmentDifferent() {
   return (
     <section className="w-full py-4 sm:py-6 lg:py-8 relative">
       {/* Background grain for this section */}
-      <BgGrain className="absolute inset-0 w-full h-full z-0" />
+      <BgGrain className="absolute inset-0 w-full h-full z-0 optimized" />
       {/* Section content */}
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-8 lg:px-16 pb-8">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-lora font-normal text-[#004040] mb-4 sm:mb-6">
-            How we do <span className="font-medium">Investment</span> different
+          <h2 className="text-3xl capitalize sm:text-4xl lg:text-5xl font-lora font-bold text-[#004040] mb-4 sm:mb-6">
+            How we do <span className="font-bold">Investment</span> different
           </h2>
-          <p className="text-base sm:text-lg font-noto-sans font-normal text-[#475569] max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg font-noto-sans font-normal text-[#525252] max-w-4xl mx-auto leading-relaxed">
             Consistent 5-8% returns from regulated corporate debt, with instant
             trading
             <br />
@@ -72,7 +70,7 @@ export function InvestmentDifferent() {
           </div>
 
           {/* Top-middle diamond 1 (25%) */}
-          <div className="hidden sm:block absolute left-[25%] -translate-x-1/2 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute left-[25%] -translate-x-1/2 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -90,7 +88,7 @@ export function InvestmentDifferent() {
           </div>
 
           {/* Top-middle diamond 2 (50%) */}
-          <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -108,7 +106,7 @@ export function InvestmentDifferent() {
           </div>
 
           {/* Top-middle diamond 3 (75%) */}
-          <div className="hidden sm:block absolute left-[75%] -translate-x-1/2 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute left-[75%] -translate-x-1/2 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -126,7 +124,7 @@ export function InvestmentDifferent() {
           </div>
 
           {/* Top-right diamond */}
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -144,7 +142,7 @@ export function InvestmentDifferent() {
           </div>
 
           {/* Bottom-left diamond */}
-          <div className="hidden sm:block absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-20">
+          <div className="hidden sm:block absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -162,7 +160,7 @@ export function InvestmentDifferent() {
           </div>
 
           {/* Bottom-middle diamond 1 (25%) */}
-          <div className="hidden sm:block absolute left-[25%] -translate-x-1/2 -bottom-2 sm:-bottom-3 z-20">
+          <div className="hidden sm:block absolute left-[25%] -translate-x-1/2 -bottom-2 sm:-bottom-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -180,7 +178,7 @@ export function InvestmentDifferent() {
           </div>
 
           {/* Bottom-middle diamond 2 (50%) */}
-          <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -bottom-2 sm:-bottom-3 z-20">
+          <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -bottom-2 sm:-bottom-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -198,7 +196,7 @@ export function InvestmentDifferent() {
           </div>
 
           {/* Bottom-middle diamond 3 (75%) */}
-          <div className="hidden sm:block absolute left-[75%] -translate-x-1/2 -bottom-2 sm:-bottom-3 z-20">
+          <div className="hidden sm:block absolute left-[75%] -translate-x-1/2 -bottom-2 sm:-bottom-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -216,7 +214,7 @@ export function InvestmentDifferent() {
           </div>
 
           {/* Bottom-right diamond */}
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-20">
+          <div className="hidden sm:block absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -259,7 +257,7 @@ export function InvestmentDifferent() {
               </div>
 
               {/* Description */}
-              <p className="text-xs sm:text-sm font-noto-sans font-normal text-[#475569] mb-3 sm:mb-4 leading-relaxed flex-grow">
+              <p className="text-xs sm:text-sm font-noto-sans font-normal text-[#525252] mb-3 sm:mb-4 leading-relaxed flex-grow">
                 {feature.description}
               </p>
 

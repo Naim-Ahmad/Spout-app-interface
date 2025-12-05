@@ -1,22 +1,23 @@
 "use client";
 
-import Image from "next/image";
-import { DiagonalPattern } from "@/components/slant-dashes-svg";
 import BgGrain from "@/components/bg-grain-svg";
+import { DiagonalPattern } from "@/components/slant-dashes-svg";
+import Image from "next/image";
 
 export function ProofOfReserveLanding() {
   return (
     <section className="w-full py-4 sm:py-6 lg:py-8 relative">
       {/* Background grain for this section */}
-      <BgGrain className="absolute inset-0 w-full h-full z-0" />
+      <BgGrain className="absolute inset-0 w-full h-full z-0 optimized" />
+
       {/* Section content */}
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 pb-8">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-lora font-normal text-[#004040] mb-4 sm:mb-6">
-            <span className="font-medium">Proof</span> of Reserve
+          <h2 className="text-3xl capitalize sm:text-4xl lg:text-5xl font-lora font-bold text-[#004040] mb-4 sm:mb-6">
+            <span className="font-bold">Proof</span> of Reserve
           </h2>
-          <p className="text-base sm:text-lg font-noto-sans font-normal text-[#475569] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg tracking-[-0.072px] font-noto-sans font-normal text-[#525252] max-w-3xl mx-auto leading-relaxed">
             Every token is fully backed 1:1 by investment-grade bond ETFs, held
             by qualified U.S. custodians for maximum security.
           </p>
@@ -36,7 +37,7 @@ export function ProofOfReserveLanding() {
         {/* Statistics Section */}
         <div className="relative bg-white border border-gray-300 rounded-none shadow-sm px-4 sm:px-6 py-4 sm:py-6 lg:py-3 max-w-[1100px] mx-auto">
           {/* Top-left diamond */}
-          <div className="hidden sm:block absolute -left-2 sm:-left-3 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute -left-2 sm:-left-3 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -54,7 +55,7 @@ export function ProofOfReserveLanding() {
           </div>
 
           {/* Top-right diamond */}
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20">
+          <div className="hidden sm:block absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20 optimized">
             <svg
               width="16"
               height="16"
@@ -72,7 +73,7 @@ export function ProofOfReserveLanding() {
           </div>
 
           {/* Bottom-left lock and diamond */}
-          <div className="hidden sm:block absolute left-0 bottom-0 z-20">
+          <div className="hidden sm:block absolute left-0 bottom-0 z-20 optimized">
             <Image
               src="/svg-assets/landingpage/spout-lock.svg"
               alt="Lock"
@@ -81,7 +82,7 @@ export function ProofOfReserveLanding() {
               className="w-8 h-8 sm:w-10 sm:h-10"
             />
           </div>
-          <div className="hidden sm:block absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-30">
+          <div className="hidden sm:block absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-30 optimized">
             <svg
               width="16"
               height="16"
@@ -99,7 +100,7 @@ export function ProofOfReserveLanding() {
           </div>
 
           {/* Bottom-right coins and diamond */}
-          <div className="hidden sm:block absolute right-0 bottom-0 z-20">
+          <div className="hidden sm:block absolute right-0 bottom-0 z-20 optimized">
             <Image
               src="/svg-assets/landingpage/spout-coins.svg"
               alt="Coins"
@@ -108,7 +109,7 @@ export function ProofOfReserveLanding() {
               className="w-8 h-8 sm:w-10 sm:h-10"
             />
           </div>
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-30">
+          <div className="hidden sm:block absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-30 optimized">
             <svg
               width="16"
               height="16"
@@ -141,7 +142,7 @@ export function ProofOfReserveLanding() {
                 <div className="text-lg sm:text-xl font-bold text-[#004040]">
                   $200k
                 </div>
-                <div className="text-xs text-[#475569] whitespace-nowrap">
+                <div className="text-xs text-[#525252] whitespace-nowrap">
                   Assets On-Chain
                 </div>
               </div>
@@ -162,7 +163,7 @@ export function ProofOfReserveLanding() {
                 <div className="text-lg sm:text-xl font-bold text-[#004040]">
                   1,124
                 </div>
-                <div className="text-xs text-[#475569] whitespace-nowrap">
+                <div className="text-xs text-[#525252] whitespace-nowrap">
                   Investments Tokenized
                 </div>
               </div>
@@ -183,7 +184,7 @@ export function ProofOfReserveLanding() {
                 <div className="text-lg sm:text-xl font-bold text-[#004040]">
                   100%
                 </div>
-                <div className="text-xs text-[#475569] whitespace-nowrap">
+                <div className="text-xs text-[#525252] whitespace-nowrap">
                   Proof-of-Reserve Verified
                 </div>
               </div>
