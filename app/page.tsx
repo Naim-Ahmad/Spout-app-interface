@@ -21,7 +21,7 @@ export default function HomePage() {
           <div className="absolute right-4 top-0 bottom-0 w-[1.5px] bg-[#A7C6ED] optimized"></div>
         </div>
         {/* Hero Section */}
-        <div className="relative z-10 w-full">
+        <div className="relative z-10 w-full lg:h-[702px] overflow-hidden">
           <HeroSection />
         </div>
 

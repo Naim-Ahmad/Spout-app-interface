@@ -5,7 +5,7 @@
 @layer base {
   html,
   body {
-    font-family:
+    /* font-family:
       var(--font-sans),
       ui-sans-serif,
       system-ui,
@@ -16,8 +16,8 @@
       "Helvetica Neue",
       Arial,
       "Noto Sans",
-      sans-serif;
-    zoom: 0.9;
+      sans-serif; */
+    /* zoom: 0.9; */
     /* font-size: 14px; */
   }
   :root {
@@ -57,9 +57,12 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Custom Spout colors */
-    --spout-primary: 180 100% 12.5%;
-    --spout-accent: 211 60% 80%;
-    --spout-text-muted: 0 0% 32%;
+    --spout-primary: 180 100% 12.5%; /* #004040 */
+    --spout-accent: 211 60% 80%; /* #A7C6ED */
+    --spout-text-muted: 0 0% 32%; /* #525252 */
+    --spout-blue: 218.5 100% 75.9%; /* #84B0FF */
+    --spout-gray: 225 2% 47%; /* #757679 */
+    --spout-light-gray: 0 0% 83%; /* #D4D4D4 */
   }
 
   .dark {

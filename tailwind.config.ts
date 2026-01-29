@@ -13,7 +13,7 @@ function flattenColorPalette(colors: Record<string, any>) {
       return Object.entries(values).map(([key, value]) => {
         return { [`${color}-${key}`]: value };
       });
-    })
+    }),
   );
 }
 
@@ -39,6 +39,8 @@ const config = {
         sans: ["var(--font-sans)", ...defaultTheme.fontFamily.sans],
         lora: ["var(--font-lora)", ...defaultTheme.fontFamily.serif],
         "noto-sans": ["var(--font-noto-sans)", ...defaultTheme.fontFamily.sans],
+        "pt-serif": ["var(--font-pt-serif)", ...defaultTheme.fontFamily.serif],
+        "dm-sans": ["var(--font-dm-sans)", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -85,12 +87,15 @@ const config = {
           ring: "hsl(var(--sidebar-ring))",
         },
         spout: {
-          primary: "#004040",
-          accent: "#A7C6ED",
-          "text-muted": "#525252",
-          "text-secondary": "#3D5678",
-          "text-gray": "#8C9BAA",
-          border: "#E5E5E5",
+          primary: "hsl(var(--spout-primary))",
+          accent: "hsl(var(--spout-accent))",
+          "text-muted": "hsl(var(--spout-text-muted))",
+          "text-secondary": "hsl(var(--spout-text-secondary))",
+          "text-gray": "hsl(var(--spout-text-gray))",
+          border: "hsl(var(--spout-border))",
+          blue: "hsl(var(--spout-blue))",
+          gray: "hsl(var(--spout-gray))",
+          "light-gray": "hsl(var(--spout-light-gray))",
         },
       },
       borderRadius: {
@@ -130,7 +135,7 @@ export default config;
 function addVariablesForColors({ addBase, theme }: any) {
   const flattenedColors = flattenColorPalette(theme("colors"));
   const newVars = Object.fromEntries(
-    Object.entries(flattenedColors).map(([key, val]) => [`--${key}`, val])
+    Object.entries(flattenedColors).map(([key, val]) => [`--${key}`, val]),
   );
 
   addBase({
