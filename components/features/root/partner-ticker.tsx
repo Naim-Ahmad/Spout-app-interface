@@ -63,7 +63,7 @@ export function PartnerTicker() {
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     const updateSegmentWidth = () => {
@@ -80,7 +80,7 @@ export function PartnerTicker() {
       (entries) => {
         isVisibleRef.current = entries[0]?.isIntersecting ?? true;
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
     const tickerNode = tickerRef.current;
     if (tickerNode) observer.observe(tickerNode);
@@ -115,64 +115,20 @@ export function PartnerTicker() {
   }, [isPaused]);
 
   return (
-    <div className="w-full rounded-lg border border-gray-300 relative">
-      {/* Horizontal lines extending from center to screen edges */}
-      {/* Left side line */}
-      <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[50vw] w-[50vw] h-[1.5px] bg-[#A7C6ED] z-10 optimized"></div>
-      {/* Right side line */}
-      <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-[50vw] w-[50vw] h-[1.5px] bg-[#A7C6ED] z-10 optimized"></div>
-
-      {/* Diamonds at intersection points with vertical page lines */}
-      {/* Left intersection diamond - positioned at left vertical page line */}
-      <div className="hidden md:block absolute -left-[120px] top-1/2 -translate-y-1/2 z-20 optimized">
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          className="text-blue-300"
-        >
-          <path
-            d="M12 2L22 12L12 22L2 12L12 2Z"
-            stroke="currentColor"
-            strokeWidth="3"
-            fill="white"
-          />
-        </svg>
-      </div>
-
-      {/* Right intersection diamond - positioned at right vertical page line */}
-      <div className="hidden md:block absolute -right-[120px] top-1/2 -translate-y-1/2 z-20 optimized">
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          className="text-blue-300"
-        >
-          <path
-            d="M12 2L22 12L12 22L2 12L12 2Z"
-            stroke="currentColor"
-            strokeWidth="3"
-            fill="white"
-          />
-        </svg>
-      </div>
+    <div className="w-full rounded-lg border border-gray-300 overflow-hidden relative bg-white">
       <div className="flex flex-col sm:flex-row items-center">
         {/* Fixed "Compatible With Leading Networks" box */}
-        <div className="bg-white rounded-t-lg sm:rounded-l-lg sm:rounded-t-none px-4 sm:px-6 lg:px-8 py-4 sm:py-6 border-b sm:border-b-0 sm:border-r border-gray-300 flex-shrink-0 w-full sm:w-auto">
+        <div className="bg-white rounded-t-lg sm:rounded-l-lg sm:rounded-t-none px-4 sm:px-6 lg:px-8 py-4 sm:py-6 border-b sm:border-b-0  flex-shrink-0 w-full sm:w-auto">
           <h3 className="text-base sm:text-lg font-noto-sans text-[#334155] font-semibold text-center leading-tight">
-            Compatible With
-            <br />
-            Leading Networks
+            WORKING WITH
           </h3>
         </div>
 
         {/* Animated partner logos */}
         <div
           className="flex-1 overflow-hidden bg-white"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
+          // onMouseEnter={() => setIsPaused(true)}
+          // onMouseLeave={() => setIsPaused(false)}
         >
           <div
             ref={tickerRef}
@@ -190,7 +146,7 @@ export function PartnerTicker() {
                   className="focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 rounded group"
                   aria-label={partner.alt}
                 >
-                  <div className="bg-white px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6 border-r border-gray-200 transition-all duration-300 ease-out flex items-center justify-center min-w-[140px] sm:min-w-[160px] lg:min-w-[180px] hover:bg-gray-50 relative">
+                  <div className="bg-white px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6  transition-all duration-300 ease-out flex items-center justify-center min-w-[140px] sm:min-w-[160px] lg:min-w-[180px] hover:bg-gray-50 relative">
                     <Image
                       src={partner.src}
                       alt={partner.alt}

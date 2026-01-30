@@ -1,200 +1,252 @@
 "use client";
 
-import BgGrain from "@/components/bg-grain-svg";
-import { DiagonalPattern } from "@/components/slant-dashes-svg";
-import Image from "next/image";
+import { animate, motion, useInView, useMotionValue } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const steps = [
   {
-    number: "STEP 1",
+    label: "Step 01",
     title: "Complete KYC",
-    description:
-      'Connect your wallet and complete KYC verification to access investment-grade assets. KYC ensures that we are completely compliant with every jurisdiction"',
     image: "/svg-assets/kyc-tokens.svg",
-    imageAlt: "KYC Verification",
+    bg: "from-green-200 to-green-100",
   },
   {
-    number: "STEP 2",
+    label: "Step 02",
     title: "Access Public Equities",
-    description:
-      "Connect your wallet and complete KYC verification to access investment-grade assets. Assets include highly trading equities, including Tesla, Microsoft, Coinbase, etc.",
     image: "/svg-assets/public-equity.svg",
-    imageAlt: "Public Equities",
+    bg: "from-yellow-200 to-yellow-100",
   },
   {
-    number: "STEP 3",
-    title: "Earn Stable Yields",
-    description:
-      "Receive consistent returns from underlying bond interest payments. Dividends are automatically reinvested into the respective assets.",
+    label: "Step 03",
+    title: "Lever Up",
+    image: "/svg-assets/lever-up.svg",
+    bg: "from-blue-300 to-blue-200",
+  },
+  {
+    label: "Step 04",
+    title: "Earn Yields",
     image: "/svg-assets/stable-yields.svg",
-    imageAlt: "Stable Yields",
+    bg: "from-purple-200 to-purple-100",
   },
   {
-    number: "STEP 4",
-    title: "Utilize in DeFi with our Stablecoin",
-    description:
-      "Use your tokenized assets in DeFi protocols for lending, borrowing, and yield farming. Use your assets as collateral to mint our ERC20 stablecoin that can be used seamlessly across DeFi.",
-    image: "/svg-assets/defi-with-tokens.svg",
-    imageAlt: "DeFi Integration",
-  },
-  {
-    number: "STEP 5",
+    label: "Step 05",
     title: "Track Performance",
-    description:
-      "Monitor your portfolio with real-time analytics and transparent reporting. Trade assets with a UI similar to your traditional brokerage.",
     image: "/svg-assets/track-performance.svg",
-    imageAlt: "Performance Tracking",
+    bg: "from-cyan-200 to-cyan-100",
   },
 ];
 
+const INTERVAL = 5000;
+
 export function HowSpoutWorks() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { margin: "-100px" });
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const x = useMotionValue("0%");
+
+  useEffect(() => {
+    if (!inView) return;
+
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev === steps.length - 1 ? 0 : prev + 1));
+    }, INTERVAL);
+
+    return () => clearInterval(timer);
+  }, [inView]);
+
+  useEffect(() => {
+    animate(x, `-${activeIndex * (100 / 3)}%`, {
+      duration: 1.2,
+      ease: [0.22, 1, 0.36, 1],
+    });
+  }, [activeIndex]);
+
+  // progress based on CENTER card
+  const progressPercent = ((activeIndex + 1) / steps.length) * 100;
+
   return (
-    <section className="w-full py-8 sm:py-12 lg:py-20 relative">
-      {/* Background grain for this section */}
-      <BgGrain className="absolute inset-0 w-full h-full z-0 optimized" />
-      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-3xl capitalize sm:text-4xl lg:text-5xl font-lora font-bold text-[#004040] mb-4 sm:mb-6">
-            How <span className="font-bold">Spout</span> works
-          </h2>
-          <p className="text-base sm:text-base lg:text-lg tracking-[-0.072px] font-noto-sans text-[#525252] max-w-4xl mx-auto">
-            Spout bridges the gap between traditional finance and DeFi by
-            tokenizing investment-grade corporate bonds, providing stable yields
-            while maintaining the benefits of blockchain technology.
+    <section ref={ref} className="w-full py-16 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <h2 className="section-heading">How Spoutworks</h2>
+          <p className="section-description">
+            Step-by-step overview of how Spout works.
           </p>
         </div>
 
-        {/* Steps Grid */}
-        <div className="relative space-y-0">
-          {/* Decorative diamonds at corners of entire section */}
-          {/* Top-left diamond */}
-          <div className="hidden sm:block absolute -left-2 sm:-left-3 -top-2 sm:-top-3 z-20 optimized">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-blue-300 sm:w-6 sm:h-6"
-            >
-              <path
-                d="M12 2L22 12L12 22L2 12L12 2Z"
-                stroke="currentColor"
-                strokeWidth="3"
-                fill="white"
-              />
-            </svg>
-          </div>
-          {/* Top-right diamond */}
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20 optimized">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-blue-300 sm:w-6 sm:h-6"
-            >
-              <path
-                d="M12 2L22 12L12 22L2 12L12 2Z"
-                stroke="currentColor"
-                strokeWidth="3"
-                fill="white"
-              />
-            </svg>
-          </div>
-          {/* Bottom-left diamond */}
-          <div className="hidden sm:block absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-20 optimized">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-blue-300 sm:w-6 sm:h-6"
-            >
-              <path
-                d="M12 2L22 12L12 22L2 12L12 2Z"
-                stroke="currentColor"
-                strokeWidth="3"
-                fill="white"
-              />
-            </svg>
-          </div>
-          {/* Bottom-right diamond */}
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-20 optimized">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-blue-300 sm:w-6 sm:h-6"
-            >
-              <path
-                d="M12 2L22 12L12 22L2 12L12 2Z"
-                stroke="currentColor"
-                strokeWidth="3"
-                fill="white"
-              />
-            </svg>
-          </div>
+        {/* Progress Bar */}
+        <div className="relative h-[10px] rounded-[24px] mb-10 bg-gray-200 overflow-hidden">
+          {/* Masked gradient */}
+          <motion.div
+            className="absolute inset-y-0 left-0 "
+            animate={{ width: `${progressPercent}%` }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            style={{
+              background: "linear-gradient(90deg, #DDFF87 0%, #0057FF 100%)",
+            }}
+          />
 
-          {steps.map((step, index) => (
-            <div
-              key={index}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch border-gray-300 rounded-none overflow-hidden mb-6 last:mb-0 relative ${
-                index === 0
-                  ? "border border-t border-l border-r border-b"
-                  : "border-l border-r border-b"
-              }`}
-            >
-              {/* Vertical divider line */}
-              <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-300 transform -translate-x-1/2 optimized"></div>
-              {/* Content - alternates left/right */}
-              <div
-                className={`flex items-center bg-white py-4 sm:py-6 px-4 sm:px-6 min-h-[250px] sm:min-h-[300px] ${index % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}
-              >
-                <div>
-                  <div className="inline-block bg-[#A7C6ED]/35 border border-[#A7C6ED] text-[#3D5678] px-2 sm:px-3 py-1 sm:py-1.5 rounded-none text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
-                    {step.number}
-                  </div>
-                  <h3 className="text-xl sm:text-2xl lg:text-[28px] !leading-7 tracking-[-0.072px] font-noto-sans font-semibold text-[#004040] mb-2 sm:mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm sm:text-base lg:text-lg tracking-[-0.072px] font-noto-sans font-normal text-[#525252] leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-
-              {/* Image - alternates right/left */}
-              <div
-                className={`flex justify-center bg-white items-center relative bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:35px_35px] px-4 sm:px-6 py-4 sm:py-6 min-h-[200px] sm:min-h-[250px] lg:min-h-[300px] ${index % 2 === 0 ? "lg:order-2" : "lg:order-1"}`}
-              >
-                {/* Gradient fade overlay - fades from bottom (visible) to top (hidden) */}
-                <div className="absolute inset-0 bg-gradient-to-t from-transparent from-0% via-transparent via-50% to-gray-50 to-100% pointer-events-none optimized"></div>
-                <div className="w-full max-w-[180px] sm:max-w-[220px] lg:max-w-[250px] h-[180px] sm:h-[220px] lg:h-[250px] relative z-10 flex items-center justify-center">
-                  <Image
-                    src={step.image}
-                    alt={step.imageAlt}
-                    width={250}
-                    height={250}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              </div>
-            </div>
-          ))}
+          {/* Background track */}
+          <motion.div
+            className="absolute inset-y-0 right-0 bg-gray-200"
+            animate={{ width: `${100 - progressPercent}%` }}
+          />
         </div>
-      </div>
 
-      {/* Diagonal blue lines at bottom */}
-      <div className="relative z-10 w-full mt-40 px-4 py-2">
-        <DiagonalPattern
-          width="100%"
-          height={34}
-          color="#A7C6ED"
-          strokeWidth={1.5}
-          spacing={14}
-        />
+        {/* Carousel viewport */}
+        <div className="relative overflow-hidden">
+          <motion.div className="flex will-change-transform" style={{ x }}>
+            {steps.map((step, i) => (
+              <div key={step.title} className="w-1/3  flex-shrink-0">
+                <div className={`relative bg-gradient-to-r  p-8 md:p-12`}>
+                  {/* Vertical stripes background */}
+
+                  <div className="relative z-10">
+                    {/* Step Label */}
+                    <div className="text-sm font-medium text-gray-700 py-[10px] px-[20px] bg-[#FAFAFA] border border-[#F3F4F6] font-dm-sans">
+                      Step 01
+                    </div>
+
+                    {/* Icon */}
+                    <div className="flex justify-center mb-8 relative">
+                      <div className="absolute inset-0 -z-10 flex">
+                        <div className="flex-1 bg-emerald-200"></div>
+                        <div className="flex-1 bg-emerald-300"></div>
+                        <div className="flex-1 bg-emerald-200"></div>
+                        <div className="flex-1 bg-emerald-300"></div>
+                      </div>
+                      <div className="w-32 h-32 flex items-center justify-center">
+                        <svg
+                          viewBox="0 0 200 200"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-full h-full"
+                        >
+                          {/* Shield */}
+                          <path
+                            d="M100 30 L140 45 L140 85 Q140 125 100 155 Q60 125 60 85 L60 45 Z"
+                            fill="#5B9BD5"
+                            stroke="#2D5F8D"
+                            strokeWidth="3"
+                          />
+
+                          {/* User icon in shield */}
+                          <circle cx="100" cy="75" r="15" fill="white" />
+                          <path
+                            d="M80 110 Q80 95 100 95 Q120 95 120 110 L120 115 L80 115 Z"
+                            fill="white"
+                          />
+
+                          {/* Coins */}
+                          <g>
+                            {/* Left coin */}
+                            <circle
+                              cx="70"
+                              cy="130"
+                              r="18"
+                              fill="#FFD700"
+                              stroke="#DAA520"
+                              strokeWidth="2"
+                            />
+                            <circle
+                              cx="70"
+                              cy="130"
+                              r="12"
+                              fill="none"
+                              stroke="#DAA520"
+                              strokeWidth="1.5"
+                            />
+                            <text
+                              x="70"
+                              y="136"
+                              textAnchor="middle"
+                              fill="#DAA520"
+                              fontSize="16"
+                              fontWeight="bold"
+                            >
+                              $
+                            </text>
+
+                            {/* Center coin */}
+                            <circle
+                              cx="100"
+                              cy="140"
+                              r="18"
+                              fill="#FFD700"
+                              stroke="#DAA520"
+                              strokeWidth="2"
+                            />
+                            <circle
+                              cx="100"
+                              cy="140"
+                              r="12"
+                              fill="none"
+                              stroke="#DAA520"
+                              strokeWidth="1.5"
+                            />
+                            <text
+                              x="100"
+                              y="146"
+                              textAnchor="middle"
+                              fill="#DAA520"
+                              fontSize="16"
+                              fontWeight="bold"
+                            >
+                              $
+                            </text>
+
+                            {/* Right coin */}
+                            <circle
+                              cx="130"
+                              cy="130"
+                              r="18"
+                              fill="#FFD700"
+                              stroke="#DAA520"
+                              strokeWidth="2"
+                            />
+                            <circle
+                              cx="130"
+                              cy="130"
+                              r="12"
+                              fill="none"
+                              stroke="#DAA520"
+                              strokeWidth="1.5"
+                            />
+                            <text
+                              x="130"
+                              y="136"
+                              textAnchor="middle"
+                              fill="#DAA520"
+                              fontSize="16"
+                              fontWeight="bold"
+                            >
+                              $
+                            </text>
+                          </g>
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="font-sans text-xl font-semibold text-gray-900 mb-3">
+                      Complete KYC
+                    </h3>
+
+                    {/* Description */}
+                    <p className="font-sans text-sm text-gray-700 leading-relaxed">
+                      Connect your wallet and complete KYC verification to
+                      access investment-grade equities. KYC ensures that we are
+                      completely compliant with every jurisdiction.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

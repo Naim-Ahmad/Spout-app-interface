@@ -1,4 +1,3 @@
-import { RumInit } from "@/aws/rum-init";
 import { AnnouncementBarWrapper } from "@/components/announcement-bar-wrapper";
 import {
   ConditionalFooter,
@@ -8,6 +7,7 @@ import { cn } from "@/lib/utils";
 import "@rainbow-me/rainbowkit/styles.css";
 import type { Metadata } from "next";
 import {
+  DM_Mono,
   DM_Sans,
   IBM_Plex_Mono,
   Lora,
@@ -45,6 +45,12 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
   variable: "--font-dm-sans",
+});
+
+const dmMono = DM_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "300"],
+  variable: "--font-dm-mono",
 });
 
 export const metadata: Metadata = {
@@ -106,9 +112,10 @@ export default async function RootLayout({
           notoSans.variable,
           ptSerif.variable,
           dmSans.variable,
+          dmMono.variable,
         )}
       >
-        <RumInit />
+        {/* <RumInit /> */}
         {/* <Providers> */}
         <AnnouncementBarWrapper />
         <ConditionalNavbar />

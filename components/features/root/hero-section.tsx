@@ -8,7 +8,7 @@ import image1 from "@/assets/images/hero/1.png";
 
 export function HeroSection() {
   return (
-    <section className="w-full flex flex-col relative overflow-hidden lg:h-[702px] justify-center">
+    <section className="w-full flex flex-col relative overflow-hidden">
       {/* Hero content wrapper */}
       <div className="relative w-full">
         {/* Grid background */}
@@ -20,16 +20,16 @@ export function HeroSection() {
         </div>
 
         {/* Main content */}
-        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 pt-6 sm:pt-12 lg:pt-20 pb-0 flex flex-col lg:flex-row items-center gap-10 lg:gap-[114px]">
+        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 pt-6 sm:pt-12 lg:pt-0 pb-5 flex flex-col lg:flex-row gap-10 xl:gap-[114px] items-center">
           {/* Left column */}
-          <div className="w-full lg:max-w-[833px] mb-6 sm:mb-12 lg:mb-0">
+          <div className="lg:max-w-[840px]  mb-6 sm:mb-12 lg:mb-0">
             <div className=" space-y-4 sm:space-y-6">
-              <h1 className="font-pt-serif text-spout-primary lg:text-[60px] font-normal lg:leading-[72px] text-2xl capitalize sm:text-3xl lg:text-5xl !leading-tight">
+              <h1 className="font-pt-serif text-spout-primary lg:text-[60px] font-normal lg:leading-[72px] text-2xl capitalize sm:text-3xl lg:text-5xl leading-tight">
                 The Go-To Platform for Margin Trading at{" "}
                 <span className="text-spout-blue">0%</span> Rates
               </h1>
 
-              <p className="text-sm sm:text-base tracking-[-0.072px] font-noto-sans text-spout-gray font-dm-sans lg:text-[20px] lg:leading-7">
+              <p className="text-sm sm:text-base tracking-[-0.072px] text-spout-gray font-dm-sans lg:text-[20px] lg:leading-7">
                 Spout enables you to borrow against your equities at 0% APR or
                 lend your stablecoins for 10%+ APY
               </p>
@@ -87,20 +87,15 @@ export function HeroSection() {
           {/* Right column - image */}
           <div className="max-w-[368.592px]">
             <div className="w-full max-w-[280px] sm:max-w-sm lg:max-w-xl lg:w-auto optimized">
-              <Image src={image1} alt="Spout Water Tokens" priority />
+              <Image
+                src={image1}
+                alt="Spout Water Tokens"
+                priority
+                className="w-full h-full"
+              />
             </div>
           </div>
         </div>
-
-        {/* Partner Ticker */}
-        {/* <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-8 lg:px-16 mb-3 sm:mb-6">
-          <div className="px-16 hidden md:block optimized">
-            <PartnerTicker />
-          </div>
-          <div className="block md:hidden optimized">
-            <PartnerTicker />
-          </div>
-        </div> */}
       </div>
     </section>
   );

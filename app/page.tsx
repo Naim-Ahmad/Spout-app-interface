@@ -8,56 +8,68 @@ import {
   ProofOfReserveLanding,
   UnlockingFinance,
 } from "@/components/features/root";
+import { PartnerTicker } from "@/components/features/root/partner-ticker";
 
 export default function HomePage() {
   return (
     <>
       <div className="min-h-screen w-full overflow-x-hidden flex flex-col items-center justify-center relative">
-        {/* Vertical lines on both sides - hidden on mobile */}
-        <div className="hidden md:block fixed inset-0 pointer-events-none z-0">
-          {/* Left vertical line */}
-          <div className="absolute left-4 top-0 bottom-0 w-[1.5px] bg-[#A7C6ED] optimized"></div>
-          {/* Right vertical line */}
-          <div className="absolute right-4 top-0 bottom-0 w-[1.5px] bg-[#A7C6ED] optimized"></div>
-        </div>
         {/* Hero Section */}
-        <div className="relative z-10 w-full lg:h-[702px] overflow-hidden">
+        <div className="relative z-10 w-full overflow-hidden">
           <HeroSection />
         </div>
 
-        {/* How Spout Works Section */}
-        <div className="relative z-10 w-full">
-          <HowSpoutWorks />
+        {/* Partner Ticker */}
+        <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-8 lg:px-16 mb-3 sm:mb-6">
+          <div className="px-16 hidden md:block optimized">
+            <PartnerTicker />
+          </div>
+          <div className="block md:hidden optimized">
+            <PartnerTicker />
+          </div>
         </div>
+        <div className="relative">
+          <div className="hidden md:block absolute inset-0 pointer-events-none z-0 max-w-[1178px] mx-auto">
+            {/* Left vertical line */}
+            <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[#F3F4F6] optimized"></div>
+            {/* Right vertical line */}
+            <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-[#F3F4F6] optimized"></div>
+          </div>
 
-        {/* Proof of Reserve Section */}
-        <div className="relative z-10 w-full">
-          <ProofOfReserveLanding />
-        </div>
+          {/* How Spout Works Section */}
+          <div className="relative z-10 w-full">
+            <HowSpoutWorks />
+          </div>
 
-        {/* Unlocking Finance Section */}
-        <div className="relative z-10 w-full">
-          <UnlockingFinance />
-        </div>
+          {/* Proof of Reserve Section */}
+          <div className="relative z-10 w-full">
+            <ProofOfReserveLanding />
+          </div>
 
-        {/* Investment Different Section */}
-        <div className="relative z-10 w-full">
-          <InvestmentDifferent />
-        </div>
+          {/* Unlocking Finance Section */}
+          <div className="relative z-10 w-full">
+            <UnlockingFinance />
+          </div>
 
-        {/* In The News Section */}
-        <div className="relative z-10 w-full">
-          <InTheNews />
-        </div>
+          {/* Investment Different Section */}
+          <div className="relative z-10 w-full">
+            <InvestmentDifferent />
+          </div>
 
-        {/* FAQ Section */}
-        <div className="relative z-10 w-full">
-          <FAQSection />
-        </div>
+          {/* In The News Section */}
+          <div className="relative z-10 w-full">
+            <InTheNews />
+          </div>
 
-        {/* CTA Section */}
-        <div className="relative z-10 w-full">
-          <CTASection />
+          {/* FAQ Section */}
+          <div className="relative z-10 w-full">
+            <FAQSection />
+          </div>
+
+          {/* CTA Section */}
+          <div className="relative z-10 w-full">
+            <CTASection />
+          </div>
         </div>
       </div>
     </>
