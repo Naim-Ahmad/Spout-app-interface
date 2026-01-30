@@ -8,24 +8,29 @@ export function InvestmentDifferent() {
       title: "Privacy Protection",
       description: "Confidential transactions with encrypted data",
       badges: ["Encrypted data", "Private transfers"],
+      gradient: "linear-gradient-green-2",
     },
     {
       icon: "/svg-assets/landingpage/security-safe.svg",
       title: "Regulated Assets",
       description: "Backed by real corporate debt obligations",
       badges: ["SEC Compliant", "FDIC protected"],
+      gradient: "linear-gradient-blue-2",
     },
     {
       icon: "/svg-assets/landingpage/flash.svg",
       title: "Instant Liquidity",
       description: "Trade tokens 24/7 on decentralized exchanges",
       badges: ["No Lock-up Period", "24/7 Trading"],
+      gradient: "linear-gradient-4",
     },
     {
       icon: "/svg-assets/landingpage/key.svg",
       title: "Confidential Assets",
       description: "Protected identity and private records",
       badges: ["Secure handling", "Private layers"],
+      gradient: "linear-gradient-5",
+
     },
   ];
 
@@ -48,12 +53,13 @@ export function InvestmentDifferent() {
         </div>
 
         {/* Features Grid */}
-        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 mb-8 sm:mb-12">
+        <div className=" grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-0 mb-8 sm:mb-12">
          
 
-          {features.map((feature, index) => (
-            <div
-              key={index}
+  {features.map((feature, index) => (
+    <div key={index}>
+      <div className={`bg-${feature.gradient} w-[18px] h-[183px]`}></div>
+                  <div
               className={`border bg-white border-gray-300 p-4 sm:p-6 rounded-none flex flex-col ${
                 index === 0
                   ? "sm:rounded-l-lg"
@@ -93,7 +99,11 @@ export function InvestmentDifferent() {
                 ))}
               </div>
             </div>
+    </div>
           ))}
+
+
+
         </div>
       </div>
 

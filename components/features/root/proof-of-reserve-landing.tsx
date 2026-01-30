@@ -58,7 +58,7 @@ export function ProofOfReserveLanding() {
                 alt="Proof of Reserve Lock"
                 width={519}
                 height={778}
-                className="w-[220px] sm:w-[300px] md:w-[420px] lg:w-[519px] h-auto object-contain"
+                className="hidden sm:flex w-[220px]  sm:w-[300px] md:w-[420px] lg:w-[519px] h-auto object-contain"
               />
             </div>
 
