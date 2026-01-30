@@ -31,7 +31,7 @@ export default function Navbar() {
   //   : user?.email;
 
   return (
-    <ResizableNavbar>
+    <ResizableNavbar className="border-b-2 border-[#F3F4F6]">
       <NavBody>
         <NavbarLogo />
         <div className="flex items-center gap-8">

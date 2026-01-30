@@ -15,7 +15,7 @@ export function HeroSection() {
         <div className="absolute inset-0 pointer-events-none z-0">
           <img
             src="/svg-assets/landingpage/grid-bg.svg"
-            className="bg-contain w-full h-full optimized"
+            className="object-cover w-full h-full optimized"
           />
         </div>
 
