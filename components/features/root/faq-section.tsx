@@ -1,7 +1,11 @@
 "use client";
 
-import BgGrain from "@/components/bg-grain-svg";
-import { DiagonalPattern } from "@/components/slant-dashes-svg";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -32,9 +36,7 @@ export function FAQSection() {
   };
 
   return (
-    <section className="w-full py-4 sm:py-6 lg:py-8 relative">
-      {/* Background grain for this section */}
-      <BgGrain className="absolute inset-0 w-full h-full z-0 optimized" />
+    <section className="w-full py-4 sm:py-6 lg:py-5">
       {/* Section content */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 pb-8 sm:pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
@@ -57,64 +59,36 @@ export function FAQSection() {
 
           {/* Right Column - FAQ Items */}
           <div className="space-y-3 sm:space-y-4">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="border bg-white border-gray-300 rounded-none overflow-hidden"
-              >
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+            <Accordion
+              type="single"
+              collapsible
+              defaultValue="item-1"
+              className="max-w-lg text-start"
+            >
+              {faqs.map((item, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="faq-title border-[1px] border-gray-300 px-5 p-2 sm:px-6 sm:py-2 rounded-sm hover:no-underline"
                 >
-                  <span className="text-sm sm:text-base lg:text-lg font-noto-sans font-medium text-[#004040] pr-2 sm:pr-4">
-                    {faq.question}
-                  </span>
-                  <svg
-                    className={`w-5 h-5 sm:w-6 sm:h-6 text-[#004040] flex-shrink-0 transition-transform ${
-                      openIndex === index ? "rotate-180" : ""
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-                {openIndex === index && (
-                  <div className="px-4 sm:px-6 pb-4 sm:pb-5 pt-2 border-t bg-white border-gray-200">
-                    <p className="text-sm sm:text-base font-noto-sans text-[#475569] leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
+                  <AccordionTrigger className="text-start">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent>{item.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+
+              <div className="mt-4 sm:mt-6 text-end">
+                <Link
+                  href="/faq"
+                  className="border rounded-sm border-black bg-white py-2 px-2 inline-flex text-sm sm:text-base font-noto-sans font-medium text-[#004040] hover:text-[#003030] transition-colors items-end"
+                >
+                  View All →
+                </Link>
               </div>
-            ))}
-            <div className="mt-4 sm:mt-6">
-              <Link
-                href="/faq"
-                className="inline-flex items-center text-sm sm:text-base font-noto-sans font-medium text-[#004040] hover:text-[#003030] transition-colors underline"
-              >
-                See more
-              </Link>
-            </div>
+            </Accordion>
           </div>
         </div>
-      </div>
-
-      {/* Diagonal blue lines at bottom */}
-      <div className="relative z-10 w-full mt-20 px-4 py-2">
-        <DiagonalPattern
-          width="100%"
-          height={34}
-          color="#A7C6ED"
-          strokeWidth={2}
-          spacing={14}
-        />
       </div>
     </section>
   );

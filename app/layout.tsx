@@ -108,7 +108,7 @@ export default async function RootLayout({
           dmSans.variable,
         )}
       >
-        <RumInit />
+        {/* <RumInit /> */}
         {/* <Providers> */}
         <AnnouncementBarWrapper />
         <ConditionalNavbar />

@@ -1,6 +1,5 @@
 "use client";
 
-import BgGrain from "@/components/bg-grain-svg";
 import { DiagonalPattern } from "@/components/slant-dashes-svg";
 import Image from "next/image";
 
@@ -50,8 +49,7 @@ const steps = [
 export function HowSpoutWorks() {
   return (
     <section className="w-full py-8 sm:py-12 lg:py-20 relative">
-      {/* Background grain for this section */}
-      <BgGrain className="absolute inset-0 w-full h-full z-0 optimized" />
+
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
