@@ -1,8 +1,17 @@
 "use client";
 
 import BgGrain from "@/components/bg-grain-svg";
-import { DiagonalPattern } from "@/components/slant-dashes-svg";
 import Image from "next/image";
+import lockImage from "@/assets/images/lock.png";
+import amazonSvg from "@/assets/images/amazon.svg";
+import circleSvg from "@/assets/images/circle.svg";
+import coinbaseSvg from "@/assets/images/coinbase.svg";
+import frame1Svg from "@/assets/images/frame 1.svg";
+import frame2Svg from "@/assets/images/frame 2.svg";
+import frame3Svg from "@/assets/images/frame 3.svg";
+import metaSvg from "@/assets/images/meta.svg";
+import microsoftSvg from "@/assets/images/microsoft.svg";
+import teslaSvg from "@/assets/images/tesla.svg";
 
 export function ProofOfReserveLanding() {
   return (
@@ -13,11 +22,11 @@ export function ProofOfReserveLanding() {
       {/* Section content */}
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 pb-8">
         {/* Header */}
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-3xl capitalize sm:text-4xl lg:text-5xl font-lora font-bold text-[#004040] mb-4 sm:mb-6">
-            <span className="font-bold">Proof</span> of Reserve
+        <div className="flex w-[769] flex-col justify-center align-center mb-8 sm:mb-12 lg:mb-16 text-center">
+          <h2 className="text-3xl capitalize sm:text-4xl lg:text-5xl font-pt-serif leading-[56px] tracking-[0.192px] text-spout-deep-teal font-normal mb-4 sm:mb-6">
+            <span className="">Proof</span> of Reserve
           </h2>
-          <p className="text-sm sm:text-base lg:text-lg tracking-[-0.072px] font-noto-sans font-normal text-[#525252] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-base lg:text-lg text-spout-text-muted-dark max-w-3xl mx-auto text-center font-dm-sans  font-normal leading-6 tracking-[0.064px]">
             Every token is fully backed 1:1 by investment-grade bond ETFs, held
             by qualified U.S. custodians for maximum security.
           </p>
@@ -25,183 +34,162 @@ export function ProofOfReserveLanding() {
 
         {/* Vault Image with Company Logos */}
         <div className="flex justify-center items-center mb-8 sm:mb-12 lg:mb-16">
-          <Image
-            src="/svg-assets/landingpage/spout-reserve.svg"
-            alt="Proof of Reserve Vault"
-            width={900}
-            height={600}
-            className="w-full max-w-4xl sm:max-w-5xl h-auto"
-          />
+          <div className="bg-radial-gradient-green w-full max-w-[1262px] sm:h-auto flex flex-col md:flex-row items-center md:items-stretch gap-6 p-6">
+            {/* Left: lock image */}
+            <div className="md:w-1/2 flex items-center justify-center">
+              <Image
+                src={lockImage}
+                alt="Proof of Reserve Lock"
+                width={519}
+                height={778}
+                className="w-[220px] sm:w-[300px] md:w-[420px] lg:w-[519px] h-auto object-contain"
+              />
+            </div>
+
+            {/* Right: company logos grid */}
+            <div className="md:w-1/2 grid grid-cols-2 gap-y-4 gap-x-6 items-center justify-items-center">
+              <div className="w-[120px] sm:w-[160px] md:w-[208px] h-[40px] sm:h-[48px] md:h-[60px] flex items-center justify-center">
+                <Image
+                  src={teslaSvg}
+                  alt="Tesla"
+                  width={208}
+                  height={60}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              <div className="w-[120px] sm:w-[160px] md:w-[208px] h-[40px] sm:h-[48px] md:h-[60px] flex items-center justify-center">
+                <Image
+                  src={metaSvg}
+                  alt="Meta"
+                  width={208}
+                  height={60}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              <div className="w-[120px] sm:w-[160px] md:w-[208px] h-[40px] sm:h-[48px] md:h-[60px] flex items-center justify-center">
+                <Image
+                  src={coinbaseSvg}
+                  alt="Coinbase"
+                  width={208}
+                  height={60}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              <div className="w-[120px] sm:w-[160px] md:w-[208px] h-[40px] sm:h-[48px] md:h-[60px] flex items-center justify-center">
+                <Image
+                  src={amazonSvg}
+                  alt="Amazon"
+                  width={208}
+                  height={60}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              <div className="w-[120px] sm:w-[160px] md:w-[208px] h-[40px] sm:h-[48px] md:h-[60px] flex items-center justify-center">
+                <Image
+                  src={circleSvg}
+                  alt="Circle"
+                  width={208}
+                  height={60}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              <div className="w-[120px] sm:w-[160px] md:w-[208px] h-[40px] sm:h-[48px] md:h-[60px] flex items-center justify-center">
+                <Image
+                  src={microsoftSvg}
+                  alt="Microsoft"
+                  width={208}
+                  height={60}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Statistics Section */}
-        <div className="relative bg-white border border-gray-300 rounded-none shadow-sm px-4 sm:px-6 py-4 sm:py-6 lg:py-3 max-w-[1100px] mx-auto">
-          {/* Top-left diamond */}
-          <div className="hidden sm:block absolute -left-2 sm:-left-3 -top-2 sm:-top-3 z-20 optimized">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-blue-300 sm:w-6 sm:h-6"
-            >
-              <path
-                d="M12 2L22 12L12 22L2 12L12 2Z"
-                stroke="currentColor"
-                strokeWidth="3"
-                fill="white"
-              />
-            </svg>
-          </div>
 
-          {/* Top-right diamond */}
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20 optimized">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-blue-300 sm:w-6 sm:h-6"
-            >
-              <path
-                d="M12 2L22 12L12 22L2 12L12 2Z"
-                stroke="currentColor"
-                strokeWidth="3"
-                fill="white"
-              />
-            </svg>
-          </div>
-
-          {/* Bottom-left lock and diamond */}
-          <div className="hidden sm:block absolute left-0 bottom-0 z-20 optimized">
-            <Image
-              src="/svg-assets/landingpage/spout-lock.svg"
-              alt="Lock"
-              width={40}
-              height={40}
-              className="w-8 h-8 sm:w-10 sm:h-10"
-            />
-          </div>
-          <div className="hidden sm:block absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-30 optimized">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-blue-300 sm:w-6 sm:h-6"
-            >
-              <path
-                d="M12 2L22 12L12 22L2 12L12 2Z"
-                stroke="currentColor"
-                strokeWidth="3"
-                fill="white"
-              />
-            </svg>
-          </div>
-
-          {/* Bottom-right coins and diamond */}
-          <div className="hidden sm:block absolute right-0 bottom-0 z-20 optimized">
-            <Image
-              src="/svg-assets/landingpage/spout-coins.svg"
-              alt="Coins"
-              width={40}
-              height={40}
-              className="w-8 h-8 sm:w-10 sm:h-10"
-            />
-          </div>
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-30 optimized">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-blue-300 sm:w-6 sm:h-6"
-            >
-              <path
-                d="M12 2L22 12L12 22L2 12L12 2Z"
-                stroke="currentColor"
-                strokeWidth="3"
-                fill="white"
-              />
-            </svg>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+        <div className="bg-white border border-gray-300 rounded-none shadow-sm m-auto max-w-[1150px]">
+          <div className="flex flex-col items-center sm:flex-row justify-between gap-3 sm:gap-4">
             {/* Assets On-Chain */}
-            <div className="flex items-center gap-2 sm:gap-3 border border-gray-200 rounded-none px-4 sm:px-6 lg:px-10 py-3 sm:py-4 w-full sm:w-auto">
-              <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0">
-                <Image
-                  src="/svg-assets/landingpage/spout-bank.svg"
-                  alt="Bank"
-                  width={40}
-                  height={40}
-                  className="w-8 h-8 sm:w-10 sm:h-10"
-                />
-              </div>
-              <div>
-                <div className="text-lg sm:text-xl font-bold text-[#004040]">
-                  $200k
+            <div className="flex-1 flex justify-between w-[200px] sm:w-auto lg:max-w-[370px] h-[156px] sm:h-auto">
+              <div className="flex flex-col items-start justify-center gap-[20px] sm:gap-[24px] px-4 sm:px-6 lg:px-10 py-3 sm:py-4">
+                <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0">
+                  <Image
+                    src={frame3Svg}
+                    alt="Bank"
+                    width={40}
+                    height={40}
+                    className="w-8 h-8 sm:w-10 sm:h-10"
+                  />
                 </div>
-                <div className="text-xs text-[#525252] whitespace-nowrap">
-                  Assets On-Chain
+                <div>
+                  <div className="text-black font-dm-sans text-[20px] font-semibold leading-normal">
+                    $200k
+                  </div>
+                  <div className="text-[#7D8690] font-dm-sans text-base font-medium leading-normal">
+                    Assets On-Chain
+                  </div>
                 </div>
               </div>
+              <div className="bg-linear-gradient-1 w-[15px] sm:w-[22px] h-[156px]"></div>
             </div>
 
             {/* Investments Tokenized */}
-            <div className="flex items-center gap-2 sm:gap-3 border border-gray-200 rounded-none px-4 sm:px-6 lg:px-10 py-3 sm:py-4 w-full sm:w-auto">
-              <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0">
-                <Image
-                  src="/svg-assets/landingpage/spout-category.svg"
-                  alt="Category"
-                  width={40}
-                  height={40}
-                  className="w-8 h-8 sm:w-10 sm:h-10"
-                />
-              </div>
-              <div>
-                <div className="text-lg sm:text-xl font-bold text-[#004040]">
-                  1,124
+
+            <div className="flex-1 flex justify-between w-[200px] sm:w-auto lg:max-w-[370px] h-[156px] sm:h-auto">
+              <div className="flex flex-col items-start justify-center gap-[20px] sm:gap-[24px] px-4 sm:px-6 lg:px-10 py-3 sm:py-4">
+                <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0">
+                  <Image
+                    src={frame1Svg}
+                    alt="Category"
+                    width={40}
+                    height={40}
+                    className="w-8 h-8 sm:w-10 sm:h-10"
+                  />
                 </div>
-                <div className="text-xs text-[#525252] whitespace-nowrap">
-                  Investments Tokenized
+                <div>
+                  <div className="text-black font-dm-sans text-[20px] font-semibold leading-normal">
+                    1,124
+                  </div>
+                  <div className="text-[#7D8690] font-dm-sans text-base font-medium leading-normal">
+                    Investments Tokenized
+                  </div>
                 </div>
               </div>
+              <div className="bg-linear-gradient-2 w-[15px] sm:w-[22px] h-[156px]"></div>
             </div>
 
             {/* Proof-of-Reserve Verified */}
-            <div className="flex items-center gap-2 sm:gap-3 border border-gray-200 rounded-none px-4 sm:px-6 lg:px-10 py-3 sm:py-4 w-full sm:w-auto">
-              <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0">
-                <Image
-                  src="/svg-assets/landingpage/spout-shield-tick.svg"
-                  alt="Shield"
-                  width={40}
-                  height={40}
-                  className="w-8 h-8 sm:w-10 sm:h-10"
-                />
-              </div>
-              <div>
-                <div className="text-lg sm:text-xl font-bold text-[#004040]">
-                  100%
+
+            <div className="flex-1 flex justify-between w-[200px] sm:w-auto lg:max-w-[370px] h-[156px] sm:h-auto">
+              <div className="flex flex-col items-start justify-center gap-[20px] sm:gap-[24px] px-4 sm:px-6 lg:px-10 py-3 sm:py-4">
+                <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0">
+                  <Image
+                    src={frame2Svg}
+                    alt="Shield"
+                    width={40}
+                    height={40}
+                    className="w-8 h-8 sm:w-10 sm:h-10"
+                  />
                 </div>
-                <div className="text-xs text-[#525252] whitespace-nowrap">
-                  Proof-of-Reserve Verified
+                <div>
+                  <div className="text-black font-dm-sans text-[20px] font-semibold leading-normal">
+                    100%
+                  </div>
+                  <div className="text-[#7D8690] font-dm-sans text-base font-medium leading-normal">
+                    Proof-of-Reserve Verified
+                  </div>
                 </div>
               </div>
+              <div className="bg-linear-gradient-3 w-[15px] sm:w-[22px] h-[156px]"></div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Diagonal blue lines at bottom */}
-      <div className="relative z-10 w-full mt-20 px-4 py-2">
-        <DiagonalPattern
-          width="100%"
-          height={34}
-          color="#A7C6ED"
-          strokeWidth={1.5}
-          spacing={14}
-        />
       </div>
     </section>
   );

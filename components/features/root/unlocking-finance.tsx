@@ -5,6 +5,8 @@ import { DiagonalPattern } from "@/components/slant-dashes-svg";
 import Image from "next/image";
 import Link from "next/link";
 
+import lockImage from "@/assets/images/lock.svg";
+
 export function UnlockingFinance() {
   return (
     <section className="w-full py-4 sm:py-6 lg:py-8 relative">
@@ -15,131 +17,26 @@ export function UnlockingFinance() {
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-4xl xl:text-5xl !leading-tight capitalize font-lora font-bold text-[#004040] mb-4 sm:mb-6">
-            Unlocking <span className="font-bold">Finance</span> with DeFi
+          <h2 className="text-3xl capitalize sm:text-4xl lg:text-5xl font-pt-serif leading-[56px] tracking-[0.192px] text-spout-deep-teal font-normal mb-4 sm:mb-6">
+            Unlocking <span className="font-normal">Finance</span> with DeFi
             <br />
             through our stablecoin
           </h2>
-          <p className="text-base sm:text-lg font-noto-sans font-normal text-[#525252] leading-relaxed">
+          <p className="text-[18px] sm:text-base lg:text-lg text-spout-text-muted-dark max-w-3xl mx-auto text-center font-dm-sans  font-normal leading-6 tracking-[0.064px]">
             Expand access to traditional assets with security, transparency, and
             real yield on-chain.
           </p>
-          <p className="text-base sm:text-lg font-noto-sans font-normal text-[#525252] leading-relaxed">
+          <p className="text-[18px] sm:text-base lg:text-lg text-spout-text-muted-dark max-w-3xl mx-auto text-center font-dm-sans  font-normal leading-6 tracking-[0.064px]">
             Global access, real yield, full transparency, built for DeFi.
           </p>
         </div>
 
         {/* Cards Section */}
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-0 mb-6 sm:mb-8 lg:mb-12">
-          {/* Top-left diamond */}
-          <div className="hidden sm:block absolute -left-2 sm:-left-3 -top-2 sm:-top-3 z-20 optimized">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-blue-300 sm:w-6 sm:h-6"
-            >
-              <path
-                d="M12 2L22 12L12 22L2 12L12 2Z"
-                stroke="currentColor"
-                strokeWidth="3"
-                fill="white"
-              />
-            </svg>
-          </div>
-
-          {/* Top-middle diamond */}
-          <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -top-2 sm:-top-3 z-20 optimized">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-blue-300 sm:w-6 sm:h-6"
-            >
-              <path
-                d="M12 2L22 12L12 22L2 12L12 2Z"
-                stroke="currentColor"
-                strokeWidth="3"
-                fill="white"
-              />
-            </svg>
-          </div>
-
-          {/* Top-right diamond */}
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -top-2 sm:-top-3 z-20 optimized">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-blue-300 sm:w-6 sm:h-6"
-            >
-              <path
-                d="M12 2L22 12L12 22L2 12L12 2Z"
-                stroke="currentColor"
-                strokeWidth="3"
-                fill="white"
-              />
-            </svg>
-          </div>
-
-          {/* Bottom-left diamond */}
-          <div className="hidden sm:block absolute -left-2 sm:-left-3 -bottom-2 sm:-bottom-3 z-20 optimized">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-blue-300 sm:w-6 sm:h-6"
-            >
-              <path
-                d="M12 2L22 12L12 22L2 12L12 2Z"
-                stroke="currentColor"
-                strokeWidth="3"
-                fill="white"
-              />
-            </svg>
-          </div>
-
-          {/* Bottom-middle diamond */}
-          <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 -bottom-2 sm:-bottom-3 z-20 optimized">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-blue-300 sm:w-6 sm:h-6"
-            >
-              <path
-                d="M12 2L22 12L12 22L2 12L12 2Z"
-                stroke="currentColor"
-                strokeWidth="3"
-                fill="white"
-              />
-            </svg>
-          </div>
-
-          {/* Bottom-right diamond */}
-          <div className="hidden sm:block absolute -right-2 sm:-right-3 -bottom-2 sm:-bottom-3 z-20 optimized">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-blue-400 sm:w-6 sm:h-6"
-            >
-              <path
-                d="M12 2L22 12L12 22L2 12L12 2Z"
-                stroke="currentColor"
-                strokeWidth="3"
-                fill="white"
-              />
-            </svg>
-          </div>
 
           {/* DeFi Integration Benefits Card */}
+
+      <div className="flex ">
           <div className="border bg-white border-gray-300 rounded-l-none sm:rounded-l-none rounded-r-none sm:rounded-r-none p-4 sm:p-6 lg:p-8 relative">
             <div className="flex bg-[#A7C6ED]/35 border border-[#A7C6ED] items-center gap-2 sm:gap-3 mb-3 sm:mb-4 w-fit px-2 py-1 rounded-none">
               {/* <svg
@@ -200,8 +97,16 @@ export function UnlockingFinance() {
               />
             </div>
           </div>
+            <div className="bg-linear-gradient-2 w-[64px] sm:w-[94px] h-[340px] sm:h-auto"></div>
+      </div>
+
+
+
 
           {/* DeFi Security & Transparency Card */}
+                <div className="flex ">
+                <div className="bg-linear-gradient-3 w-[64px] sm:w-[94px] h-[340px] sm:h-auto"></div>
+
           <div className="border-t sm:border-t border-r border-b border-l-0 sm:border-l-0 bg-white border-gray-300 rounded-r-none sm:rounded-r-none rounded-l-none sm:rounded-l-none p-4 sm:p-6 lg:p-8 relative">
             <div className="flex bg-[#A7C6ED]/35 border border-[#A7C6ED] items-center gap-2 sm:gap-3 mb-3 sm:mb-4 w-fit px-2 py-1 rounded-none">
               <Image
@@ -244,20 +149,29 @@ export function UnlockingFinance() {
                 alt="Lock"
                 width={160}
                 height={160}
-                className="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36"
+                className="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 z-10"
+              />
+              <Image
+                src={lockImage}
+                alt="Lock"
+                width={160}
+                height={160}
+                className="w-20 h-20 sm:w-22 sm:h-22 lg:w-26 opacity-20 lg:h-26 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 ml-7 mt-3"
               />
             </div>
           </div>
+                </div>
+
+
         </div>
 
         {/* View Reserve Details Button */}
-        <div className="flex justify-start">
+        {/* <div className="flex justify-start">
           <Link
             href="/app/proof-of-reserve"
             className="inline-flex bg-white p-2 sm:p-3 border rounded-md border-gray-300 items-center gap-1 sm:gap-2 text-[#004040] font-semibold text-sm sm:text-base hover:text-[#003030] transition-colors"
           >
             View Reserve Details
-            {/* make it use react icons */}
             <svg
               className="w-4 h-4 sm:w-5 sm:h-5"
               fill="none"
@@ -272,7 +186,7 @@ export function UnlockingFinance() {
               />
             </svg>
           </Link>
-        </div>
+        </div> */}
       </div>
 
       {/* Diagonal blue lines at bottom */}

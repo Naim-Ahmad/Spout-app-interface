@@ -35,6 +35,13 @@ const config = {
       },
     },
     extend: {
+      gridTemplateRows: {
+        "fit-3": "repeat(3, minmax(0, 1fr))",
+      },
+      gridTemplateColumns: {
+        "fit-2": "repeat(2, minmax(0, 1fr))",
+      },
+
       fontFamily: {
         sans: ["var(--font-sans)", ...defaultTheme.fontFamily.sans],
         lora: ["var(--font-lora)", ...defaultTheme.fontFamily.serif],
@@ -96,12 +103,32 @@ const config = {
           blue: "hsl(var(--spout-blue))",
           gray: "hsl(var(--spout-gray))",
           "light-gray": "hsl(var(--spout-light-gray))",
+          "deep-teal": "#004040",
+          "text-muted-dark": "#525252",
         },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      backgroundImage: {
+        "radial-gradient-green":
+          "radial-gradient(62.35% 62.35% at 50% 50%, rgba(61, 199, 132, 0.38) 0%, rgba(61, 199, 132, 0.00) 79.33%)",
+        "linear-gradient-1":
+          "linear-gradient(180deg, #ABFFE1 0%, #DCFFE2 100%)",
+        "linear-gradient-2":
+          "linear-gradient(180deg, #FEC8BB 0%, #FFE4C8 100%)",
+        "linear-gradient-3":
+          "linear-gradient(180deg, #ADE1FF 0%, #E8FBF9 100%)",
+        "linear-gradient-green-2":
+          "linear-gradient(180deg, #48CA83 0%, #C1F672 100%)",
+        "linear-gradient-blue-2":
+          "linear-gradient(180deg, #0168FF 0%, #02BFFF 100%)",
+        "linear-gradient-4":
+          "linear-gradient(180deg, #FEBB46 0%, #FEE6A9 100%)",
+        "linear-gradient-5":
+          "linear-gradient(180deg, #FAB6E4 0%, #F8CCE9 100%)",
       },
       keyframes: {
         "accordion-down": {
