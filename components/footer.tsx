@@ -1,8 +1,7 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import { ArrowUp } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect, useRef, useState } from "react";
 interface LinkItem {
   href: string;
   label: string;
@@ -88,13 +87,6 @@ export const Footer: React.FC<FooterProps> = ({
       ref={footerRef}
       className="bg-gray-50 text-gray-900 relative flex flex-col w-full h-full justify-between select-none z-0"
     >
-      {/* Vertical lines for footer - hidden on mobile */}
-      <div className="hidden md:block absolute inset-0 pointer-events-none z-0">
-        {/* Left vertical line */}
-        <div className="absolute left-4 top-0 bottom-0 w-[1.5px] bg-[#A7C6ED]"></div>
-        {/* Right vertical line */}
-        <div className="absolute right-4 top-0 bottom-0 w-[1.5px] bg-[#A7C6ED]"></div>
-      </div>
       <div className="container mx-auto flex flex-col lg:flex-row justify-between w-full gap-12 py-12 px-6 lg:px-16 max-w-7xl relative z-10">
         {/* Mobile Layout - Logo and copyright at top, links below */}
         <div className="lg:hidden space-y-8">
@@ -295,43 +287,7 @@ export const Footer: React.FC<FooterProps> = ({
       </div>
 
       {/* Disclaimer Section - Hidden on mobile */}
-      <div className="hidden md:block border-t-[1.5px] border-[#A7C6ED] relative z-10">
-        {/* Top-left diamond */}
-        <div className="hidden sm:block absolute left-1 sm:left-2 -top-1 sm:-top-2 z-20">
-          <svg
-            width="12"
-            height="12"
-            viewBox="0 0 24 24"
-            fill="none"
-            className="text-blue-300 sm:w-4 sm:h-4"
-          >
-            <path
-              d="M12 2L22 12L12 22L2 12L12 2Z"
-              stroke="currentColor"
-              strokeWidth="3"
-              fill="white"
-            />
-          </svg>
-        </div>
-
-        {/* Top-right diamond */}
-        <div className="hidden sm:block absolute right-1 sm:right-2 -top-1 sm:-top-2 z-20">
-          <svg
-            width="12"
-            height="12"
-            viewBox="0 0 24 24"
-            fill="none"
-            className="text-blue-300 sm:w-4 sm:h-4"
-          >
-            <path
-              d="M12 2L22 12L12 22L2 12L12 2Z"
-              stroke="currentColor"
-              strokeWidth="3"
-              fill="white"
-            />
-          </svg>
-        </div>
-
+      <div className="hidden md:block  relative z-10">
         <div className="container mx-auto px-6 lg:px-16 py-8 max-w-7xl">
           <h5 className="font-semibold text-gray-900 mb-3 text-base">
             Disclaimer

@@ -1,6 +1,6 @@
 import block from "@/assets/images/block.png";
-import mexc from "@/assets/images/mexc-global-seeklogo.svg";
 import kucoin from "@/assets/images/logo_general_green.svg";
+import mexc from "@/assets/images/mexc-global-seeklogo.svg";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -38,9 +38,9 @@ export function InTheNews() {
   };
 
   return (
-    <section className="w-full py-4 sm:py-6 lg:py-8">
+    <section className="w-full py-4 sm:py-6 lg:pt-8">
       {/* Section content */}
-      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 pb-8">
+      <div className="w-full max-w-[1178px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0 pb-8">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="section-heading">
@@ -58,7 +58,7 @@ export function InTheNews() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-8 sm:mb-12">
           {newsItems.map((item, index) => (
             <div className="flex w-full" key={index}>
-              <div className="border border-gray-300 rounded-none">
+              <div className="border border-[#F3F4F6] rounded-none">
                 {/* Card Content with rounded corners */}
                 <div className="overflow-hidden rounded-none">
                   {/* Logo Area */}
@@ -75,7 +75,7 @@ export function InTheNews() {
                   </div>
 
                   {/* Publication Info */}
-                  <div className="p-3 sm:p-4 md:p-6 border-t border-gray-300 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-2 md:gap-4">
+                  <div className="p-3 sm:p-4 md:p-6 border-t border-[#F3F4F6] flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-2 md:gap-4">
                     <Link
                       href={item.url}
                       target="_blank"

@@ -54,105 +54,104 @@ const partners = [
 
 export function PartnerTicker() {
   const [isPaused, setIsPaused] = useState(false);
+
   const tickerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const offsetRef = useRef<number>(0);
-  const segmentWidthRef = useRef<number>(0);
-  const isVisibleRef = useRef<boolean>(true);
-  const speed = 0.7; // px per frame
+
+  const offsetRef = useRef(0);
+  const segmentWidthRef = useRef(0);
+  const rafIdRef = useRef<number | null>(null);
+
+  const speed = 0.7;
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
+    if (prefersReducedMotion) return;
+
     const updateSegmentWidth = () => {
       if (contentRef.current) {
-        // We rendered partners array 3 times → one segment is 1/3 of total width
         segmentWidthRef.current = contentRef.current.scrollWidth / 3;
       }
     };
+
     updateSegmentWidth();
     window.addEventListener("resize", updateSegmentWidth);
 
-    // Pause animation when ticker not in viewport
+    const animate = () => {
+      if (!tickerRef.current || isPaused) return;
+
+      let next = offsetRef.current - speed;
+      const segment = segmentWidthRef.current;
+
+      if (segment > 0 && Math.abs(next) >= segment) {
+        next = 0;
+      }
+
+      offsetRef.current = next;
+      tickerRef.current.style.transform = `translate3d(${next}px,0,0)`;
+
+      rafIdRef.current = requestAnimationFrame(animate);
+    };
+
+    const start = () => {
+      if (rafIdRef.current == null) {
+        rafIdRef.current = requestAnimationFrame(animate);
+      }
+    };
+
+    const stop = () => {
+      if (rafIdRef.current != null) {
+        cancelAnimationFrame(rafIdRef.current);
+        rafIdRef.current = null;
+      }
+    };
+
     const observer = new IntersectionObserver(
-      (entries) => {
-        isVisibleRef.current = entries[0]?.isIntersecting ?? true;
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          start();
+        } else {
+          stop();
+        }
       },
       { threshold: 0.1 },
     );
-    const tickerNode = tickerRef.current;
-    if (tickerNode) observer.observe(tickerNode);
 
-    let frame: number;
-    const animate = () => {
-      if (
-        !prefersReducedMotion &&
-        !isPaused &&
-        isVisibleRef.current &&
-        tickerRef.current
-      ) {
-        let next = offsetRef.current - speed;
-        const segment = segmentWidthRef.current || 0;
-        if (segment > 0 && Math.abs(next) >= segment) {
-          next = 0; // reset to start of first segment
-        }
-        offsetRef.current = next;
-        // Avoid React state updates; mutate style directly for smoothness
-        tickerRef.current.style.transform = `translate3d(${next}px,0,0)`;
-      }
-      frame = requestAnimationFrame(animate);
-    };
-    frame = requestAnimationFrame(animate);
+    if (tickerRef.current) {
+      observer.observe(tickerRef.current);
+    }
 
     return () => {
-      cancelAnimationFrame(frame);
-      window.removeEventListener("resize", updateSegmentWidth);
-      if (tickerNode) observer.unobserve(tickerNode);
+      stop();
       observer.disconnect();
+      window.removeEventListener("resize", updateSegmentWidth);
     };
   }, [isPaused]);
 
   return (
-    <div className="w-full rounded-lg border border-gray-300 overflow-hidden relative bg-white">
+    <div className="w-full overflow-hidden">
       <div className="flex flex-col sm:flex-row items-center">
-        {/* Fixed "Compatible With Leading Networks" box */}
-        <div className="bg-white rounded-t-lg sm:rounded-l-lg sm:rounded-t-none px-4 sm:px-6 lg:px-8 py-4 sm:py-6 border-b sm:border-b-0  flex-shrink-0 w-full sm:w-auto">
-          <h3 className="text-base sm:text-lg font-noto-sans text-[#334155] font-semibold text-center leading-tight">
-            WORKING WITH
-          </h3>
+        <div className="px-6 py-5 flex-shrink-0">
+          <h3 className="font-semibold text-[#334155]">WORKING WITH</h3>
         </div>
 
-        {/* Animated partner logos */}
-        <div
-          className="flex-1 overflow-hidden bg-white"
-          // onMouseEnter={() => setIsPaused(true)}
-          // onMouseLeave={() => setIsPaused(false)}
-        >
+        <div className="flex-1 overflow-hidden">
           <div
             ref={tickerRef}
-            className="flex items-center optimized"
-            style={{ transform: "translate3d(0,0,0)" }}
+            className="flex items-center will-change-transform"
           >
-            <div ref={contentRef} className="flex items-center shrink-0">
-              {/* Duplicate the partners array for seamless loop */}
-              {[...partners, ...partners, ...partners].map((partner, idx) => (
-                <Link
-                  key={idx}
-                  href={partner.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 rounded group"
-                  aria-label={partner.alt}
-                >
-                  <div className="bg-white px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6  transition-all duration-300 ease-out flex items-center justify-center min-w-[140px] sm:min-w-[160px] lg:min-w-[180px] hover:bg-gray-50 relative">
+            <div ref={contentRef} className="flex shrink-0">
+              {[...partners, ...partners, ...partners].map((p, i) => (
+                <Link key={i} href={p.link} target="_blank">
+                  <div className="px-8 py-5 min-w-[160px] flex justify-center">
                     <Image
-                      src={partner.src}
-                      alt={partner.alt}
+                      src={p.src}
+                      alt={p.alt}
                       width={80}
                       height={80}
-                      className="h-10 sm:h-12 lg:h-14 w-auto max-w-[100px] sm:max-w-[120px] lg:max-w-[140px] object-contain transition-all duration-300 ease-out group-hover:scale-105"
                       draggable={false}
                     />
                   </div>

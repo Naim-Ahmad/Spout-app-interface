@@ -43,9 +43,9 @@ export function InvestmentDifferent() {
   };
 
   return (
-    <section className="w-full py-4 sm:py-6 lg:py-8 relative">
+    <section className="w-full py-4 sm:py-6 lg:pt-8 relative">
       {/* Section content */}
-      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-8 lg:px-16 pb-8">
+      <div className="w-full max-w-[1178px] mx-auto px-4 sm:px-8 lg:px-0 pb-8">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="section-heading">Smarter On-chain Investing</h2>
@@ -65,7 +65,7 @@ export function InvestmentDifferent() {
                 className={`${gradientMap[feature.gradient] ?? "bg-linear-gradient-1"} w-[18px] h-[183px]`}
               />
               <div
-                className={`flex-1 border bg-white border-gray-300 p-4 sm:p-6 rounded-none flex flex-col ${
+                className={`flex-1 border bg-white border-[#F3F4F6] p-4 sm:p-6 rounded-none flex flex-col ${
                   index === 0
                     ? "sm:rounded-l-lg"
                     : index === features.length - 1

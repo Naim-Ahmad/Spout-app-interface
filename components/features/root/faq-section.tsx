@@ -38,7 +38,7 @@ export function FAQSection() {
   return (
     <section className="w-full py-4 sm:py-6 lg:py-5">
       {/* Section content */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 pb-8 sm:pb-12">
+      <div className="w-full max-w-[1178px] mx-auto px-4 sm:px-6 lg:px-[36px] pb-8 sm:pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
           {/* Left Column - Header */}
           <div>
@@ -69,7 +69,7 @@ export function FAQSection() {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="faq-title border-[1px] border-gray-300 px-5 p-2 sm:px-6 sm:py-2 rounded-sm hover:no-underline"
+                  className="faq-title border-[1px] border-[#F3F4F6] px-5 p-2 sm:px-6 sm:py-2 rounded-sm hover:no-underline"
                 >
                   <AccordionTrigger className="text-start">
                     {item.question}

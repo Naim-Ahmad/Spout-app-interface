@@ -1,16 +1,16 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
 import {
-  motion,
   AnimatePresence,
-  useScroll,
+  motion,
   useMotionValueEvent,
+  useScroll,
 } from "framer-motion";
+import { Menu, X } from "lucide-react";
 // import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useRef, useState } from "react";
-import Image from "next/image";
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -104,7 +104,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         minWidth: "800px",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-[1800px] flex-row items-center justify-between self-start rounded-2xl bg-white px-16 py-4 lg:flex dark:bg-white",
+        "relative z-[60] mx-auto hidden w-full max-w-[1440px] flex-row items-center justify-between self-start rounded-2xl bg-white px-16 py-4 lg:flex dark:bg-white",
         className,
       )}
     >
