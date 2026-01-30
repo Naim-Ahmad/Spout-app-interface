@@ -4,10 +4,8 @@ import {
   ConditionalFooter,
   ConditionalNavbar,
 } from "@/components/conditionalNavbar";
-import { Providers } from "@/components/providers";
 import { cn } from "@/lib/utils";
 import "@rainbow-me/rainbowkit/styles.css";
-import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import {
   DM_Sans,
@@ -111,13 +109,13 @@ export default async function RootLayout({
         )}
       >
         <RumInit />
-        <Providers>
-          <AnnouncementBarWrapper />
-          <ConditionalNavbar />
-          <main className="flex-1">{children}</main>
-          <ConditionalFooter />
-        </Providers>
-        <Analytics />
+        {/* <Providers> */}
+        <AnnouncementBarWrapper />
+        <ConditionalNavbar />
+        <main className="flex-1">{children}</main>
+        <ConditionalFooter />
+        {/* </Providers>
+        <Analytics /> */}
       </body>
     </html>
   );

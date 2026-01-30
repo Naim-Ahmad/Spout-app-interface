@@ -6,7 +6,8 @@
   "author": "Mihir Sahu <0xmihirsahu@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
+    "dev:turbopack": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

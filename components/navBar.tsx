@@ -1,5 +1,4 @@
 "use client";
-import { useAuthContext } from "@/context/AuthContext";
 import { signOut } from "@/lib/supabase/auth";
 import Link from "next/link";
 import { useState } from "react";
@@ -20,16 +19,16 @@ const navItems = [
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { user, profile } = useAuthContext();
+  // const { user, profile } = useAuthContext();
 
   const handleSignOut = async () => {
     await signOut();
     window.location.reload();
   };
 
-  const displayName = profile?.first_name
-    ? `${profile.first_name} ${profile.last_name ?? ""}`
-    : user?.email;
+  // const displayName = profile?.first_name
+  //   ? `${profile.first_name} ${profile.last_name ?? ""}`
+  //   : user?.email;
 
   return (
     <ResizableNavbar>
