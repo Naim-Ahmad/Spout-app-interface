@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import lockImage from "@/assets/images/lock.png";
 import amazonSvg from "@/assets/images/amazon.svg";
 import circleSvg from "@/assets/images/circle.svg";
@@ -12,14 +13,27 @@ import metaSvg from "@/assets/images/meta.svg";
 import microsoftSvg from "@/assets/images/microsoft.svg";
 import teslaSvg from "@/assets/images/tesla.svg";
 
+
+
+
 export function ProofOfReserveLanding() {
+  const logos = [
+    { id: "tesla", src: teslaSvg, alt: "Tesla" },
+    { id: "meta", src: metaSvg, alt: "Meta" },
+    { id: "coinbase", src: coinbaseSvg, alt: "Coinbase" },
+    { id: "amazon", src: amazonSvg, alt: "Amazon" },
+    { id: "circle", src: circleSvg, alt: "Circle" },
+    { id: "microsoft", src: microsoftSvg, alt: "Microsoft" },
+  ];
+
+
   return (
-    <section className="w-full py-4 sm:py-6 lg:py-8 relative">
+    <section className="w-full h-fit py-4 sm:py-6 lg:py-8 relative">
 
       {/* Section content */}
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 pb-8">
         {/* Header */}
-        <div className="flex w-[769] flex-col justify-center align-center mb-8 sm:mb-12 lg:mb-16 text-center">
+        <div className="flex flex-col justify-center align-center mb-8 sm:mb-12 lg:mb-16 text-center">
           <h2 className="section-heading">
             <span className="">Proof</span> of Reserve
           </h2>
@@ -31,9 +45,14 @@ export function ProofOfReserveLanding() {
 
         {/* Vault Image with Company Logos */}
         <div className="flex justify-center items-center mb-8 sm:mb-12 lg:mb-16">
-          <div className="bg-radial-gradient-green w-full max-w-[1262px] sm:h-auto flex flex-col md:flex-row items-center md:items-stretch gap-6 p-6">
+          <div className=" w-full max-w-[1262px] sm:h-auto flex flex-col md:flex-row items-center md:items-stretch gap-6" style={{
+            background: `
+      radial-gradient(60% 100% at left 60%, rgba(61, 199, 132, 0.38), transparent 70%),
+      radial-gradient(150% 100% at right 60%, rgba(88, 162, 255, 0.38), transparent 70%)
+    `,
+          }}>
             {/* Left: lock image */}
-            <div className="md:w-1/2 flex items-center justify-center">
+            <div className="flex items-center justify-center">
               <Image
                 src={lockImage}
                 alt="Proof of Reserve Lock"
@@ -44,66 +63,14 @@ export function ProofOfReserveLanding() {
             </div>
 
             {/* Right: company logos grid */}
-            <div className="md:w-1/2 grid grid-cols-2 gap-y-4 gap-x-6 items-center justify-items-center">
-              <div className="w-[120px] sm:w-[160px] md:w-[208px] h-[40px] sm:h-[48px] md:h-[60px] flex items-center justify-center">
-                <Image
-                  src={teslaSvg}
-                  alt="Tesla"
-                  width={208}
-                  height={60}
-                  className="w-full h-full object-contain"
+            <div className="grid grid-cols-2 gap-y-4 gap-x-6 items-center justify-items-center">
+          {logos.map((logo) => (
+           <Image key={logo.id}
+                  src={logo.src}
+                  alt={logo.alt}    
+                  className="object-contain"
                 />
-              </div>
-
-              <div className="w-[120px] sm:w-[160px] md:w-[208px] h-[40px] sm:h-[48px] md:h-[60px] flex items-center justify-center">
-                <Image
-                  src={metaSvg}
-                  alt="Meta"
-                  width={208}
-                  height={60}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-
-              <div className="w-[120px] sm:w-[160px] md:w-[208px] h-[40px] sm:h-[48px] md:h-[60px] flex items-center justify-center">
-                <Image
-                  src={coinbaseSvg}
-                  alt="Coinbase"
-                  width={208}
-                  height={60}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-
-              <div className="w-[120px] sm:w-[160px] md:w-[208px] h-[40px] sm:h-[48px] md:h-[60px] flex items-center justify-center">
-                <Image
-                  src={amazonSvg}
-                  alt="Amazon"
-                  width={208}
-                  height={60}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-
-              <div className="w-[120px] sm:w-[160px] md:w-[208px] h-[40px] sm:h-[48px] md:h-[60px] flex items-center justify-center">
-                <Image
-                  src={circleSvg}
-                  alt="Circle"
-                  width={208}
-                  height={60}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-
-              <div className="w-[120px] sm:w-[160px] md:w-[208px] h-[40px] sm:h-[48px] md:h-[60px] flex items-center justify-center">
-                <Image
-                  src={microsoftSvg}
-                  alt="Microsoft"
-                  width={208}
-                  height={60}
-                  className="w-full h-full object-contain"
-                />
-              </div>
+          ))}
             </div>
           </div>
         </div>

@@ -113,8 +113,9 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       backgroundImage: {
-        "radial-gradient-green":
-          "radial-gradient(62.35% 62.35% at 50% 50%, rgba(61, 199, 132, 0.38) 0%, rgba(61, 199, 132, 0.00) 79.33%)",
+       "radial-gradient-green-blue": 
+          `radial-gradient(60% 100% at left 60%, rgba(61, 199, 132, 0.38), transparent 70%),
+          radial-gradient(150% 100% at right 60%, rgba(88, 162, 255, 0.38), transparent 70%)`,
         "linear-gradient-1":
           "linear-gradient(180deg, #ABFFE1 0%, #DCFFE2 100%)",
         "linear-gradient-2":
