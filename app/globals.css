@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   html,
   body {
@@ -193,6 +194,12 @@
     scrollbar-width: none;
   }
 
+  .section-heading {
+   @apply text-3xl capitalize sm:text-4xl lg:text-5xl font-pt-serif leading-[56px] tracking-[0.192px] text-spout-deep-teal font-normal mb-4 sm:mb-6;
+  }
+  .section-description {
+  @apply text-[18px] sm:text-base lg:text-lg text-spout-text-muted-dark max-w-3xl mx-auto text-center font-dm-sans  font-normal leading-6 tracking-[0.064px];
+  }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }

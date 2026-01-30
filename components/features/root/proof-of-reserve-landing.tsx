@@ -1,6 +1,5 @@
 "use client";
 
-import BgGrain from "@/components/bg-grain-svg";
 import Image from "next/image";
 import lockImage from "@/assets/images/lock.png";
 import amazonSvg from "@/assets/images/amazon.svg";
@@ -16,17 +15,15 @@ import teslaSvg from "@/assets/images/tesla.svg";
 export function ProofOfReserveLanding() {
   return (
     <section className="w-full py-4 sm:py-6 lg:py-8 relative">
-      {/* Background grain for this section */}
-      <BgGrain className="absolute inset-0 w-full h-full z-0 optimized" />
 
       {/* Section content */}
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 pb-8">
         {/* Header */}
         <div className="flex w-[769] flex-col justify-center align-center mb-8 sm:mb-12 lg:mb-16 text-center">
-          <h2 className="text-3xl capitalize sm:text-4xl lg:text-5xl font-pt-serif leading-[56px] tracking-[0.192px] text-spout-deep-teal font-normal mb-4 sm:mb-6">
+          <h2 className="section-heading">
             <span className="">Proof</span> of Reserve
           </h2>
-          <p className="text-base sm:text-base lg:text-lg text-spout-text-muted-dark max-w-3xl mx-auto text-center font-dm-sans  font-normal leading-6 tracking-[0.064px]">
+          <p className="section-description">
             Every token is fully backed 1:1 by investment-grade bond ETFs, held
             by qualified U.S. custodians for maximum security.
           </p>

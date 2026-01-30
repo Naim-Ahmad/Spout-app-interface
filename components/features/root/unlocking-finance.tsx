@@ -1,6 +1,5 @@
 "use client";
 
-import BgGrain from "@/components/bg-grain-svg";
 import { DiagonalPattern } from "@/components/slant-dashes-svg";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,7 +10,6 @@ export function UnlockingFinance() {
   return (
     <section className="w-full py-4 sm:py-6 lg:py-8 relative">
       {/* Background grain for this section */}
-      <BgGrain className="absolute inset-0 w-full h-full z-0 optimized" />
 
       {/* Section content */}
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
@@ -22,7 +20,7 @@ export function UnlockingFinance() {
             <br />
             through our stablecoin
           </h2>
-          <p className="text-[18px] sm:text-base lg:text-lg text-spout-text-muted-dark max-w-3xl mx-auto text-center font-dm-sans  font-normal leading-6 tracking-[0.064px]">
+          <p className="section-description">
             Expand access to traditional assets with security, transparency, and
             real yield on-chain.
           </p>
