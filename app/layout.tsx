@@ -115,14 +115,11 @@ export default async function RootLayout({
           dmMono.variable,
         )}
       >
-        {/* <RumInit /> */}
-        {/* <Providers> */}
         <AnnouncementBarWrapper />
         <ConditionalNavbar />
         <main className="flex-1">{children}</main>
         <ConditionalFooter />
-        {/* </Providers>
-        <Analytics /> */}
+        {/* <Analytics /> */}
       </body>
     </html>
   );
