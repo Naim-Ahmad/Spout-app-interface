@@ -9,7 +9,6 @@ import lockImage from "@/assets/images/lock.svg";
 export function UnlockingFinance() {
   return (
     <section className="w-full py-4 sm:py-6 lg:py-8 relative">
-      {/* Background grain for this section */}
 
       {/* Section content */}
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
@@ -188,7 +187,7 @@ export function UnlockingFinance() {
       </div>
 
       {/* Diagonal blue lines at bottom */}
-      <div className="relative z-10 w-full mt-10 px-4 py-2">
+      {/* <div className="relative z-10 w-full mt-10 px-4 py-2">
         <DiagonalPattern
           width="100%"
           height={34}
@@ -196,7 +195,7 @@ export function UnlockingFinance() {
           strokeWidth={1.5}
           spacing={14}
         />
-      </div>
+      </div> */}
     </section>
   );
 }

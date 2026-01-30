@@ -71,7 +71,7 @@ export function HowSpoutWorks() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-10">
-          <h2 className="section-heading">How Spoutworks</h2>
+          <h2 className="section-heading">How Spout works</h2>
           <p className="section-description">
             Step-by-step overview of how Spout works.
           </p>
