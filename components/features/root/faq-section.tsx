@@ -36,16 +36,16 @@ export function FAQSection() {
   };
 
   return (
-    <section className="w-full py-4 sm:py-6 lg:py-5">
+    <section className="w-full py-4 sm:py-6 lg:py-[72px]">
       {/* Section content */}
-      <div className="w-full max-w-[1178px] mx-auto px-4 sm:px-6 lg:px-[36px] pb-8 sm:pb-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
+      <div className="w-full max-w-[1178px] mx-auto px-4 sm:px-6 lg:px-[36px] pb-8 sm:pb-0">
+        <div className="flex gap-[36px]">
           {/* Left Column - Header */}
-          <div>
+          <div className="basis-[448px]">
             <div className="text-xs sm:text-sm font-medium text-[#475569] mb-3 sm:mb-4 tracking-wider">
               [ FAQ ]
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-lora font-normal text-[#004040] mb-4 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-pt-serif font-normal text-[#004040] mb-4 sm:mb-6 tracking-[0.192px]">
               Frequently asked
               <br />
               questions
@@ -58,32 +58,59 @@ export function FAQSection() {
           </div>
 
           {/* Right Column - FAQ Items */}
-          <div className="space-y-3 sm:space-y-4">
+          <div className="basis-[610px]">
             <Accordion
               type="single"
               collapsible
               defaultValue="item-1"
-              className="max-w-lg text-start"
+              className="text-start w"
             >
               {faqs.map((item, index) => (
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="faq-title border-[1px] border-[#F3F4F6] px-5 p-2 sm:px-6 sm:py-2 rounded-sm hover:no-underline"
+                  className="faq-title border-[1px] border-[#F3F4F6] px-5 p-2 sm:px-8 sm:py-5 rounded-sm hover:no-underline font-dm-sans text-[#4f4f4f] text-xl"
                 >
-                  <AccordionTrigger className="text-start">
+                  <AccordionTrigger className="text-start py-0 px-0 gap-8 items-start">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent>{item.answer}</AccordionContent>
+                  <AccordionContent className="mt-5">
+                    {item.answer}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
 
               <div className="mt-4 sm:mt-6 text-end">
                 <Link
                   href="/faq"
-                  className="border rounded-sm border-black bg-white py-2 px-2 inline-flex text-sm sm:text-base font-noto-sans font-medium text-[#004040] hover:text-[#003030] transition-colors items-end"
+                  className="group border rounded-sm border-[#E8E8E8] bg-white p-[10px] inline-flex text-sm sm:text-base font-noto-sans font-medium text-[#000] transition-colors items-end gap-2"
                 >
-                  View All →
+                  View All
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="transition-transform duration-300 ease-out group-hover:translate-x-1"
+                  >
+                    <path
+                      d="M14.4301 5.93018L20.5001 12.0002L14.4301 18.0702"
+                      stroke="#292D32"
+                      strokeWidth="1.5"
+                      strokeMiterlimit="10"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M3.5 12H20.33"
+                      stroke="#292D32"
+                      strokeWidth="1.5"
+                      strokeMiterlimit="10"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </Link>
               </div>
             </Accordion>

@@ -23,9 +23,9 @@ export function ProofOfReserveLanding() {
   ];
 
   return (
-    <section className="w-full h-fit py-4 sm:py-6 lg:py-8 relative">
+    <section className="w-full h-fit py-4 sm:py-6 lg:py-8 lg:pb-0 relative">
       {/* Section content */}
-      <div className="w-full  px-4 sm:px-6 md:px-8 lg:px-0 pb-8">
+      <div className="w-full  px-4 sm:px-6 md:px-8 lg:px-0 pb-8 lg:pb-0">
         {/* Header */}
         <div className="flex flex-col justify-center align-center mb-8 sm:mb-12 lg:mb-16 text-center">
           <h2 className="section-heading">
@@ -49,7 +49,7 @@ export function ProofOfReserveLanding() {
             }}
           >
             {/* Left: lock image */}
-            <div className="flex items-center justify-center">
+            <div className="flex items-end justify-center">
               <Image
                 src={lockImage}
                 alt="Proof of Reserve Lock"
@@ -60,7 +60,7 @@ export function ProofOfReserveLanding() {
             </div>
 
             {/* Right: company logos grid */}
-            <div className="grid grid-cols-2 gap-y-4 gap-x-6 items-center justify-items-center">
+            <div className="grid grid-cols-2 gap-y-4 gap-x-6 items-center justify-items-center py-5">
               {logos.map((logo) => (
                 <Image
                   key={logo.id}

@@ -38,9 +38,9 @@ export function InTheNews() {
   };
 
   return (
-    <section className="w-full py-4 sm:py-6 lg:pt-8">
+    <section className="w-full py-4 sm:py-6 lg:pt-8 lg:pb-0">
       {/* Section content */}
-      <div className="w-full max-w-[1178px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0 pb-8">
+      <div className="w-full  px-4 sm:px-6 md:px-8 lg:px-0 pb-8">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="section-heading">
@@ -54,16 +54,18 @@ export function InTheNews() {
           </p>
         </div>
 
+        <div className="w-screen bg-transparent border-t border-b border-[#F3F4F6] "></div>
+
         {/* News Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-8 sm:mb-12 lg:mb-0 max-w-[1178px] mx-auto">
           {newsItems.map((item, index) => (
             <div className="flex w-full" key={index}>
-              <div className="border border-[#F3F4F6] rounded-none">
+              <div className=" rounded-none">
                 {/* Card Content with rounded corners */}
                 <div className="overflow-hidden rounded-none">
                   {/* Logo Area */}
                   <div
-                    className={`h-32 sm:h-40 lg:h-48 flex ${index === 1 ? "bg-black" : "bg-white"} items-center justify-center p-4 sm:p-6 lg:p-8`}
+                    className={`h-32 sm:h-40 lg:h-48 flex ${index === 1 ? "bg-black" : ""} items-center justify-center p-4 sm:p-6 lg:p-8`}
                   >
                     <Image
                       src={item.logo}
@@ -104,15 +106,42 @@ export function InTheNews() {
             </div>
           ))}
         </div>
-        <div className="mt-4 sm:mt-6 text-end">
+        <div className="w-screen bg-transparent border-t border-b border-[#F3F4F6] "></div>
+        <div className="mt-4 sm:mt-7 text-end max-w-[1178px] mx-auto pe-[22px]">
           <Link
             href="/faq"
-            className="border rounded-sm border-black bg-white py-2 px-2 inline-flex text-sm sm:text-base font-noto-sans font-medium text-[#004040] hover:text-[#003030] transition-colors items-end"
+            className="group border rounded-sm border-[#E8E8E8] bg-white p-[10px] inline-flex text-sm sm:text-base font-noto-sans font-medium text-[#000] transition-colors items-end gap-2"
           >
-            View All →
+            View All
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              className="transition-transform duration-300 ease-out group-hover:translate-x-1"
+            >
+              <path
+                d="M14.4301 5.93018L20.5001 12.0002L14.4301 18.0702"
+                stroke="#292D32"
+                strokeWidth="1.5"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M3.5 12H20.33"
+                stroke="#292D32"
+                strokeWidth="1.5"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </Link>
         </div>
       </div>
+      <div className="w-screen bg-transparent border-t border-b border-[#F3F4F6] "></div>
     </section>
   );
 }

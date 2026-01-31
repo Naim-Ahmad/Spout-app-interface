@@ -6,9 +6,9 @@ import lockImage from "@/assets/images/lock.svg";
 
 export function UnlockingFinance() {
   return (
-    <section className="w-full py-4 sm:py-6 lg:pt-8 relative">
+    <section className="w-full py-4 sm:py-6 lg:pt-8 lg:pb-0 relative">
       {/* Section content */}
-      <div className="w-full max-w-[1178px] mx-auto px-4 sm:px-6 lg:px-0 pb-8">
+      <div className="w-full px-4 sm:px-6 lg:px-0 pb-8 lg:pb-0">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="text-3xl capitalize sm:text-4xl lg:text-5xl font-pt-serif leading-[56px] tracking-[0.192px] text-spout-deep-teal font-normal mb-4 sm:mb-6">
@@ -25,12 +25,14 @@ export function UnlockingFinance() {
           </p>
         </div>
 
+        <div className="w-screen bg-transparent border-t border-b border-[#F3F4F6] "></div>
+
         {/* Cards Section */}
-        <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-0 mb-6 sm:mb-8 lg:mb-12">
+        <div className="relative max-w-[1178px] mx-auto  grid grid-cols-1 lg:grid-cols-2 gap-0 mb-6 sm:mb-8 lg:mb-0">
           {/* DeFi Integration Benefits Card */}
 
           <div className="flex ">
-            <div className="border bg-white border-gray-300 rounded-l-none sm:rounded-l-none rounded-r-none sm:rounded-r-none p-4 sm:p-6 lg:p-8 relative">
+            <div className=" rounded-l-none sm:rounded-l-none rounded-r-none sm:rounded-r-none p-4 sm:p-6 lg:p-8 relative">
               <div className="flex bg-[#A7C6ED]/35 border border-[#A7C6ED] items-center gap-2 sm:gap-3 mb-3 sm:mb-4 w-fit px-2 py-1 rounded-none">
                 {/* <svg
                 className="w-5 h-5 sm:w-6 sm:h-6 text-[#004040]"
@@ -97,7 +99,7 @@ export function UnlockingFinance() {
           <div className="flex ">
             <div className="bg-linear-gradient-3 w-[64px] sm:w-[94px] h-[340px] sm:h-auto"></div>
 
-            <div className="border-t sm:border-t border-r border-b border-l-0 sm:border-l-0 bg-white border-gray-300 rounded-r-none sm:rounded-r-none rounded-l-none sm:rounded-l-none p-4 sm:p-6 lg:p-8 relative">
+            <div className="rounded-r-none sm:rounded-r-none rounded-l-none sm:rounded-l-none p-4 sm:p-6 lg:p-8 relative">
               <div className="flex bg-[#A7C6ED]/35 border border-[#A7C6ED] items-center gap-2 sm:gap-3 mb-3 sm:mb-4 w-fit px-2 py-1 rounded-none">
                 <Image
                   src="/svg-assets/defi-security-transparency.svg"
@@ -152,41 +154,7 @@ export function UnlockingFinance() {
             </div>
           </div>
         </div>
-
-        {/* View Reserve Details Button */}
-        {/* <div className="flex justify-start">
-          <Link
-            href="/app/proof-of-reserve"
-            className="inline-flex bg-white p-2 sm:p-3 border rounded-md border-gray-300 items-center gap-1 sm:gap-2 text-[#004040] font-semibold text-sm sm:text-base hover:text-[#003030] transition-colors"
-          >
-            View Reserve Details
-            <svg
-              className="w-4 h-4 sm:w-5 sm:h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </Link>
-        </div> */}
       </div>
-
-      {/* Diagonal blue lines at bottom */}
-      {/* <div className="relative z-10 w-full mt-10 px-4 py-2">
-        <DiagonalPattern
-          width="100%"
-          height={34}
-          color="#A7C6ED"
-          strokeWidth={1.5}
-          spacing={14}
-        />
-      </div> */}
     </section>
   );
 }

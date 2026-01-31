@@ -85,9 +85,9 @@ export const Footer: React.FC<FooterProps> = ({
   return (
     <footer
       ref={footerRef}
-      className="bg-gray-50 text-gray-900 relative flex flex-col w-full h-full justify-between select-none z-0"
+      className="bg-white text-gray-900 relative flex flex-col w-full h-full justify-between select-none z-0"
     >
-      <div className="container mx-auto flex flex-col lg:flex-row justify-between w-full gap-12 py-12 px-6 lg:px-16 max-w-7xl relative z-10">
+      <div className="border-b-2 border-[#F3F4F6]  flex flex-col lg:flex-row justify-between w-full gap-12  relative z-10">
         {/* Mobile Layout - Logo and copyright at top, links below */}
         <div className="lg:hidden space-y-8">
           {/* Logo and copyright */}
@@ -189,9 +189,9 @@ export const Footer: React.FC<FooterProps> = ({
         </div>
 
         {/* Desktop Layout - Original layout */}
-        <div className="hidden lg:flex lg:flex-row lg:justify-between lg:w-full lg:gap-12">
+        <div className="hidden lg:flex lg:flex-row lg:justify-between lg:w-full lg:gap-12 max-w-[1178px] mx-auto ">
           {/* Left side - Logo and copyright */}
-          <div className="space-y-6 lg:max-w-xs">
+          <div className="space-y-6 py-12 border-r border-[#F3F4F6] pr-12">
             <div className="flex items-center mb-4">
               <Image
                 src="/Spout_complete.png"
@@ -201,14 +201,16 @@ export const Footer: React.FC<FooterProps> = ({
                 className="h-10 w-auto"
               />
             </div>
-            <p className="text-sm text-gray-600">{copyrightText}</p>
+            <p className="text-sm text-gray-600 font-dm-sans">
+              {copyrightText}
+            </p>
           </div>
 
           {/* Right side - Links grid */}
-          <div className="grid grid-cols-3 gap-16">
+          <div className="grid grid-cols-3 gap-16 py-12 font-noto-sans">
             {/* Platform Column */}
             <div>
-              <h4 className="font-semibold text-gray-400 mb-4 text-sm uppercase tracking-wider">
+              <h4 className="font-semibold text-[#8C9BAA] mb-4 text-sm uppercase tracking-wider">
                 PLATFORM
               </h4>
               <ul className="space-y-3">
@@ -227,7 +229,7 @@ export const Footer: React.FC<FooterProps> = ({
 
             {/* Company Column */}
             <div>
-              <h4 className="font-semibold text-gray-400 mb-4 text-sm uppercase tracking-wider">
+              <h4 className="font-semibold text-[#8C9BAA] mb-4 text-sm uppercase tracking-wider">
                 COMPANY
               </h4>
               <ul className="space-y-3">
@@ -246,7 +248,7 @@ export const Footer: React.FC<FooterProps> = ({
 
             {/* Social Column */}
             <div>
-              <h4 className="font-semibold text-gray-400 mb-4 text-sm uppercase tracking-wider">
+              <h4 className="font-semibold text-[#8C9BAA] mb-4 text-sm uppercase tracking-wider">
                 SOCIAL
               </h4>
               <ul className="space-y-3">
@@ -288,11 +290,11 @@ export const Footer: React.FC<FooterProps> = ({
 
       {/* Disclaimer Section - Hidden on mobile */}
       <div className="hidden md:block  relative z-10">
-        <div className="container mx-auto px-6 lg:px-16 py-8 max-w-7xl">
-          <h5 className="font-semibold text-gray-900 mb-3 text-base">
+        <div className="container mx-auto px-6 lg:px-16 py-8 max-w-7xl font-dm-sans">
+          <h5 className="font-semibold text-[#525252] mb-3 text-base font-dm-sans">
             Disclaimer
           </h5>
-          <p className="text-sm text-gray-600 leading-relaxed">
+          <p className="text-sm text-[#525252] leading-relaxed font-dm-sans">
             All provided information has been carefully researched and checked.
             In spite of taking due care, Spout does not accept any warranty for
             the information being correct, complete, and up to date.

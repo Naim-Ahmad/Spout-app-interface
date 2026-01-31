@@ -43,9 +43,9 @@ export function InvestmentDifferent() {
   };
 
   return (
-    <section className="w-full py-4 sm:py-6 lg:pt-8 relative">
+    <section className="w-full py-4 sm:py-6 lg:pt-8 lg:pb-0 relative">
       {/* Section content */}
-      <div className="w-full max-w-[1178px] mx-auto px-4 sm:px-8 lg:px-0 pb-8">
+      <div className="w-full  px-4 sm:px-8 lg:px-0 pb-8 lg:pb-0">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="section-heading">Smarter On-chain Investing</h2>
@@ -57,15 +57,17 @@ export function InvestmentDifferent() {
           </p>
         </div>
 
+        <div className="w-screen bg-transparent border-t border-b border-[#F3F4F6] "></div>
+
         {/* Features Grid */}
-        <div className=" grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-0 mb-8 sm:mb-12">
+        <div className="max-w-[1178px] mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-0 mb-8 sm:mb-12 lg:mb-0">
           {features.map((feature, index) => (
             <div key={index} className="flex ">
               <div
                 className={`${gradientMap[feature.gradient] ?? "bg-linear-gradient-1"} w-[18px] h-[183px]`}
               />
               <div
-                className={`flex-1 border bg-white border-[#F3F4F6] p-4 sm:p-6 rounded-none flex flex-col ${
+                className={`flex-1 border border-[#F3F4F6] p-4 sm:p-6 rounded-none flex flex-col ${
                   index === 0
                     ? "sm:rounded-l-lg"
                     : index === features.length - 1
