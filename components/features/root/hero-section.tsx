@@ -23,18 +23,18 @@ export function HeroSection() {
         <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 pt-6 sm:pt-12 lg:pt-0 pb-5 flex flex-col lg:flex-row gap-10 xl:gap-[114px] items-center">
           {/* Left column */}
           <div className="lg:max-w-[840px]  mb-6 sm:mb-12 lg:mb-0">
-            <div className=" space-y-4 sm:space-y-6">
-              <h1 className="font-pt-serif text-spout-primary lg:text-[60px] font-normal lg:leading-[72px] text-2xl capitalize sm:text-3xl lg:text-5xl leading-tight">
+            <div className="">
+              <h1 className="font-pt-serif text-spout-primary lg:text-[60px] font-normal lg:leading-[72px] text-2xl capitalize sm:text-3xl lg:text-5xl leading-tight mb-6">
                 The Go-To Platform for Margin Trading at{" "}
                 <span className="text-spout-blue">0%</span> Rates
               </h1>
 
-              <p className="text-sm sm:text-base tracking-[-0.072px] text-spout-gray font-dm-sans lg:text-[20px] lg:leading-7">
+              <p className="text-sm sm:text-base tracking-[-0.072px] text-spout-gray font-dm-sans lg:text-[20px] lg:leading-7 mb-[56px]">
                 Spout enables you to borrow against your equities at 0% APR or
                 lend your stablecoins for 10%+ APY
               </p>
 
-              <div className="pt-2 sm:pt-0 flex flex-col lg:flex-row  items-center gap-4 sm:gap-6">
+              <div className="pt-2 sm:pt-0 flex flex-col lg:flex-row  items-center gap-4 sm:gap-6 mb-[52px]">
                 <Link
                   href="/app"
                   className="flex items-center justify-center w-full lg:w-[199px] h-[45.281px] bg-spout-primary hover:bg-spout-primary/90 text-white font-dm-sans font-medium text-lg sm:text-xl rounded-[4.766px] transition-all"
@@ -73,9 +73,8 @@ export function HeroSection() {
                 </button>
               </div>
 
-              <p className="text-xs sm:text-sm lg:text-base font-noto-sans text-[#004040] uppercase tracking-wide">
-                [JOIN THE PLATFORM THAT&apos;S MAKING TRADITIONAL CAPITAL MORE
-                EFFICIENT]
+              <p className="text-xs sm:text-sm lg:text-base font-noto-sans text-[#004040] uppercase tracking-wide mb-5">
+                [ Join our mailing list for early access and updates ]
               </p>
 
               <div className="max-w-md pt-2 sm:pt-0">

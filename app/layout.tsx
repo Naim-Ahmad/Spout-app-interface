@@ -1,4 +1,3 @@
-import { AnnouncementBarWrapper } from "@/components/announcement-bar-wrapper";
 import {
   ConditionalFooter,
   ConditionalNavbar,
@@ -115,7 +114,7 @@ export default async function RootLayout({
           dmMono.variable,
         )}
       >
-        <AnnouncementBarWrapper />
+        {/* <AnnouncementBarWrapper /> */}
         <ConditionalNavbar />
         <main className="flex-1">{children}</main>
         <ConditionalFooter />
