@@ -104,7 +104,7 @@ export default async function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen flex flex-col bg-gray-50 font-sans antialiased",
+          "min-h-screen flex flex-col bg-white font-sans antialiased",
           publicSans.variable,
           ibmPlexMono.variable,
           lora.variable,

@@ -201,9 +201,7 @@ export const Footer: React.FC<FooterProps> = ({
                 className="h-10 w-auto"
               />
             </div>
-            <p className="text-sm font-dm-sans">
-              {copyrightText}
-            </p>
+            <p className="text-sm font-dm-sans">{copyrightText}</p>
           </div>
 
           {/* Right side - Links grid */}
@@ -262,7 +260,7 @@ export const Footer: React.FC<FooterProps> = ({
                     LinkedIn
                   </a>
                 </li>
-                                <li>
+                <li>
                   <a
                     href="https://x.com/0xspout"
                     target="_blank"
@@ -282,7 +280,6 @@ export const Footer: React.FC<FooterProps> = ({
                     Telegram
                   </a>
                 </li>
-
               </ul>
             </div>
           </div>
@@ -290,13 +287,16 @@ export const Footer: React.FC<FooterProps> = ({
       </div>
 
       {/* Disclaimer Section - Hidden on mobile */}
-      <div className="hidden md:block  relative z-10 w-[755px] h-[85px]">
-        <div className="container mx-auto px-6 lg:px-16 py-8 max-w-7xl font-dm-sans">
+      <div className="hidden md:block  relative z-10 w-full max-w-[1305px] mx-auto h-[85px]">
+        <div className="py-8 max-w-[755px] font-dm-sans ">
           <h5 className="text-[#525252] font-dm-sans text-[18px] not-italic font-medium leading-7 tracking-[-0.072px]">
             Disclaimer
           </h5>
           <p className="text-[#525252] font-dm-sans text-[14px] not-italic font-normal leading-[24px] tracking-[-0.056px]">
-All provided information has been carefully researched and checked. In spite of taking due care, Spout Finance does not accept any warranty for the information being correct, complete, and up to date.
+            All provided information has been carefully researched and checked.
+            In spite of taking due care, Spout Finance does not accept any
+            warranty for the information being correct, complete, and up to
+            date.
           </p>
         </div>
       </div>
