@@ -59,7 +59,6 @@ export function HowSpoutWorks() {
   const inView = useInView(ref, { margin: "-100px" });
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const [direction, setDirection] = useState<1 | -1>(1); // 1 = forward, -1 = backward
 
   const x = useMotionValue("0%");
 
@@ -79,9 +78,11 @@ export function HowSpoutWorks() {
   useEffect(() => {
     animate(x, `-${activeIndex * (100 / CARDS_PER_VIEW)}%`, {
       type: "spring",
-      stiffness: 80, // softer spring
-      damping: 25, // smoother stop
-      mass: 0.8, // lighter feel
+      stiffness: 100,
+      damping: 28,
+      mass: 0.8,
+      restDelta: 0.001,
+      restSpeed: 0.01,
     });
   }, [activeIndex]);
 
@@ -110,7 +111,7 @@ export function HowSpoutWorks() {
             <motion.div
               className="absolute inset-y-0 left-0"
               animate={{ width: `${progressPercent}%` }}
-              transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }} // smooth ease
+              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }} // smooth ease
               style={{
                 background: "linear-gradient(90deg, #DDFF87 0%, #0057FF 100%)",
               }}
