@@ -7,8 +7,8 @@ export function CTASection() {
   return (
     <section className="w-full py-4 sm:py-8 lg:py-0 relative">
       {/* Section content */}
-      <div className="w-full max-w-[1178px] mx-auto px-4 sm:px-8 lg:px-0 pb-8 sm:pb-12 lg:pb-0">
-        <div className="relative  rounded-none shadow-sm pl-4 sm:pl-4 lg:pl-5 pr-4 sm:pr-4 lg:pr-5 py-6 sm:py-8 lg:py-0">
+      <div className="w-full max-w-[1178px] mx-auto px-4 sm:px-8 lg:px-0 pb-8 sm:pb-12 lg:pb-0 ">
+        <div className="relative  rounded-none shadow-sm pl-4 sm:pl-4 lg:pl-5 pr-4 sm:pr-4 lg:pr-0 py-6 sm:py-8 lg:py-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 items-center">
             {/* Left Content */}
             <div className="space-y-4 sm:space-y-6">
@@ -33,13 +33,13 @@ export function CTASection() {
 
             {/* Right Image */}
             <div className="w-full mt-4 sm:mt-0 flex">
-              <div className="bg-linear-gradient-blue-2 w-[18px] h-auto sm:h-[313px]"></div>
-              <div>
+              <div className="bg-linear-gradient-blue-2 w-[18px] h-auto "></div>
+              <div className="w-full">
                 <Image
                   src={background}
                   alt="Stock Exchange Building"
                   height={313}
-                  className="rounded-none"
+                  className="w-full rounded-none object-cover"
                 />
               </div>
             </div>

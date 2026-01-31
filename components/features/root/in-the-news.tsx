@@ -82,7 +82,7 @@ export function InTheNews() {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 md:px-4 bg-blue-50 border border-blue-200 rounded text-[#004040] font-noto-sans text-xs sm:text-sm md:text-base font-medium hover:bg-blue-100 transition-colors flex-shrink-0"
+                      className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 md:px-4 bg-[rgba(167,198,237,0.35)] border border-blue-200 rounded text-[#004040] font-noto-sans text-xs sm:text-sm md:text-base font-medium hover:bg-blue-100 transition-colors flex-shrink-0 "
                     >
                       <Image
                         src="/svg-assets/landingpage/spout-book.svg"
@@ -92,6 +92,21 @@ export function InTheNews() {
                         className="w-4 h-4 sm:w-5 sm:h-5"
                       />
                       {item.publication}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="6"
+                        height="9"
+                        viewBox="0 0 6 9"
+                        fill="none"
+                      >
+                        <path
+                          d="M0.75 7.81L4.27 4.28L0.75 0.75"
+                          stroke="#3D5678"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
                     </Link>
                     <span className="text-xs sm:text-xs md:text-sm font-noto-sans text-[#525252] sm:ml-auto whitespace-nowrap">
                       {item.date}
