@@ -134,8 +134,10 @@ export function PartnerTicker() {
   return (
     <div className="w-full overflow-hidden">
       <div className="flex flex-col sm:flex-row items-center">
-        <div className="px-6 py-5 flex-shrink-0">
-          <h3 className="font-semibold text-[#334155]">WORKING WITH</h3>
+        <div className="pr-12 flex-shrink-0">
+          <h3 className="text-black font-dm-sans text-[18px] not-italic font-medium leading-6 tracking-[0.072px]">
+            WORKING WITH
+          </h3>
         </div>
 
         <div className="flex-1 overflow-hidden">
@@ -143,16 +145,20 @@ export function PartnerTicker() {
             ref={tickerRef}
             className="flex items-center will-change-transform"
           >
-            <div ref={contentRef} className="flex shrink-0">
+            <div
+              ref={contentRef}
+              className="flex shrink-0 justify-center items-center"
+            >
               {[...partners, ...partners, ...partners].map((p, i) => (
                 <Link key={i} href={p.link} target="_blank">
-                  <div className="px-8 py-5 min-w-[160px] flex justify-center">
+                  <div className="px-8 py-5 min-w-[160px] m-h-[30px] flex justify-center">
                     <Image
                       src={p.src}
                       alt={p.alt}
-                      width={80}
-                      height={80}
+                      width={100}
+                      height={30}
                       draggable={false}
+                      className="object-contain"
                     />
                   </div>
                 </Link>

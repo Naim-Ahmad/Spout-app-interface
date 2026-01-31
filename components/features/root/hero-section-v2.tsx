@@ -24,11 +24,11 @@ export function HeroSection() {
             <div className="flex flex-col gap-14">
               {/* Text Content */}
               <div className="flex flex-col gap-6">
-                <h1 className="font-pt-serif text-spout-primary text-[60px] font-normal leading-[72px]">
+                <h1 className="text-[#004040] font-pt-serif text-[52px] font-normal leading-[72px] tracking-[0.208px]">
                   The Go-To Platform for Margin Trading at{" "}
                   <span className="text-spout-blue">0%</span> Rates
                 </h1>
-                <p className="text-spout-gray font-dm-sans text-[20px] leading-7">
+                <p className="text-[#757679] font-dm-sans text-[18px] font-normal leading-[24px] tracking-[0.072px]">
                   Spout enables you to borrow against your equities at 0% APR or
                   lend your stablecoins for 10%+ APY
                 </p>
@@ -36,10 +36,10 @@ export function HeroSection() {
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-6">
-                <button className="flex items-center justify-center w-[199px] h-[45.281px] bg-spout-primary hover:bg-spout-primary/90 text-white font-dm-sans font-medium text-lg sm:text-xl rounded-[4.766px] transition-all">
+                <button className="flex items-center justify-center w-[199px] h-[45.281px] bg-spout-primary hover:bg-spout-primary/90 text-white font-dm-sans text-[16px] font-medium leading-normal rounded-[4.766px] transition-all">
                   Launch Platform
                 </button>
-                <button className="flex items-center justify-center gap-3 min-w-[162px] h-[45.281px] border-[1px]  rounded-[4.766px] border-spout-light-gray text-primary font-dm-sans font-medium text-lg sm:text-xl transition-all group">
+                <button className="flex items-center justify-center gap-3 min-w-[162px] h-[45.281px] border-[1px] rounded-[4.766px] border-spout-light-gray text-black font-dm-sans text-[16px] font-medium leading-normal transition-all group">
                   Try Demo
                   <div className="bg-spout-primary w-[35px] h-[32px] rounded-[3px] text-white flex items-center justify-center transition-transform group-hover:translate-x-2">
                     <svg

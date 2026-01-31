@@ -23,9 +23,9 @@ export function ProofOfReserveLanding() {
   ];
 
   return (
-    <section className="w-full h-fit py-4 sm:py-6 lg:py-8 lg:pb-0 relative">
+    <section className="w-full h-fit py-4 sm:py-6 lg:py-8 relative">
       {/* Section content */}
-      <div className="w-full  px-4 sm:px-6 md:px-8 lg:px-0 pb-8 lg:pb-0">
+      <div className="w-full  px-4 sm:px-6 md:px-8 lg:px-0 p-12">
         {/* Header */}
         <div className="flex flex-col justify-center align-center mb-8 sm:mb-12 lg:mb-16 text-center">
           <h2 className="section-heading">
@@ -37,14 +37,16 @@ export function ProofOfReserveLanding() {
           </p>
         </div>
 
+        <div className="h-[1px] w-screen bg-transparent border-t-2 border-[#F3F4F6]"></div>
+
         {/* Vault Image with Company Logos */}
         <div className="flex justify-center items-center mb-8 sm:mb-12 lg:mb-0 max-w-[1178px] mx-auto">
           <div
             className=" w-full max-w-[1262px] sm:h-auto flex flex-col md:flex-row items-center md:items-stretch gap-6"
             style={{
               background: `
-      radial-gradient(60% 100% at left 60%, rgba(61, 199, 132, 0.38), transparent 70%),
-      radial-gradient(150% 100% at right 60%, rgba(88, 162, 255, 0.38), transparent 70%)
+      radial-gradient(100% 100% at left 60%, rgba(61, 199, 132, 0.38), transparent 70%),
+      radial-gradient(150% 100% at right 80%, rgba(88, 162, 255, 0.38), transparent 60%)
     `,
             }}
           >
@@ -86,16 +88,14 @@ export function ProofOfReserveLanding() {
                   <Image
                     src={frame3Svg}
                     alt="Bank"
-                    width={40}
-                    height={40}
-                    className="w-8 h-8 sm:w-10 sm:h-10"
+                    className="w-[35.843px] h-[38.893px]"
                   />
                 </div>
                 <div>
                   <div className="text-black font-dm-sans text-[20px] font-semibold leading-normal">
                     $200k
                   </div>
-                  <div className="text-[#7D8690] font-dm-sans text-base font-medium leading-normal">
+                  <div className="text-[#7D8690] font-dm-sans text-[16px] font-medium leading-normal">
                     Assets On-Chain
                   </div>
                 </div>
@@ -111,16 +111,14 @@ export function ProofOfReserveLanding() {
                   <Image
                     src={frame1Svg}
                     alt="Category"
-                    width={40}
-                    height={40}
-                    className="w-8 h-8 sm:w-10 sm:h-10"
+                    className="w-[35.843px] h-[38.893px]"
                   />
                 </div>
                 <div>
                   <div className="text-black font-dm-sans text-[20px] font-semibold leading-normal">
                     1,124
                   </div>
-                  <div className="text-[#7D8690] font-dm-sans text-base font-medium leading-normal">
+                  <div className="text-[#7D8690] font-dm-sans text-[16px] font-medium leading-normal">
                     Investments Tokenized
                   </div>
                 </div>
@@ -136,16 +134,14 @@ export function ProofOfReserveLanding() {
                   <Image
                     src={frame2Svg}
                     alt="Shield"
-                    width={40}
-                    height={40}
-                    className="w-8 h-8 sm:w-10 sm:h-10"
+                    className="w-[35.843px] h-[38.893px]"
                   />
                 </div>
                 <div>
                   <div className="text-black font-dm-sans text-[20px] font-semibold leading-normal">
                     100%
                   </div>
-                  <div className="text-[#7D8690] font-dm-sans text-base font-medium leading-normal">
+                  <div className="text-[#7D8690] font-dm-sans text-[16px] font-medium leading-normal">
                     Proof-of-Reserve Verified
                   </div>
                 </div>

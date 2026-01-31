@@ -77,7 +77,7 @@ export function JoinMailingList() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="flex flex-col sm:flex-row gap-2 w-full max-w-sm items-center"
+      className="flex flex-col sm:flex-row gap-2 w-full items-center"
     >
       {!joined && (
         <Input
@@ -87,7 +87,7 @@ export function JoinMailingList() {
           onChange={handleEmailChange}
           onBlur={handleEmailBlur}
           autoComplete="email"
-          className={`flex-1 w-72 bg-white/80 border-slate-200 focus-visible:ring-emerald-600 ${
+          className={`text-[#9F9F9F] w-full font-dm-sans text-sm not-italic font-normal leading-4 outline-none flex h-11  pl-5 py-[14px] items-center ${
             error ? "border-red-300 focus-visible:ring-red-400" : ""
           }`}
           disabled={loading}
@@ -101,11 +101,11 @@ export function JoinMailingList() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="flex"
+            className="flex w-[105px] h-10 p-2.5 justify-center items-center gap-2.5"
           >
             <JoinButton
               type="submit"
-              className="bg-[#DAE5F2] hover:bg-[#DAE5F2] data-[hovered]:bg-[#DAE5F2] border-[1.5px] border-[#A7C6ED] text-[#3D5678] px-6 py-2 rounded-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-[#DAE5F2] hover:bg-[#DAE5F2] data-[hovered]:bg-[#DAE5F2] border-[1.5px] border-[#A7C6ED] text-[#3D5678] px-6 py-2 font-dm-sans rounded-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
               isDisabled={
                 loading || (email.length > 0 && !isValidEmail(email.trim()))
               }

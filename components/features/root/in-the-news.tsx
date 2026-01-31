@@ -1,4 +1,4 @@
-import block from "@/assets/images/block.png";
+import block from "@/assets/images/block.svg";
 import kucoin from "@/assets/images/logo_general_green.svg";
 import mexc from "@/assets/images/mexc-global-seeklogo.svg";
 import Image from "next/image";
@@ -9,21 +9,21 @@ export function InTheNews() {
     {
       logo: block,
       publication: "The Block",
-      date: "SEP 9, 2025",
+      date: "JAN 20, 2026",
       url: "https://apnews.com/press-release/globenewswire-mobile/onepiece-labs-solana-accelerator-officially-launches-f2e8e0a2478df30533933fdfe8f07a5e",
       gradient: "linear-gradient-2",
     },
     {
       logo: mexc,
       publication: "MEXC",
-      date: "SEP 9, 2025",
+      date: "JAN 21, 2026",
       url: "https://markets.businessinsider.com/news/stocks/onepiece-labs-solana-accelerator-officially-launches-1035128439",
       gradient: "linear-gradient-3",
     },
     {
       logo: kucoin,
       publication: "Kucoin",
-      date: "SEP 9, 2025",
+      date: "JAN 21, 2026",
       url: "https://www.marketwatch.com/press-release/onepiece-labs-solana-accelerator-officially-launches-7b06ee13?mod=search_headline",
       gradient: "linear-gradient-blue-3",
     },
@@ -82,7 +82,7 @@ export function InTheNews() {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 md:px-4 bg-[rgba(167,198,237,0.35)] border border-blue-200 rounded text-[#004040] font-noto-sans text-xs sm:text-sm md:text-base font-medium hover:bg-blue-100 transition-colors flex-shrink-0 "
+                      className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 md:px-4 tracking-[-0.064px] leading-[28px] bg-[rgba(167,198,237,0.35)] border border-blue-200 rounded text-[#004040] font-dm-sans text-[16px] font-[500] flex-shrink-0 "
                     >
                       <Image
                         src="/svg-assets/landingpage/spout-book.svg"
@@ -102,13 +102,13 @@ export function InTheNews() {
                         <path
                           d="M0.75 7.81L4.27 4.28L0.75 0.75"
                           stroke="#3D5678"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
                     </Link>
-                    <span className="text-xs sm:text-xs md:text-sm font-noto-sans text-[#525252] sm:ml-auto whitespace-nowrap">
+                    <span className="text-[16px] font-[500] leading-[28px] tracking-[-0.064px] font-dm-sans text-[#525252] sm:ml-auto">
                       {item.date}
                     </span>
                   </div>

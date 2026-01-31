@@ -48,7 +48,7 @@ export function InvestmentDifferent() {
       <div className="w-full  px-4 sm:px-8 lg:px-0 pb-8 lg:pb-0">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="section-heading">Smarter On-chain Investing</h2>
+          <h2 className="section-heading text-[#004040] text-center text-[48px] leading-[56px] tracking-[0.192px]">Smarter On-chain Investing</h2>
           <p className="section-description">
             Consistent returns from regulated investment-grade securities, with
             instant trading
@@ -84,22 +84,22 @@ export function InvestmentDifferent() {
                     height={24}
                     className="w-5 h-5 sm:w-6 sm:h-6"
                   />
-                  <h3 className="text-base sm:text-lg font-noto-sans font-semibold text-[#004040]">
+                  <h3 className="text-black font-[DM Sans] text-[20px] font-medium leading-[28px] tracking-[-0.08px]">
                     {feature.title}
                   </h3>
                 </div>
 
                 {/* Description */}
-                <p className="text-xs sm:text-sm font-noto-sans font-normal text-[#525252] mb-3 sm:mb-4 leading-relaxed flex-grow">
+                <p className="text-[#7D8690] font-[DM_Sans] text-[16px] leading-[28px] tracking-[-0.064px]">
                   {feature.description}
                 </p>
 
                 {/* Badges */}
-                <div className="flex flex-wrap gap-1 sm:gap-2 mt-auto">
+                <div className="flex flex-wrap gap-1 sm:gap-2 mt-auto font-dm-sans">
                   {feature.badges.map((badge, badgeIndex) => (
                     <span
                       key={badgeIndex}
-                      className="px-2 sm:px-3 py-1 text-xs font-medium text-[#004040] bg-blue-50 border border-blue-200 rounded"
+                      className="px-2 sm:px-3 py-1 bg-blue-50 border border-blue-200 rounded text-[#3D5678] text-center font-[DM Sans] text-[16px] font-medium leading-[28px] tracking-[-0.064px]"
                     >
                       {badge}
                     </span>

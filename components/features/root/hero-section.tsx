@@ -20,31 +20,31 @@ export function HeroSection() {
         </div>
 
         {/* Main content */}
-        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 pt-6 sm:pt-12 lg:pt-0 pb-5 flex flex-col lg:flex-row gap-10 xl:gap-[114px] items-center">
+        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 pt-6 sm:pt-12 lg:pt-0 pb-16 flex flex-col lg:flex-row gap-10 xl:gap-[114px] items-center">
           {/* Left column */}
-          <div className="lg:max-w-[840px]  mb-6 sm:mb-12 lg:mb-0">
+          <div className="lg:max-w-[840px] sm:mb-12">
             <div className="">
-              <h1 className="font-pt-serif text-spout-primary lg:text-[60px] font-normal lg:leading-[72px] text-2xl capitalize sm:text-3xl lg:text-5xl leading-tight mb-6">
+              <h1 className="mt-[100px] text-[#004040] font-pt-serif text-[52px] font-normal leading-[72px] tracking-[0.208px]">
                 The Go-To Platform for Margin Trading at{" "}
                 <span className="text-spout-blue">0%</span> Rates
               </h1>
 
-              <p className="text-sm sm:text-base tracking-[-0.072px] text-spout-gray font-dm-sans lg:text-[20px] lg:leading-7 mb-[56px]">
+              <p className="py-8 text-[#757679] font-dm-sans text-[18px] font-normal leading-[24px] tracking-[0.072px]">
                 Spout enables you to borrow against your equities at 0% APR or
-                lend your stablecoins for 10%+ APY
+                lend your stablecoins for <br /> 10%+ APY
               </p>
 
               <div className="pt-2 sm:pt-0 flex flex-col lg:flex-row  items-center gap-4 sm:gap-6 mb-[52px]">
                 <Link
                   href="/app"
-                  className="flex items-center justify-center w-full lg:w-[199px] h-[45.281px] bg-spout-primary hover:bg-spout-primary/90 text-white font-dm-sans font-medium text-lg sm:text-xl rounded-[4.766px] transition-all"
+                  className="flex h-9 px-4 py-3 justify-center items-center gap-3 bg-spout-primary hover:bg-spout-primary/90 text-white font-dm-sans text-[16px] font-medium leading-normal rounded-[4.766px] transition-all"
                 >
                   Launch Platform
                 </Link>
 
-                <button className="flex items-center justify-center gap-3 w-full lg:w-[162px] h-[45.281px] border-[1px]  rounded-[4.766px] border-spout-light-gray text-primary font-dm-sans font-medium text-lg sm:text-xl transition-all group">
+                <button className="flex h-9 px-4 py-3 justify-center items-center gap-[11.916px] border-[1px]  rounded-[4.766px] border-spout-light-gray text-primary font-dm-sans !text-black font-[16px] text-lg sm:text-xl transition-all group">
                   Try Demo
-                  <div className="bg-spout-primary w-[35px] h-[32px] rounded-[3px] text-white flex items-center justify-center transition-transform group-hover:translate-x-2">
+                  {/* <div className="bg-spout-primary w-[35px] h-[32px] rounded-[3px] text-white flex items-center justify-center transition-transform group-hover:translate-x-2">
                     <svg
                       width="24"
                       height="24"
@@ -69,15 +69,15 @@ export function HeroSection() {
                         strokeLinejoin="round"
                       />
                     </svg>
-                  </div>
+                  </div> */}
                 </button>
               </div>
 
-              <p className="text-xs sm:text-sm lg:text-base font-noto-sans text-[#004040] uppercase tracking-wide mb-5">
+              <p className="text-[#004040] font-dm-sans text-base not-italic font-medium leading-normal uppercase">
                 [ Join our mailing list for early access and updates ]
               </p>
 
-              <div className="max-w-md pt-2 sm:pt-0">
+              <div className="max-w-md pt-5">
                 <JoinMailingList />
               </div>
             </div>
@@ -85,7 +85,7 @@ export function HeroSection() {
 
           {/* Right column - image */}
           <div className="max-w-[368.592px]">
-            <div className="w-full max-w-[280px] sm:max-w-sm lg:max-w-xl lg:w-auto optimized">
+            <div className="w-full max-w-[368.592px] lg:max-w-xl lg:w-auto optimized">
               <Image
                 src={image1}
                 alt="Spout Water Tokens"

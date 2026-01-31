@@ -189,9 +189,9 @@ export const Footer: React.FC<FooterProps> = ({
         </div>
 
         {/* Desktop Layout - Original layout */}
-        <div className="hidden lg:flex lg:flex-row lg:justify-between lg:w-full lg:gap-12 max-w-[1178px] mx-auto ">
+        <div className="hidden lg:flex lg:flex-row lg:justify-between lg:w-full lg:gap-12 max-w-[1305px] mx-auto">
           {/* Left side - Logo and copyright */}
-          <div className="space-y-6 py-12 border-r border-[#F3F4F6] pr-12">
+          <div className="space-y-6 py-12 border-r border-[#F3F4F6] pr-2 ">
             <div className="flex items-center mb-4">
               <Image
                 src="/Spout_complete.png"
@@ -201,13 +201,13 @@ export const Footer: React.FC<FooterProps> = ({
                 className="h-10 w-auto"
               />
             </div>
-            <p className="text-sm text-gray-600 font-dm-sans">
+            <p className="text-sm font-dm-sans">
               {copyrightText}
             </p>
           </div>
 
           {/* Right side - Links grid */}
-          <div className="grid grid-cols-3 gap-16 py-12 font-noto-sans">
+          <div className="grid grid-cols-3 gap-16 py-12 font-noto-sans mr-10">
             {/* Platform Column */}
             <div>
               <h4 className="font-semibold text-[#8C9BAA] mb-4 text-sm uppercase tracking-wider">
@@ -262,6 +262,16 @@ export const Footer: React.FC<FooterProps> = ({
                     LinkedIn
                   </a>
                 </li>
+                                <li>
+                  <a
+                    href="https://x.com/0xspout"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-900 hover:text-[#004040] transition-colors duration-200 text-base"
+                  >
+                    X
+                  </a>
+                </li>
                 <li>
                   <a
                     href="https://t.me/+BCqhsA4Nmv0wZDU5"
@@ -272,16 +282,7 @@ export const Footer: React.FC<FooterProps> = ({
                     Telegram
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="https://x.com/0xspout"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-900 hover:text-[#004040] transition-colors duration-200 text-base"
-                  >
-                    X
-                  </a>
-                </li>
+
               </ul>
             </div>
           </div>
@@ -289,15 +290,13 @@ export const Footer: React.FC<FooterProps> = ({
       </div>
 
       {/* Disclaimer Section - Hidden on mobile */}
-      <div className="hidden md:block  relative z-10">
+      <div className="hidden md:block  relative z-10 w-[755px] h-[85px]">
         <div className="container mx-auto px-6 lg:px-16 py-8 max-w-7xl font-dm-sans">
-          <h5 className="font-semibold text-[#525252] mb-3 text-base font-dm-sans">
+          <h5 className="text-[#525252] font-dm-sans text-[18px] not-italic font-medium leading-7 tracking-[-0.072px]">
             Disclaimer
           </h5>
-          <p className="text-sm text-[#525252] leading-relaxed font-dm-sans">
-            All provided information has been carefully researched and checked.
-            In spite of taking due care, Spout does not accept any warranty for
-            the information being correct, complete, and up to date.
+          <p className="text-[#525252] font-dm-sans text-[14px] not-italic font-normal leading-[24px] tracking-[-0.056px]">
+All provided information has been carefully researched and checked. In spite of taking due care, Spout Finance does not accept any warranty for the information being correct, complete, and up to date.
           </p>
         </div>
       </div>

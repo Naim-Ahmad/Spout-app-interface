@@ -204,6 +204,11 @@
   .section-description {
   @apply text-[18px] sm:text-base lg:text-lg text-spout-text-muted-dark max-w-3xl mx-auto text-center font-dm-sans  font-normal leading-6 tracking-[0.064px];
   }
+
+  .smart-chain-text {
+    @apply text-[#3D5678] text-center font-[DM Sans] text-[16px] font-medium leading-[28px] tracking-[-0.064px]
+  }
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }

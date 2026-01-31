@@ -59,36 +59,42 @@ export function HowSpoutWorks() {
   const inView = useInView(ref, { margin: "-100px" });
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState<1 | -1>(1); // 1 = forward, -1 = backward
 
   const x = useMotionValue("0%");
+
+  const CARDS_PER_VIEW = 3;
+  const TOTAL_SLIDES = steps.length - CARDS_PER_VIEW + 1; // 3 slides
 
   useEffect(() => {
     if (!inView) return;
 
     const timer = setInterval(() => {
-      setActiveIndex((prev) => (prev === steps.length - 1 ? 0 : prev + 1));
+      setActiveIndex((prev) => (prev === TOTAL_SLIDES - 1 ? 0 : prev + 1));
     }, INTERVAL);
 
     return () => clearInterval(timer);
   }, [inView]);
 
   useEffect(() => {
-    animate(x, `-${activeIndex * (100 / 3)}%`, {
-      duration: 1.2,
-      ease: [0.22, 1, 0.36, 1],
+    animate(x, `-${activeIndex * (100 / CARDS_PER_VIEW)}%`, {
+      type: "spring",
+      stiffness: 80, // softer spring
+      damping: 25, // smoother stop
+      mass: 0.8, // lighter feel
     });
   }, [activeIndex]);
 
-  // progress based on CENTER card
-  const progressPercent = ((activeIndex + 1) / steps.length) * 100;
+  // progressPercent
+  const progressPercent = ((activeIndex + 1) / TOTAL_SLIDES) * 100;
 
   return (
-    <section ref={ref} className="w-full pt-16 ">
+    <section ref={ref} className="w-full pt-20 ">
       <div className=" px-6 lg:px-0">
         {/* Header */}
-        <div className="text-center mb-[74px]">
+        <div className="flex w-[769px] flex-col justify-center items-center gap-2 mx-auto mb-20">
           <h2 className="section-heading">How Spout works</h2>
-          <p className="section-description">
+          <p className="text-[#757679] font-dm-sans text-base not-italic font-normal leading-6 tracking-[0.064px]">
             Spout bridges the gap between traditional finance and DeFi by
             tokenizing investment-grade corporate bonds, providing stable yields
             while maintaining the benefits of blockchain technology.
@@ -102,9 +108,9 @@ export function HowSpoutWorks() {
           <div className="relative h-[10px] rounded-[24px]  bg-gray-200 overflow-hidden">
             {/* Masked gradient */}
             <motion.div
-              className="absolute inset-y-0 left-0 "
+              className="absolute inset-y-0 left-0"
               animate={{ width: `${progressPercent}%` }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
+              transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }} // smooth ease
               style={{
                 background: "linear-gradient(90deg, #DDFF87 0%, #0057FF 100%)",
               }}
@@ -117,38 +123,30 @@ export function HowSpoutWorks() {
             />
           </div>
 
-          {/* Carousel viewport */}
+          {/*Carousel viewport*/}
           <div className="relative overflow-hidden">
             <motion.div className="flex will-change-transform" style={{ x }}>
               {steps.map((step, i) => (
                 <div
                   key={`${step.title}-${i}`}
-                  className="w-1/3  flex-shrink-0 border border-[#F3F4F6]"
+                  className="w-1/3 flex-shrink-0 border border-[#F3F4F6]"
                 >
                   <div className="relative z-10">
-                    {/* Step Label */}
-                    <div className="text-sm font-medium text-gray-700 py-[10px] px-[20px] bg-[#FAFAFA] border border-[#F3F4F6] font-dm-sans">
+                    <div className="text-[#191B20] font-dm-mono text-[14px] font-normal leading-[20px] py-4 px-6">
                       {step.label}
                     </div>
-
-                    {/* Icon */}
                     <div className="flex justify-center items-center mb-8 relative h-[274px]">
-                      <div className="absolute inset-0 -z-10 flex">
-                        <Image
-                          src={step.image}
-                          alt={step.title}
-                          className="mx-auto object-cover"
-                        />
-                      </div>
+                      <Image
+                        src={step.image}
+                        alt={step.title}
+                        className="mx-auto object-cover"
+                      />
                     </div>
                     <div className="px-6 pb-8">
-                      {/* Title */}
-                      <h3 className="font-sans text-xl font-semibold text-gray-900 mb-3">
+                      <h3 className="text-[#004040] font-pt-serif text-[24px] font-normal leading-[34px] tracking-[0.096px] pb-2">
                         {step.title}
                       </h3>
-
-                      {/* Description */}
-                      <p className="font-sans text-sm text-gray-700 leading-relaxed">
+                      <p className="text-[#757679] font-dm-sans text-[15px] font-normal leading-[24px] tracking-[0.06px]">
                         {step.description}
                       </p>
                     </div>
