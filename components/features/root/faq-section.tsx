@@ -71,10 +71,10 @@ export function FAQSection() {
                   value={`item-${index}`}
                   className="mt-[-10px] border-[1.249px] border-solid border-[#E5E5E5] bg-[#FFF] text-[#000] text-[16px] not-italic font-medium leading-[28px] tracking-[-0.064px] px-5 p-2 sm:px-8 sm:py-5 rounded-sm hover:no-underline font-dm-sans text-xl"
                 >
-                  <AccordionTrigger className="text-start py-0 px-0 gap-8 items-start text-[#525252] font-['DM_Sans'] text-[16px] not-italic font-medium leading-[28px] tracking-[-0.064px]">
+                  <AccordionTrigger className="text-start py-0 px-0 gap-8 items-start  font-['DM_Sans'] text-[16px] not-italic font-medium leading-[28px] tracking-[-0.064px]">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="mt-5">
+                  <AccordionContent className="mt-5 text-[#525252]">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>

@@ -42,7 +42,7 @@ export function ProofOfReserveLanding() {
         {/* Vault Image with Company Logos */}
         <div className="flex justify-center items-center mb-8 sm:mb-12 lg:mb-0 max-w-[1178px] mx-auto">
           <div
-            className=" w-full max-w-[1183.345px] h-[333px] flex flex-col md:flex-row items-center"
+            className=" w-full max-w-[1183.345px] h-[333px] flex flex-col md:flex-row items-center mr-[2px] ml-[2px]"
             style={{
               background: `
       radial-gradient(100% 100% at left 60%, rgba(61, 199, 132, 0.38), transparent 70%),
@@ -79,7 +79,7 @@ export function ProofOfReserveLanding() {
         {/* Statistics Section */}
 
         <div className="rounded-none max-w-[1180px] mx-auto">
-          <div className="flex flex-col items-center sm:flex-row justify-between gap-3 sm:gap-4">
+          <div className="flex flex-col items-center sm:flex-row justify-between gap-3 sm:gap-4 pr-[8px]">
             {/* Assets On-Chain */}
             <div className="flex-1 flex justify-between h-[156px]">
               <div className="flex flex-col items-start gap-[24px]  w-[360px] h-[156px] pt-[24px] pl-[32.91px]">
