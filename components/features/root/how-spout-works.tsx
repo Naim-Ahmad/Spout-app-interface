@@ -5,9 +5,11 @@ import step2 from "@/assets/images/step-2.svg";
 import step3 from "@/assets/images/step-3.svg";
 import step4 from "@/assets/images/step-4.svg";
 import step5 from "@/assets/images/step-5.svg";
-import { animate, motion, useInView, useMotionValue } from "framer-motion";
+import { useSpring } from "framer-motion";
+
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 const steps = [
   {
@@ -52,103 +54,107 @@ const steps = [
   },
 ];
 
-const INTERVAL = 5000;
+const CARD_WIDTH = 392;
+const VISIBLE_CARDS = 3;
+const SCROLL_MULTIPLIER = 1.1;
 
 export function HowSpoutWorks() {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { margin: "-100px" });
+  const viewportRef = useRef<HTMLDivElement>(null);
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  const totalWidth = steps.length * CARD_WIDTH;
+  const maxX = 0;
+  const minX = -(totalWidth - CARD_WIDTH * VISIBLE_CARDS);
 
-  const x = useMotionValue("0%");
+  /** Raw value updated instantly */
+  const xRaw = useMotionValue(0);
 
-  const CARDS_PER_VIEW = 3;
-  const TOTAL_SLIDES = steps.length - CARDS_PER_VIEW + 1; // 3 slides
+  /** Spring smooths movement automatically */
+  const x = useSpring(xRaw, {
+    stiffness: 140,
+    damping: 28,
+    mass: 0.8,
+  });
 
-  useEffect(() => {
-    if (!inView) return;
+  /** Progress bar (cheap transform) */
+  const progress = useTransform(x, [minX, maxX], [1, 0]);
 
-    const timer = setInterval(() => {
-      setActiveIndex((prev) => (prev === TOTAL_SLIDES - 1 ? 0 : prev + 1));
-    }, INTERVAL);
+  const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    e.preventDefault();
 
-    return () => clearInterval(timer);
-  }, [inView]);
+    const delta = Math.max(-80, Math.min(80, e.deltaY));
+    const next = xRaw.get() - delta * SCROLL_MULTIPLIER;
 
-  useEffect(() => {
-    animate(x, `-${activeIndex * (100 / CARDS_PER_VIEW)}%`, {
-      type: "spring",
-      stiffness: 100,
-      damping: 28,
-      mass: 0.8,
-      restDelta: 0.001,
-      restSpeed: 0.01,
-    });
-  }, [activeIndex]);
-
-  // progressPercent
-  const progressPercent = ((activeIndex + 1) / TOTAL_SLIDES) * 100;
+    xRaw.set(Math.max(minX, Math.min(maxX, next)));
+  };
 
   return (
-    <section ref={ref} className="w-full pt-20 ">
+    <section className="w-full pt-20">
       <div className="px-6 lg:px-0">
-        {/* Header */}
-        <div className="flex w-[769px] flex-col justify-center items-center mx-auto mb-20">
+        {/* HEADER (unchanged) */}
+        <div className="flex w-[769px] flex-col items-center mx-auto mb-20">
           <h2 className="section-heading">How Spout works</h2>
-          <p className="text-[#757679] font-dm-sans text-base not-italic font-normal mt-[-6px] leading-6 tracking-[0.064px]">
+          <p className="text-[#757679] font-dm-sans text-base mt-[-6px] leading-6 tracking-[0.064px] text-center">
             Spout bridges the gap between traditional finance and DeFi by
-            tokenizing investment-grade corporate bonds, providing stable yields
-            while maintaining the benefits of blockchain technology.
+            tokenizing investment-grade corporate bonds.
           </p>
         </div>
 
-        <div className="w-screen bg-transparent border-t border-b mt-[-16px] border-[#F3F4F6] "></div>
+        <div className="w-screen border-t border-b mt-[-16px] border-[#F3F4F6]" />
 
-        <div className="max-w-[1178px] mx-auto ">
-          {/* Progress Bar */}
-          <div className="relative h-[10px] rounded-[24px] bg-gray-200 overflow-hidden">
-
-            {/* Masked gradient */}
+        <div className="max-w-[1178px] mx-auto">
+          {/* PROGRESS BAR (restored) */}
+          <div className="relative h-[10px] rounded-[24px] bg-gray-200 overflow-hidden ">
             <motion.div
               className="absolute inset-y-0 left-0"
-              animate={{ width: `${progressPercent}%` }}
-              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }} // smooth ease
               style={{
-                background: "linear-gradient(90deg, #DDFF87 0%, #0057FF 100%)",
+                scaleX: progress,
+                top: 0,
+                left: 0,
+                right: 0,
+                height: 10,
+                originX: 0,
+                background: "linear-gradient(90deg,#DDFF87 0%,#0057FF 100%)",
+                transform: "scaleX(0)",
               }}
-            />
-
-            {/* Background track */}
-            <motion.div
-              className="absolute inset-y-0 right-0 bg-gray-200"
-              animate={{ width: `${100 - progressPercent}%` }}
             />
           </div>
 
-          {/*Carousel viewport*/}
-          <div className="relative overflow-hidden">
-            <motion.div className="flex will-change-transform" style={{ x }}>
+          {/* VIEWPORT */}
+          <div
+            ref={viewportRef}
+            onWheel={handleWheel}
+            className="relative overflow-hidden"
+            style={{ overscrollBehavior: "contain" }}
+          >
+            {/* TRACK */}
+            <motion.div
+              className="flex will-change-transform"
+              style={{ x, transform: "translateZ(0)" }}
+            >
               {steps.map((step, i) => (
                 <div
-                  key={`${step.title}-${i}`}
-                  className="w-1/3 flex-shrink-0 border border-[#F3F4F6]"
+                  key={i}
+                  className="w-[392px] flex-shrink-0 border border-[#F3F4F6]"
                 >
                   <div className="relative z-10">
-                    <div className="text-[#191B20] font-dm-mono text-[14px] font-normal leading-[20px] py-4 px-6">
+                    <div className="text-[#191B20] font-dm-mono text-[14px] py-4 px-6">
                       {step.label}
                     </div>
-                    <div className="flex justify-center items-center mb-8 relative h-[274px]">
+
+                    <div className="flex justify-center items-center mb-8 h-[274px]">
                       <Image
                         src={step.image}
                         alt={step.title}
-                        className="mx-auto object-cover"
+                        className="object-cover"
                       />
                     </div>
+
                     <div className="px-6 pb-8">
-                      <h3 className="text-[#004040] font-pt-serif text-[24px] font-normal leading-[34px] tracking-[0.096px] pb-2">
+                      <h3 className="text-[#004040] font-pt-serif text-[24px] leading-[34px] pb-2">
                         {step.title}
                       </h3>
                       <p className="text-[#757679] font-dm-sans text-[15px] font-normal leading-[24px] tracking-[0.06px]">
+                        {/* Placeholder description */}
                         {step.description}
                       </p>
                     </div>
