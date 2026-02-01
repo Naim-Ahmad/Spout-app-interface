@@ -10,7 +10,7 @@ export function HeroSection() {
   return (
     <section className="w-full flex flex-col relative overflow-hidden pl-5 mb-[-34px]">
       {/* Hero content wrapper */}
-      <div className="relative w-full">
+      <div className="relative w-full h-[702px]">
         {/* Grid background */}
         <div className="absolute inset-0 pointer-events-none z-0">
           <img
