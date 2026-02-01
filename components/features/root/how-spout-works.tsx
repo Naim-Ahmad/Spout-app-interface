@@ -61,6 +61,7 @@ const EDGE_EPSILON = 8; // px (8–16 ideal)
 
 export function HowSpoutWorks() {
   const viewportRef = useRef<HTMLDivElement>(null);
+  const isActiveRef = useRef(false);
 
   const totalWidth = steps.length * CARD_WIDTH;
   const maxX = 0;
@@ -78,33 +79,57 @@ export function HowSpoutWorks() {
 
   /** Progress bar (cheap transform) */
   const progress = useTransform(x, [minX, maxX], [1, 0]);
+
   useEffect(() => {
     const el = viewportRef.current;
     if (!el) return;
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isActiveRef.current = entry.isIntersecting;
+      },
+      {
+        threshold: 0.8,
+      },
+    );
+
+    observer.observe(el);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
     const onWheel = (e: WheelEvent) => {
-      const delta = Math.max(-80, Math.min(80, e.deltaY));
+      const el = viewportRef.current;
+      if (!el) return;
+
+      const rect = el.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      // ✅ section is considered active if center is in viewport
+      const isActive =
+        rect.top < viewportHeight * 0.4 && rect.bottom > viewportHeight * 0.4;
+
+      if (!isActive) return;
+
+      const delta = Math.max(-120, Math.min(120, e.deltaY));
       const currentX = xRaw.get();
       const next = currentX - delta * SCROLL_MULTIPLIER;
+      const clamped = Math.max(minX, Math.min(maxX, next));
 
-      const nearLeftEdge = currentX > maxX - EDGE_EPSILON;
-      const nearRightEdge = currentX < minX + EDGE_EPSILON;
+      const canMoveHorizontally = clamped !== currentX;
 
-      const canScrollHorizontally =
-        (delta < 0 && !nearLeftEdge) || // scroll left
-        (delta > 0 && !nearRightEdge); // scroll right
-
-      if (canScrollHorizontally) {
-        e.preventDefault();
-        xRaw.set(Math.max(minX, Math.min(maxX, next)));
+      if (canMoveHorizontally) {
+        e.preventDefault(); // 🔒 GUARANTEED hijack
+        xRaw.set(clamped);
       }
       // else → allow vertical scroll
     };
 
-    el.addEventListener("wheel", onWheel, { passive: false });
+    window.addEventListener("wheel", onWheel, { passive: false });
 
     return () => {
-      el.removeEventListener("wheel", onWheel);
+      window.removeEventListener("wheel", onWheel);
     };
   }, [minX, maxX]);
 
@@ -121,8 +146,7 @@ export function HowSpoutWorks() {
         </div>
 
         <div className="w-screen border-t border-b mt-[-16px] border-[#F3F4F6]" />
-
-        <div className="max-w-[1178px] mx-auto">
+        <div className="max-w-[1178px] mx-auto " ref={viewportRef}>
           {/* PROGRESS BAR (restored) */}
           <div className="relative h-[10px] rounded-[24px] bg-gray-200 overflow-hidden ">
             <motion.div
@@ -142,7 +166,6 @@ export function HowSpoutWorks() {
 
           {/* VIEWPORT */}
           <div
-            ref={viewportRef}
             className="relative overflow-hidden mr-[2px]"
             // style={{ overscrollBehavior: "contain" }}
           >

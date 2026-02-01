@@ -20,7 +20,7 @@ export function HeroSection() {
         </div>
 
         {/* Main content */}
-        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:ps-16 pt-6 sm:pt-12 lg:pt-0 pb-16 flex flex-col lg:flex-row gap-10 xl:gap-[100px] items-center">
+        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:ps-16 pt-6 sm:pt-12 lg:pt-0 pb-16 flex flex-col lg:flex-row gap-10 xl:gap-[80px] justify-center items-center">
           {/* Left column */}
           <div className="lg:max-w-[840px] sm:mb-12">
             <div className="">
