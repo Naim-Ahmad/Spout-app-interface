@@ -9,7 +9,7 @@ import { useSpring } from "framer-motion";
 
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const steps = [
   {
@@ -87,6 +87,26 @@ export function HowSpoutWorks() {
     xRaw.set(Math.max(minX, Math.min(maxX, next)));
   };
 
+  useEffect(() => {
+    const el = viewportRef.current;
+    if (!el) return;
+
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+
+      const delta = Math.max(-80, Math.min(80, e.deltaY));
+      const next = xRaw.get() - delta * 1.1;
+
+      xRaw.set(Math.max(minX, Math.min(maxX, next)));
+    };
+
+    el.addEventListener("wheel", onWheel, { passive: false });
+
+    return () => {
+      el.removeEventListener("wheel", onWheel);
+    };
+  }, [minX, maxX]);
+
   return (
     <section className="w-full pt-20">
       <div className="px-6 lg:px-0">
@@ -122,8 +142,7 @@ export function HowSpoutWorks() {
           {/* VIEWPORT */}
           <div
             ref={viewportRef}
-            onWheel={handleWheel}
-            className="relative overflow-hidden"
+            className="relative overflow-hidden mr-[2px]"
             style={{ overscrollBehavior: "contain" }}
           >
             {/* TRACK */}
@@ -145,11 +164,11 @@ export function HowSpoutWorks() {
                       <Image
                         src={step.image}
                         alt={step.title}
-                        className="object-cover"
+                        className="object-contain"
                       />
                     </div>
 
-                    <div className="px-6 pb-8">
+                    <div className="px-5 pb-[27px]">
                       <h3 className="text-[#004040] font-pt-serif text-[24px] leading-[34px] pb-2">
                         {step.title}
                       </h3>
