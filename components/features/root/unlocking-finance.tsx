@@ -11,7 +11,7 @@ export function UnlockingFinance() {
       <div className="w-full px-4 sm:px-6 lg:px-0 pb-8 lg:pb-0">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="section-heading text-3xl capitalize sm:text-4xl lg:text-5xl font-pt-serif leading-[56px] tracking-[0.192px] text-spout-deep-teal font-normal mb-4 sm:mb-6">
+          <h2 className="section-heading text-3xl capitalize sm:text-4xl lg:text-5xl font-pt-serif !leading-[56px] tracking-[0.192px] text-spout-deep-teal font-normal mb-4 sm:mb-6">
             Unlocking <span className="font-normal">Finance</span> with DeFi
             <br />
             through our stablecoin
