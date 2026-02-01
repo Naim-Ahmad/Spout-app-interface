@@ -24,7 +24,7 @@ export function HeroSection() {
           {/* Left column */}
           <div className="lg:max-w-[840px] sm:mb-12">
             <div className="">
-              <h1 className="mt-[100px] mb-[16px] text-[#004040] font-pt-serif text-[52px] font-normal leading-[72px] tracking-[0.208px]">
+              <h1 className="mt-[155px] mb-[16px] text-[#004040] font-pt-serif text-[52px] font-normal leading-[72px] tracking-[0.208px]">
                 The Go-To Platform for Margin Trading at{" "}
                 <span className="text-spout-blue">0%</span> Rates
               </h1>

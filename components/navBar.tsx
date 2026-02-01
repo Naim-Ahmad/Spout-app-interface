@@ -38,7 +38,7 @@ export default function Navbar() {
           <NavItems items={navItems} />
           <Link
             href="/app"
-            className="p-[10px] h-[32px] flex items-center text-sm bg-[#004040] hover:bg-[#003030] text-white font-semibold transition-colors z-50 relative rounded-md text-[14px] leading-5 font-noto-sans"
+            className="p-[10px] w-[114px] h-[32px] flex items-center text-sm bg-[#004040] hover:bg-[#003030] text-white font-semibold transition-colors z-50 relative rounded-md text-[14px] leading-5 font-noto-sans"
           >
             Get Started
           </Link>

@@ -1,11 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Button as JoinButton } from "@/components/ui/button";
 import { LoadingSpinner } from "@/components/loadingSpinner";
+import { Button as JoinButton } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
+import { useState } from "react";
 
 export function JoinMailingList() {
   const [email, setEmail] = useState("");
@@ -77,17 +76,17 @@ export function JoinMailingList() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="flex flex-col sm:flex-row gap-2 w-full items-center"
+      className="flex flex-col sm:flex-row gap-3 w-full items-center"
     >
       {!joined && (
-        <Input
+        <input
           type="email"
           placeholder="Enter your email to join our mailing list"
           value={email}
           onChange={handleEmailChange}
           onBlur={handleEmailBlur}
           autoComplete="email"
-          className={`text-[#9F9F9F] w-full font-dm-sans text-sm not-italic font-normal leading-4 outline-none flex h-11  pl-5 py-[14px] items-center ${
+          className={`text-[#9F9F9F] w-[395px] font-dm-sans text-sm not-italic font-normal leading-4 outline-none flex h-11  pl-5 py-[14px] items-center border-[#E2E2E2] border rounded-[6px] focus:border-primary ${
             error ? "border-red-300 focus-visible:ring-red-400" : ""
           }`}
           disabled={loading}
@@ -101,11 +100,11 @@ export function JoinMailingList() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="flex w-[105px] h-10 p-2.5 justify-center items-center gap-2.5"
+            className="flex justify-center items-center "
           >
             <JoinButton
               type="submit"
-              className="bg-[#DAE5F2] hover:bg-[#DAE5F2] data-[hovered]:bg-[#DAE5F2] border-[1.5px] border-[#A7C6ED] text-[#3D5678] px-6 py-2 font-dm-sans rounded-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-[#DAE5F2] hover:bg-[#DAE5F2] data-[hovered]:bg-[#DAE5F2] border-[1.5px] border-[#A7C6ED] text-[#3D5678] w-[105px] h-[40px] font-dm-sans rounded-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
               isDisabled={
                 loading || (email.length > 0 && !isValidEmail(email.trim()))
               }
