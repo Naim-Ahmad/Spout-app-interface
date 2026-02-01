@@ -191,7 +191,7 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Desktop Layout - Original layout */}
         <div className="hidden lg:flex lg:flex-row lg:justify-between lg:w-full lg:gap-12 max-w-[1305px] mx-auto">
           {/* Left side - Logo and copyright */}
-          <div className="space-y-6 py-12 border-r border-[#F3F4F6] pr-[72px]">
+          <div className="space-y-5 pt-[52px] pb-[104px] border-r border-[#F3F4F6] pr-[55px]">
             <div className="flex items-center mb-4">
               <Image
                 src="/Spout_complete.png"
@@ -320,7 +320,7 @@ const DefaultFooter = () => {
     <Footer
       leftLinks={leftLinks}
       rightLinks={rightLinks}
-      copyrightText={`© ${new Date().getFullYear()} Spout Finance. All rights reserved.`}
+      copyrightText={`${new Date().getFullYear()} Spout Finance. All rights reserved.`}
       barCount={25}
     />
   );
