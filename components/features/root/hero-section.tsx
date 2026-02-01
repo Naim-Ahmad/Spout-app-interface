@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export function HeroSection() {
   return (
-    <section className="w-full flex flex-col relative overflow-hidden pl-5 mb-[-34px]">
+    <section className="w-full flex flex-col relative pl-5 mb-[-34px]">
       {/* Hero content wrapper */}
       <div className="relative w-full h-[702px]">
         {/* Grid background */}
@@ -20,7 +20,7 @@ export function HeroSection() {
         </div>
 
         {/* Main content */}
-        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 pt-6 sm:pt-12 lg:pt-0 pb-16 flex flex-col lg:flex-row gap-10 xl:gap-[114px] items-center">
+        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:ps-16 pt-6 sm:pt-12 lg:pt-0 pb-16 flex flex-col lg:flex-row gap-10 xl:gap-[114px] items-center">
           {/* Left column */}
           <div className="lg:max-w-[840px] sm:mb-12">
             <div className="">
@@ -58,16 +58,14 @@ export function HeroSection() {
           </div>
 
           {/* Right column - image */}
-          <div className="w-[368.592px] h-[670px]">
-            <div className="w-[368.592px] h-[670px]">
-              <Image
-                src={image1}
-                alt="Spout Water Tokens"
-                priority
-                quality={100}
-                className="w-full h-full aspect-[192/349]"
-              />
-            </div>
+          <div className="w-[368.592px] h-[670px] relative">
+            <Image
+              src={image1}
+              alt="Spout Water Tokens"
+              fill
+              quality={100}
+              objectFit="cover"
+            />
           </div>
         </div>
       </div>
