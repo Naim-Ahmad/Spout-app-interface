@@ -28,7 +28,7 @@ export function UnlockingFinance() {
         <div className="w-screen bg-transparent border-t border-b border-[#F3F4F6] "></div>
 
         {/* Cards Section */}
-        <div className="relative max-w-[1178px] h-[340px] mx-auto grid grid-cols-1 lg:grid-cols-2">
+        <div className="relative max-w-[1178px] h-[340px] mx-auto flex">
           {/* DeFi Integration Benefits Card */}
 
           <div className="flex ">
