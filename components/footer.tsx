@@ -289,10 +289,10 @@ export const Footer: React.FC<FooterProps> = ({
       {/* Disclaimer Section - Hidden on mobile */}
       <div className="hidden md:block  relative z-10 w-full max-w-[1305px] mx-auto h-[85px]">
         <div className="py-8 max-w-[755px] font-dm-sans ">
-          <h5 className="text-[#525252] font-dm-sans text-[18px] not-italic font-medium leading-7 tracking-[-0.072px]">
+          <h5 className="text-[#525252] font-['DM_Sans'] text-[18px] not-italic font-medium leading-[28px] tracking-[-0.072px]">
             Disclaimer
           </h5>
-          <p className="text-[#525252] font-dm-sans text-[14px] not-italic font-normal leading-[24px] tracking-[-0.056px]">
+          <p className="text-[#525252] font-['DM_Sans'] text-[14px] not-italic font-normal leading-[24px] tracking-[-0.056px]">
             All provided information has been carefully researched and checked.
             In spite of taking due care, Spout Finance does not accept any
             warranty for the information being correct, complete, and up to

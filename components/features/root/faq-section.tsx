@@ -42,15 +42,15 @@ export function FAQSection() {
         <div className="flex gap-[36px]">
           {/* Left Column - Header */}
           <div className="basis-[448px]">
-            <div className="text-xs sm:text-sm font-medium text-[#475569] mb-3 sm:mb-4 tracking-wider">
+            <div className="text-[#004040] font-['DM_Sans'] text-[14px] not-italic font-medium leading-normal uppercase">
               [ FAQ ]
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-pt-serif font-normal text-[#004040] mb-4 sm:mb-6 tracking-[0.192px]">
+            <h2 className="text-[#004040] font-['PT_Serif'] text-[36px] not-italic font-normal leading-[56px] tracking-[0.144px]">
               Frequently asked
               <br />
               questions
             </h2>
-            <p className="text-base sm:text-lg font-noto-sans font-normal text-[#475569] leading-relaxed">
+            <p className="pt-4 text-[#757679] font-['DM_Sans'] text-[16px] not-italic font-normal leading-[28px] tracking-[-0.064px]">
               Everything you need to know about Spout and
               <br />
               how we&apos;re changing decentralized investing.
@@ -69,9 +69,9 @@ export function FAQSection() {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="faq-title border-[1px] border-[#F3F4F6] px-5 p-2 sm:px-8 sm:py-5 rounded-sm hover:no-underline font-dm-sans text-[#4f4f4f] text-xl"
+                  className="mt-[-10px] border-[1.249px] border-solid border-[#E5E5E5] bg-[#FFF] text-[#000] text-[16px] not-italic font-medium leading-[28px] tracking-[-0.064px] px-5 p-2 sm:px-8 sm:py-5 rounded-sm hover:no-underline font-dm-sans text-xl"
                 >
-                  <AccordionTrigger className="text-start py-0 px-0 gap-8 items-start">
+                  <AccordionTrigger className="text-start py-0 px-0 gap-8 items-start text-[#000] font-['DM_Sans'] text-[16px] not-italic font-medium leading-[28px] tracking-[-0.064px]">
                     {item.question}
                   </AccordionTrigger>
                   <AccordionContent className="mt-5">

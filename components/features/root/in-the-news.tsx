@@ -38,15 +38,15 @@ export function InTheNews() {
   };
 
   return (
-    <section className="w-full py-4 sm:py-6 lg:pt-8 lg:pb-0">
+    <section className="w-full">
       {/* Section content */}
-      <div className="w-full  px-4 sm:px-6 md:px-8 lg:px-0 pb-8">
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-0 pb-8">
         {/* Header */}
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="section-heading">
+        <div className="text-center ">
+          <h2 className="text-[#004040] text-center font-['PT_Serif'] text-[48px] not-italic font-normal leading-[56px] tracking-[0.192px]">
             In the <span className="">Press</span>
           </h2>
-          <p className="section-description">
+          <p className="text-[#757679] pt-3 text-center font-['DM_Sans'] text-[16px] not-italic font-normal leading-[28px] tracking-[-0.064px]">
             Financial media outlets are highlighting our approach to secure,
             regulated
             <br />
@@ -54,7 +54,7 @@ export function InTheNews() {
           </p>
         </div>
 
-        <div className="w-screen bg-transparent border-t border-b border-[#F3F4F6] "></div>
+        <div className="w-screen bg-transparent border-t border-b mt-[70px] border-[#F3F4F6] "></div>
 
         {/* News Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-8 sm:mb-12 lg:mb-0 max-w-[1178px] mx-auto">
@@ -82,7 +82,7 @@ export function InTheNews() {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 md:px-4 tracking-[-0.064px] leading-[28px] bg-[rgba(167,198,237,0.35)] border border-blue-200 rounded text-[#004040] font-dm-sans text-[16px] font-[500] flex-shrink-0 "
+                      className="border border-solid border-[#A7C6ED] bg-[rgba(167,198,237,0.35)] flex items-center  gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 md:px-4 tracking-[-0.064px] leading-[28px]  text-[#004040] font-dm-sans text-[16px] font-[500] flex-shrink-0 "
                     >
                       <Image
                         src="/svg-assets/landingpage/spout-book.svg"

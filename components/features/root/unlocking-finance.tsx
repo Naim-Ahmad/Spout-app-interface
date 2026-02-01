@@ -6,7 +6,7 @@ import lockImage from "@/assets/images/lock.svg";
 
 export function UnlockingFinance() {
   return (
-    <section className="w-full py-4 sm:py-6 lg:pt-8 lg:pb-0 relative">
+    <section className="w-full relative">
       {/* Section content */}
       <div className="w-full px-4 sm:px-6 lg:px-0 pb-8 lg:pb-0">
         {/* Header */}
@@ -28,11 +28,11 @@ export function UnlockingFinance() {
         <div className="w-screen bg-transparent border-t border-b border-[#F3F4F6] "></div>
 
         {/* Cards Section */}
-        <div className="relative max-w-[1178px] mx-auto  grid grid-cols-1 lg:grid-cols-2 gap-0 mb-6 sm:mb-8 lg:mb-0">
+        <div className="relative max-w-[1178px] h-[340px] mx-auto grid grid-cols-1 lg:grid-cols-2">
           {/* DeFi Integration Benefits Card */}
 
           <div className="flex ">
-            <div className="rounded-l-none sm:rounded-l-none rounded-r-none sm:rounded-r-none p-4 sm:p-6 lg:p-8 relative">
+            <div className="w-[524px] rounded-l-none sm:rounded-l-none rounded-r-none sm:rounded-r-none p-10 relative ">
               <div className="flex bg-[#A7C6ED]/35 border border-[#A7C6ED] items-center gap-2 sm:gap-3 mb-3 sm:mb-4 w-fit px-2 py-1 rounded-none">
                 <Image
                   src="/svg-assets/icon-shield-security.svg"
@@ -79,14 +79,14 @@ export function UnlockingFinance() {
                 />
               </div>
             </div>
-            <div className="bg-linear-gradient-2 w-[64px] sm:w-[94px] h-[340px] sm:h-auto"></div>
+            <div className="bg-linear-gradient-2 w-[64px] h-[340px]"></div>
           </div>
 
           {/* DeFi Security & Transparency Card */}
           <div className="flex ">
-            <div className="bg-linear-gradient-3 w-[64px] sm:w-[94px] h-[340px] sm:h-auto"></div>
+            <div className="bg-linear-gradient-3 w-[64px] h-[340px] sm:h-auto"></div>
 
-            <div className="rounded-r-none sm:rounded-r-none rounded-l-none sm:rounded-l-none p-4 sm:p-6 lg:p-8 relative">
+            <div className="w-[524px] rounded-r-none sm:rounded-r-none rounded-l-none sm:rounded-l-none p-4 sm:p-6 lg:p-8 relative">
               <div className="flex bg-[#A7C6ED]/35 border border-[#A7C6ED] items-center gap-2 sm:gap-3 mb-3 sm:mb-4 w-fit px-2 py-1 rounded-none">
                 <Image
                   src="/svg-assets/defi-security-transparency.svg"

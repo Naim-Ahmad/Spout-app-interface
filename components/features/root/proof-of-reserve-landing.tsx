@@ -78,18 +78,16 @@ export function ProofOfReserveLanding() {
 
         {/* Statistics Section */}
 
-        <div className="rounded-none max-w-[1183px] mx-auto">
+        <div className="rounded-none max-w-[1180px] mx-auto">
           <div className="flex flex-col items-center sm:flex-row justify-between gap-3 sm:gap-4">
-            
             {/* Assets On-Chain */}
-            <div className="flex-1 flex justify-between">
-              <div className="flex flex-col items-start gap-[24px] shrink-0 w-[369.743px] h-[156px] pt-[24px] pr-[207.833px] pb-[20.107px] pl-[32.91px]">
-
-                  <Image
-                    src={frame3Svg}
-                    alt="Bank"
-                    className="w-[35.843px] h-[38.893px]"
-                  />
+            <div className="flex-1 flex justify-between h-[156px]">
+              <div className="flex flex-col items-start gap-[24px]  w-[360px] h-[156px] pt-[24px] pl-[32.91px]">
+                <Image
+                  src={frame3Svg}
+                  alt="Bank"
+                  className="w-[35.843px] h-[38.893px]"
+                />
 
                 <div>
                   <div className="text-black font-dm-sans text-[20px] font-semibold leading-normal">
@@ -100,21 +98,19 @@ export function ProofOfReserveLanding() {
                   </div>
                 </div>
               </div>
-              <div className="bg-linear-gradient-1 w-[15px] sm:w-[22px] h-[156px]"></div>
+              <div className="bg-linear-gradient-1 w-[21.985px] h-[156px]"></div>
             </div>
-
 
             {/* Investments Tokenized */}
 
-            <div className="flex-1 flex justify-between w-[200px] sm:w-auto lg:max-w-[370px] h-[156px] sm:h-auto">
-              <div className="flex flex-col items-start justify-center gap-[20px] sm:gap-[24px] px-4 sm:px-6 lg:px-10 py-3 sm:py-4">
-                <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0">
-                  <Image
-                    src={frame1Svg}
-                    alt="Category"
-                    className="w-[35.843px] h-[38.893px]"
-                  />
-                </div>
+            <div className="flex-1 flex justify-between">
+              <div className="flex flex-col items-start gap-[24px] w-[360px] h-[156px] pt-[24px] pl-[25.91px]">
+                <Image
+                  src={frame1Svg}
+                  alt="Category"
+                  className="w-[35.843px] h-[38.893px]"
+                />
+
                 <div>
                   <div className="text-black font-dm-sans text-[20px] font-semibold leading-normal">
                     1,124
@@ -124,20 +120,19 @@ export function ProofOfReserveLanding() {
                   </div>
                 </div>
               </div>
-              <div className="bg-linear-gradient-2 w-[15px] sm:w-[22px] h-[156px]"></div>
+              <div className="bg-linear-gradient-2 w-[21.985px] h-[156px]"></div>
             </div>
 
             {/* Proof-of-Reserve Verified */}
 
-            <div className="flex-1 flex justify-between w-[200px] sm:w-auto lg:max-w-[370px] h-[156px] sm:h-auto">
-              <div className="flex flex-col items-start justify-center gap-[20px] sm:gap-[24px] px-4 sm:px-6 lg:px-10 py-3 sm:py-4">
-                <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0">
-                  <Image
-                    src={frame2Svg}
-                    alt="Shield"
-                    className="w-[35.843px] h-[38.893px]"
-                  />
-                </div>
+            <div className="flex-1 flex justify-between">
+              <div className="flex flex-col items-start gap-[24px] w-[360px] h-[156px] pt-[24px] pl-[25.91px]">
+                <Image
+                  src={frame2Svg}
+                  alt="Shield"
+                  className="w-[35.843px] h-[38.893px]"
+                />
+
                 <div>
                   <div className="text-black font-dm-sans text-[20px] font-semibold leading-normal">
                     100%
@@ -147,10 +142,11 @@ export function ProofOfReserveLanding() {
                   </div>
                 </div>
               </div>
-              <div className="bg-linear-gradient-3 w-[15px] sm:w-[22px] h-[156px]"></div>
+              <div className="bg-linear-gradient-3 w-[21.985px] h-[156px]"></div>
             </div>
           </div>
         </div>
+        <div className="h-[100px] w-screen bg-transparent border-t-2 border-b-2 border-[#F3F4F6]"></div>
       </div>
     </section>
   );

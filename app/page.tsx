@@ -47,7 +47,6 @@ export default function HomePage() {
           <div className="relative z-10 w-full">
             <ProofOfReserveLanding />
           </div>
-          <div className="h-[100px] w-screen bg-transparent border-t-2 border-b-2 border-[#F3F4F6] "></div>
 
           {/* Unlocking Finance Section */}
           <div className="relative z-10 w-full">
@@ -59,7 +58,6 @@ export default function HomePage() {
           <div className="relative z-10 w-full">
             <InvestmentDifferent />
           </div>
-          <div className="h-[100px] w-screen bg-transparent border-t-2 border-b-2 border-[#F3F4F6] "></div>
 
           {/* In The News Section */}
           <div className="relative z-10 w-full">

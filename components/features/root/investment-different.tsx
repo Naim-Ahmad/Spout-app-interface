@@ -43,13 +43,13 @@ export function InvestmentDifferent() {
   };
 
   return (
-    <section className="w-full py-4 sm:py-6 lg:pt-8 lg:pb-0 relative">
+    <section className="w-full py-20 relative">
       {/* Section content */}
       <div className="w-full  px-4 sm:px-8 lg:px-0 pb-8 lg:pb-0">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="section-heading text-[#004040] text-center text-[48px] leading-[56px] tracking-[0.192px]">Smarter On-chain Investing</h2>
-          <p className="section-description">
+          <h2 className="text-[#004040] text-center font-['PT_Serif'] text-[48px] not-italic font-normal leading-[56px] tracking-[0.192px]">Smarter On-chain Investing</h2> 
+          <p className="pt-5 text-[#757679] text-center font-['DM_Sans'] text-[16px] not-italic font-normal leading-[28px] tracking-[-0.064px]">
             Consistent returns from regulated investment-grade securities, with
             instant trading
             <br />
@@ -99,7 +99,7 @@ export function InvestmentDifferent() {
                   {feature.badges.map((badge, badgeIndex) => (
                     <span
                       key={badgeIndex}
-                      className="px-2 sm:px-3 py-1 bg-blue-50 border border-blue-200 rounded text-[#3D5678] text-center font-[DM Sans] text-[16px] font-medium leading-[28px] tracking-[-0.064px]"
+                      className="px-2 sm:px-3 py-1 rounded-[4px] border border-solid border-[#A7C6ED] bg-[rgba(167,198,237,0.35)] text-[#3D5678] text-center font-[DM Sans] text-[16px] font-medium leading-[28px] tracking-[-0.064px]"
                     >
                       {badge}
                     </span>
@@ -109,6 +109,7 @@ export function InvestmentDifferent() {
             </div>
           ))}
         </div>
+        <div className="h-[100px] w-screen bg-transparent border-t-2 border-b-2 border-[#F3F4F6]"></div>
       </div>
     </section>
   );
