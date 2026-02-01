@@ -68,7 +68,7 @@ export default function HomePage() {
           <div className="relative z-10 w-full">
             <FAQSection />
           </div>
-          <div className=" w-screen bg-transparent border-b-2 border-[#F3F4F6] "></div>
+
 
           {/* CTA Section */}
           <div className="relative z-10 w-full">

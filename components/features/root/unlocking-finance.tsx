@@ -33,7 +33,7 @@ export function UnlockingFinance() {
 
           <div className="flex ">
             <div className="w-[524px] rounded-l-none sm:rounded-l-none rounded-r-none sm:rounded-r-none p-10 relative ">
-              <div className="flex bg-[#A7C6ED]/35 border border-[#A7C6ED] items-center gap-2 sm:gap-3 mb-3 sm:mb-4 w-fit px-2 py-1 rounded-none">
+              <div className="rounded-[4px] border-[1px] border-solid border-[#A7C6ED] flex bg-[#A7C6ED]/35  items-center gap-2 sm:gap-3 mb-3 sm:mb-4 w-fit px-2 py-1">
                 <Image
                   src="/svg-assets/icon-shield-security.svg"
                   alt="Shield"
@@ -87,7 +87,7 @@ export function UnlockingFinance() {
             <div className="bg-linear-gradient-3 w-[64px] h-[340px] sm:h-auto"></div>
 
             <div className="w-[524px] rounded-r-none sm:rounded-r-none rounded-l-none sm:rounded-l-none p-4 sm:p-6 lg:p-8 relative">
-              <div className="flex bg-[#A7C6ED]/35 border border-[#A7C6ED] items-center gap-2 sm:gap-3 mb-3 sm:mb-4 w-fit px-2 py-1 rounded-none">
+              <div className="flex bg-[#A7C6ED]/35 rounded-[4px] border-[1px] border-solid border-[#A7C6ED]  items-center gap-2 sm:gap-3 mb-3 sm:mb-4 w-fit px-2 py-1">
                 <Image
                   src="/svg-assets/defi-security-transparency.svg"
                   alt="Lock"

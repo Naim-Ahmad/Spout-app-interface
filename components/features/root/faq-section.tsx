@@ -63,7 +63,7 @@ export function FAQSection() {
               type="single"
               collapsible
               defaultValue="item-1"
-              className="text-start w"
+              className="text-start"
             >
               {faqs.map((item, index) => (
                 <AccordionItem
@@ -71,7 +71,7 @@ export function FAQSection() {
                   value={`item-${index}`}
                   className="mt-[-10px] border-[1.249px] border-solid border-[#E5E5E5] bg-[#FFF] text-[#000] text-[16px] not-italic font-medium leading-[28px] tracking-[-0.064px] px-5 p-2 sm:px-8 sm:py-5 rounded-sm hover:no-underline font-dm-sans text-xl"
                 >
-                  <AccordionTrigger className="text-start py-0 px-0 gap-8 items-start text-[#000] font-['DM_Sans'] text-[16px] not-italic font-medium leading-[28px] tracking-[-0.064px]">
+                  <AccordionTrigger className="text-start py-0 px-0 gap-8 items-start text-[#525252] font-['DM_Sans'] text-[16px] not-italic font-medium leading-[28px] tracking-[-0.064px]">
                     {item.question}
                   </AccordionTrigger>
                   <AccordionContent className="mt-5">
@@ -83,7 +83,7 @@ export function FAQSection() {
               <div className="mt-4 sm:mt-6 text-end">
                 <Link
                   href="/faq"
-                  className="group border rounded-sm border-[#E8E8E8] bg-white p-[10px] inline-flex text-sm sm:text-base font-noto-sans font-medium text-[#000] transition-colors items-end gap-2"
+                  className="h-[36px] w-[116px] items-center justify-center group border rounded-sm border-[#E8E8E8] bg-white p-[10px] inline-flex text-sm sm:text-base font-noto-sans font-medium text-[#000] transition-colors gap-2"
                 >
                   View All
                   <svg

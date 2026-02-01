@@ -58,14 +58,16 @@ export function HeroSection() {
           </div>
 
           {/* Right column - image */}
-          <div>
-            <Image
-              src={image1}
-              alt="Spout Water Tokens"
-              priority
-              quality={100}
-              className="w-[368.592px] h-[670px] aspect-[192/349] rotate-[-6deg]"
-            />
+          <div className="w-[368.592px] h-[670px]">
+            <div className="w-[368.592px] h-[670px]">
+              <Image
+                src={image1}
+                alt="Spout Water Tokens"
+                priority
+                quality={100}
+                className="w-full h-full aspect-[192/349]"
+              />
+            </div>
           </div>
         </div>
       </div>

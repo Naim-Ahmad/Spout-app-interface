@@ -288,7 +288,7 @@ export const Footer: React.FC<FooterProps> = ({
 
       {/* Disclaimer Section - Hidden on mobile */}
       <div className="hidden md:block  relative z-10 w-full max-w-[1305px] mx-auto h-[85px]">
-        <div className="py-8 max-w-[755px] font-dm-sans ">
+        <div className="flex flex-col gap-2 py-10 ml-[-4px] max-w-[755px] font-dm-sans ">
           <h5 className="text-[#525252] font-['DM_Sans'] text-[18px] not-italic font-medium leading-[28px] tracking-[-0.072px]">
             Disclaimer
           </h5>

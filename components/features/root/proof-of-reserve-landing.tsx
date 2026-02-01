@@ -46,7 +46,7 @@ export function ProofOfReserveLanding() {
             style={{
               background: `
       radial-gradient(100% 100% at left 60%, rgba(61, 199, 132, 0.38), transparent 70%),
-      radial-gradient(150% 100% at right 80%, rgba(88, 162, 255, 0.38), transparent 60%)
+      radial-gradient(150% 160% at right 80%, rgba(88, 162, 255, 0.38), transparent 60%)
     `,
             }}
           >

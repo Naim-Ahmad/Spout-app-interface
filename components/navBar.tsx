@@ -36,11 +36,11 @@ export default function Navbar() {
 
       <NavBody className="flex justify-between h-[68px]">
         <NavbarLogo />
-        <div className="flex items-center gap-[32px]">
-          <NavItems items={navItems} className="pr-6" />
+        <div className="flex items-center gap-[64px]">
+          <NavItems items={navItems} className="" />
           <Link
             href="/app"
-            className="not-italic mr-4 gap-[10px] p-[10px] w-[114px] h-[32px] flex items-center justify-center text-sm bg-[#004040] hover:bg-[#003030] text-white font-semibold transition-colors z-50 relative rounded-md text-[14px] leading-5 font-noto-sans"
+            className="not-italic mr-4 p-[10px] w-[114px] h-[32px] flex items-center justify-center text-sm bg-[#004040] hover:bg-[#003030] text-white font-semibold transition-colors z-50 relative rounded-md text-[14px] leading-5 font-noto-sans"
           >
             Get Started
           </Link>
