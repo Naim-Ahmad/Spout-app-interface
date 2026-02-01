@@ -57,6 +57,7 @@ const steps = [
 const CARD_WIDTH = 392;
 const VISIBLE_CARDS = 3;
 const SCROLL_MULTIPLIER = 1.1;
+const EDGE_EPSILON = 8; // px (8–16 ideal)
 
 export function HowSpoutWorks() {
   const viewportRef = useRef<HTMLDivElement>(null);
@@ -77,27 +78,27 @@ export function HowSpoutWorks() {
 
   /** Progress bar (cheap transform) */
   const progress = useTransform(x, [minX, maxX], [1, 0]);
-
-  const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
-    e.preventDefault();
-
-    const delta = Math.max(-80, Math.min(80, e.deltaY));
-    const next = xRaw.get() - delta * SCROLL_MULTIPLIER;
-
-    xRaw.set(Math.max(minX, Math.min(maxX, next)));
-  };
-
   useEffect(() => {
     const el = viewportRef.current;
     if (!el) return;
 
     const onWheel = (e: WheelEvent) => {
-      e.preventDefault();
-
       const delta = Math.max(-80, Math.min(80, e.deltaY));
-      const next = xRaw.get() - delta * 1.1;
+      const currentX = xRaw.get();
+      const next = currentX - delta * SCROLL_MULTIPLIER;
 
-      xRaw.set(Math.max(minX, Math.min(maxX, next)));
+      const nearLeftEdge = currentX > maxX - EDGE_EPSILON;
+      const nearRightEdge = currentX < minX + EDGE_EPSILON;
+
+      const canScrollHorizontally =
+        (delta < 0 && !nearLeftEdge) || // scroll left
+        (delta > 0 && !nearRightEdge); // scroll right
+
+      if (canScrollHorizontally) {
+        e.preventDefault();
+        xRaw.set(Math.max(minX, Math.min(maxX, next)));
+      }
+      // else → allow vertical scroll
     };
 
     el.addEventListener("wheel", onWheel, { passive: false });
@@ -143,7 +144,7 @@ export function HowSpoutWorks() {
           <div
             ref={viewportRef}
             className="relative overflow-hidden mr-[2px]"
-            style={{ overscrollBehavior: "contain" }}
+            // style={{ overscrollBehavior: "contain" }}
           >
             {/* TRACK */}
             <motion.div
