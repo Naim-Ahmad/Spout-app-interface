@@ -104,7 +104,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         minWidth: "800px",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-[1440px] flex-row items-center justify-between self-start rounded-2xl bg-white px-16 py-4 lg:flex dark:bg-white",
+        "relative z-[60] mx-auto hidden w-full max-w-[1440px] flex-row items-center justify-between self-start rounded-2xl bg-white px-16 py-[10px] lg:flex dark:bg-white",
         className,
       )}
     >
@@ -120,7 +120,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "hidden flex-row items-center space-x-2 text-base font-normal text-gray-700 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-8",
+        "hidden flex-row items-center space-x-2 text-[14px] font-medium leading-5  text-[#545D68] transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-8",
         className,
       )}
     >
@@ -128,11 +128,11 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
         <div key={item.name} className="flex items-center">
           {item.soon ? (
             <>
-              <span className="text-gray-700 flex items-center gap-2">
+              <span className="text-[#545D68] flex items-center gap-2">
                 {item.icon}
                 {item.name}
               </span>
-              <span className="ml-2 px-2 py-1 text-xs text-blue-600 bg-blue-50 rounded">
+              <span className="ml-2 px-2 h-[20px] flex items-center text-xs text-[#3D5678] bg-[rgba(167,198,237,0.35)] rounded">
                 Soon
               </span>
             </>
@@ -140,7 +140,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             <Link
               onMouseEnter={() => setHovered(idx)}
               onClick={onItemClick}
-              className="relative px-4 py-2 text-gray-700 hover:text-gray-900 dark:text-neutral-300"
+              className="relative px-4 py-2 text-[#545D68] hover:text-gray-900 dark:text-neutral-300"
               href={item.link}
             >
               <span className="relative z-20">{item.name}</span>
@@ -241,7 +241,7 @@ export const NavbarLogo = () => {
   return (
     <Link
       href="/"
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
+      className="relative z-20 mr-4 flex items-center space-x-2 px-2  text-sm font-normal text-black"
     >
       <Image
         src="/spout-full-dark-logo.svg"

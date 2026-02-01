@@ -31,14 +31,14 @@ export default function Navbar() {
   //   : user?.email;
 
   return (
-    <ResizableNavbar className="border-b-2 border-[#F3F4F6]">
+    <ResizableNavbar className="border-b-2 border-[#F3F4F6] font-dm-sans ">
       <NavBody>
         <NavbarLogo />
         <div className="flex items-center gap-8">
           <NavItems items={navItems} />
           <Link
             href="/app"
-            className="px-6 py-2 text-sm bg-[#004040] hover:bg-[#003030] text-white font-semibold transition-colors z-50 relative rounded-md"
+            className="p-[10px] h-[32px] flex items-center text-sm bg-[#004040] hover:bg-[#003030] text-white font-semibold transition-colors z-50 relative rounded-md text-[14px] leading-5 font-noto-sans"
           >
             Get Started
           </Link>
