@@ -91,22 +91,23 @@ export function HowSpoutWorks() {
 
   return (
     <section ref={ref} className="w-full pt-20 ">
-      <div className=" px-6 lg:px-0">
+      <div className="px-6 lg:px-0">
         {/* Header */}
-        <div className="flex w-[769px] flex-col justify-center items-center gap-2 mx-auto mb-20">
+        <div className="flex w-[769px] flex-col justify-center items-center mx-auto mb-20">
           <h2 className="section-heading">How Spout works</h2>
-          <p className="text-[#757679] font-dm-sans text-base not-italic font-normal leading-6 tracking-[0.064px]">
+          <p className="text-[#757679] font-dm-sans text-base not-italic font-normal mt-[-6px] leading-6 tracking-[0.064px]">
             Spout bridges the gap between traditional finance and DeFi by
             tokenizing investment-grade corporate bonds, providing stable yields
             while maintaining the benefits of blockchain technology.
           </p>
         </div>
 
-        <div className="w-screen bg-transparent border-t border-b border-[#F3F4F6] "></div>
+        <div className="w-screen bg-transparent border-t border-b mt-[-16px] border-[#F3F4F6] "></div>
 
-        <div className="max-w-[1178px] mx-auto">
+        <div className="max-w-[1178px] mx-auto ">
           {/* Progress Bar */}
-          <div className="relative h-[10px] rounded-[24px]  bg-gray-200 overflow-hidden">
+          <div className="relative h-[10px] rounded-[24px] bg-gray-200 overflow-hidden">
+
             {/* Masked gradient */}
             <motion.div
               className="absolute inset-y-0 left-0"

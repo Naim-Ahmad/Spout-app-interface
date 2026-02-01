@@ -124,14 +124,14 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
       )}
     >
       {items.map((item, idx) => (
-        <div key={item.name} className="flex items-center">
+        <div key={item.name} className="flex items-center text-[#545D68] font-['DM_Mono'] text-[14px] not-italic font-medium leading-[20px] tracking-[0.056px]">
           {item.soon ? (
             <>
-              <span className="text-[#545D68] flex items-center gap-2">
+              <span className="text-[#545D68] flex items-center">
                 {item.icon}
                 {item.name}
               </span>
-              <span className="ml-2 px-2 h-[20px] flex items-center text-xs text-[#3D5678] bg-[rgba(167,198,237,0.35)] rounded">
+              <span className="flex justify-center ml-1 text-[#3D5678] font-['DM_Mono'] text-[12px] not-italic font-medium leading-normal rounded-[3px] bg-[#A7C6ED]/35 w-[42px] h-[20px] p-[10px]  items-center gap-[10px]">
                 Soon
               </span>
             </>
@@ -240,7 +240,7 @@ export const NavbarLogo = () => {
   return (
     <Link
       href="/"
-      className="relative z-20 flex items-center space-x-2  text-sm font-normal text-black"
+      className="relative z-20 flex items-center space-x-2 pl-5  text-sm font-normal text-black"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

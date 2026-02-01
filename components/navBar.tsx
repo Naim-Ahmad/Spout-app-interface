@@ -31,19 +31,23 @@ export default function Navbar() {
   //   : user?.email;
 
   return (
-    <ResizableNavbar className="border-b-2 border-[#F3F4F6] font-dm-sans ">
-      <NavBody>
+    <ResizableNavbar className="border-b-2 border-[#F3F4F6] font-dm-sans">
+
+
+      <NavBody className="flex justify-between h-[68px]">
         <NavbarLogo />
-        <div className="flex items-center gap-8">
-          <NavItems items={navItems} />
+        <div className="flex items-center gap-[32px]">
+          <NavItems items={navItems} className="pr-6" />
           <Link
             href="/app"
-            className="p-[10px] w-[114px] h-[32px] flex items-center text-sm bg-[#004040] hover:bg-[#003030] text-white font-semibold transition-colors z-50 relative rounded-md text-[14px] leading-5 font-noto-sans"
+            className="not-italic mr-4 gap-[10px] p-[10px] w-[114px] h-[32px] flex items-center justify-center text-sm bg-[#004040] hover:bg-[#003030] text-white font-semibold transition-colors z-50 relative rounded-md text-[14px] leading-5 font-noto-sans"
           >
             Get Started
           </Link>
         </div>
       </NavBody>
+
+
       <MobileNav>
         <MobileNavHeader>
           <NavbarLogo />

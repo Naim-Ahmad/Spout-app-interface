@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export function HeroSection() {
   return (
-    <section className="w-full flex flex-col relative overflow-hidden">
+    <section className="w-full flex flex-col relative overflow-hidden pl-5 mb-[-34px]">
       {/* Hero content wrapper */}
       <div className="relative w-full">
         {/* Grid background */}
@@ -42,7 +42,7 @@ export function HeroSection() {
                   Launch Platform
                 </Link>
 
-                <button className="flex h-9 px-4 py-3 justify-center items-center gap-[11.916px] border-[1px]  rounded-[4.766px] border-spout-light-gray text-primary font-dm-sans !text-black  text-[16px] transition-all group">
+                <button className="flex h-9 px-4 py-3 justify-center items-center gap-[11.916px] border-[1px]  rounded-[4.766px] not-italic font-medium leading-normal border-spout-light-gray text-primary font-dm-sans !text-black  text-[16px] transition-all group">
                   Try Demo
                 </button>
               </div>
@@ -51,7 +51,7 @@ export function HeroSection() {
                 [ Join our mailing list for early access and updates ]
               </p>
 
-              <div className="max-w-md pt-5">
+              <div className="max-w-lg pt-4">
                 <JoinMailingList />
               </div>
             </div>
@@ -64,7 +64,7 @@ export function HeroSection() {
               alt="Spout Water Tokens"
               priority
               quality={100}
-              className="w-[368.592px] h-[670px]"
+              className="w-[368.592px] h-[670px] aspect-[192/349] rotate-[-6deg]"
             />
           </div>
         </div>

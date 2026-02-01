@@ -132,7 +132,7 @@ export function PartnerTicker() {
   }, [isPaused]);
 
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full overflow-hidden h-[96px] flex items-center">
       <div className="flex flex-col sm:flex-row items-center">
         <div className="pr-12 flex-shrink-0">
           <h3 className="text-black font-dm-sans text-[18px] not-italic font-medium leading-6 tracking-[0.072px]">

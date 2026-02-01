@@ -86,7 +86,7 @@ export function JoinMailingList() {
           onChange={handleEmailChange}
           onBlur={handleEmailBlur}
           autoComplete="email"
-          className={`text-[#9F9F9F] w-[395px] font-dm-sans text-sm not-italic font-normal leading-4 outline-none flex h-11  pl-5 py-[14px] items-center border-[#E2E2E2] border rounded-[6px] focus:border-primary ${
+          className={`text-[#9F9F9F] w-[395px] flex h-[44px] py-[14px] pr-[88px] pl-[20px] items-center font-dm-sans text-sm not-italic font-normal leading-4 outline-none border-[#E2E2E2] border rounded-[6px] focus:border-primary ${
             error ? "border-red-300 focus-visible:ring-red-400" : ""
           }`}
           disabled={loading}
@@ -104,7 +104,7 @@ export function JoinMailingList() {
           >
             <JoinButton
               type="submit"
-              className="bg-[#DAE5F2] hover:bg-[#DAE5F2] data-[hovered]:bg-[#DAE5F2] border-[1.5px] border-[#A7C6ED] text-[#3D5678] w-[105px] h-[40px] font-dm-sans rounded-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-[#DAE5F2] hover:bg-[#DAE5F2] rounded-md data-[hovered]:bg-[#DAE5F2] border-[1.5px] border-[#A7C6ED] text-[#3D5678] w-[105px] h-[40px] font-['DM_Sans'] text-[20px] not-italic font-medium leading-normal disabled:opacity-50 disabled:cursor-not-allowed"
               isDisabled={
                 loading || (email.length > 0 && !isValidEmail(email.trim()))
               }

@@ -23,7 +23,7 @@ export function ProofOfReserveLanding() {
   ];
 
   return (
-    <section className="w-full h-fit py-4 sm:py-6 lg:py-8 relative">
+    <section className="w-full h-fit py-4 sm:py-6 lg:py-6 relative">
       {/* Section content */}
       <div className="w-full  px-4 sm:px-6 md:px-8 lg:px-0 p-12">
         {/* Header */}
@@ -31,9 +31,9 @@ export function ProofOfReserveLanding() {
           <h2 className="section-heading">
             <span className="">Proof</span> of Reserve
           </h2>
-          <p className="section-description">
+          <p className="text-[#757679] text-center font-['DM_Sans'] text-[16px] not-italic font-normal leading-[24px] tracking-[0.064px]">
             Every token is fully backed 1:1 by investment-grade bond ETFs, held
-            by qualified U.S. custodians for maximum security.
+            by qualified U.S. custodians <br /> for maximum security.
           </p>
         </div>
 
@@ -42,7 +42,7 @@ export function ProofOfReserveLanding() {
         {/* Vault Image with Company Logos */}
         <div className="flex justify-center items-center mb-8 sm:mb-12 lg:mb-0 max-w-[1178px] mx-auto">
           <div
-            className=" w-full max-w-[1262px] sm:h-auto flex flex-col md:flex-row items-center md:items-stretch gap-6"
+            className=" w-full max-w-[1183.345px] h-[333px] flex flex-col md:flex-row items-center"
             style={{
               background: `
       radial-gradient(100% 100% at left 60%, rgba(61, 199, 132, 0.38), transparent 70%),
@@ -51,25 +51,24 @@ export function ProofOfReserveLanding() {
             }}
           >
             {/* Left: lock image */}
-            <div className="flex items-end justify-center">
+            <div className="">
               <Image
                 src={lockImage}
                 alt="Proof of Reserve Lock"
-                width={519}
-                height={778}
-                className="hidden sm:flex w-[220px]  sm:w-[300px] md:w-[420px] lg:w-[519px] h-auto object-contain"
+                className="object-contain"
               />
             </div>
 
             {/* Right: company logos grid */}
-            <div className="grid grid-cols-2 gap-y-4 gap-x-6 items-center justify-items-center py-5">
+            <div className="pt-5 inline-grid gap-y-[41px] gap-x-[108px] grid-rows-[repeat(3,fit-content(100%))] grid-cols-[repeat(2,fit-content(100%))]">
               {logos.map((logo) => (
-                <Image
-                  key={logo.id}
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="object-contain"
-                />
+                <div className="" key={logo.id}>
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="object-cover h-[59.819px] w-[208.511px]"
+                  />
+                </div>
               ))}
             </div>
           </div>
@@ -79,18 +78,19 @@ export function ProofOfReserveLanding() {
 
         {/* Statistics Section */}
 
-        <div className="  rounded-none max-w-[1178px] mx-auto">
+        <div className="rounded-none max-w-[1183px] mx-auto">
           <div className="flex flex-col items-center sm:flex-row justify-between gap-3 sm:gap-4">
+            
             {/* Assets On-Chain */}
-            <div className="flex-1 flex justify-between w-[200px] sm:w-auto lg:max-w-[370px] h-[156px] sm:h-auto">
-              <div className="flex flex-col items-start justify-center gap-[20px] sm:gap-[24px] px-4 sm:px-6 lg:px-10 py-3 sm:py-4">
-                <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0">
+            <div className="flex-1 flex justify-between">
+              <div className="flex flex-col items-start gap-[24px] shrink-0 w-[369.743px] h-[156px] pt-[24px] pr-[207.833px] pb-[20.107px] pl-[32.91px]">
+
                   <Image
                     src={frame3Svg}
                     alt="Bank"
                     className="w-[35.843px] h-[38.893px]"
                   />
-                </div>
+
                 <div>
                   <div className="text-black font-dm-sans text-[20px] font-semibold leading-normal">
                     $200k
@@ -102,6 +102,7 @@ export function ProofOfReserveLanding() {
               </div>
               <div className="bg-linear-gradient-1 w-[15px] sm:w-[22px] h-[156px]"></div>
             </div>
+
 
             {/* Investments Tokenized */}
 
