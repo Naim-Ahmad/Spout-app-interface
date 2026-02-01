@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { JoinMailingList } from "./join-mailing-list";
 
 import image1 from "@/assets/images/hero/1.png";
+import Image from "next/image";
 
 export function HeroSection() {
   return (
@@ -24,7 +24,7 @@ export function HeroSection() {
           {/* Left column */}
           <div className="lg:max-w-[840px] sm:mb-12">
             <div className="">
-              <h1 className="mt-[155px] mb-[16px] text-[#004040] font-pt-serif text-[52px] font-normal leading-[72px] tracking-[0.208px]">
+              <h1 className="mt-[85px] mb-[16px] text-[#004040] font-pt-serif text-[52px] font-normal leading-[72px] tracking-[0.208px]">
                 The Go-To Platform for Margin Trading at{" "}
                 <span className="text-spout-blue">0%</span> Rates
               </h1>
@@ -58,15 +58,14 @@ export function HeroSection() {
           </div>
 
           {/* Right column - image */}
-          <div className="max-w-[368.592px]">
-            <div className="w-full max-w-[368.592px] lg:max-w-xl lg:w-auto optimized">
-              <Image
-                src={image1}
-                alt="Spout Water Tokens"
-                priority
-                className="w-full h-full"
-              />
-            </div>
+          <div>
+            <Image
+              src={image1}
+              alt="Spout Water Tokens"
+              priority
+              quality={100}
+              className="w-[368.592px] h-[670px]"
+            />
           </div>
         </div>
       </div>

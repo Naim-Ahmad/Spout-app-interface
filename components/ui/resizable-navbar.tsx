@@ -240,7 +240,7 @@ export const NavbarLogo = () => {
   return (
     <Link
       href="/"
-      className="relative z-20 mr-4 flex items-center space-x-2  px-3 text-sm font-normal text-black"
+      className="relative z-20 flex items-center space-x-2  text-sm font-normal text-black"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
