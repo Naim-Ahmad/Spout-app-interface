@@ -24,17 +24,17 @@ export function HeroSection() {
           {/* Left column */}
           <div className="lg:max-w-[840px] sm:mb-12">
             <div className="">
-              <h1 className="mt-[100px] text-[#004040] font-pt-serif text-[52px] font-normal leading-[72px] tracking-[0.208px]">
+              <h1 className="mt-[100px] mb-[16px] text-[#004040] font-pt-serif text-[52px] font-normal leading-[72px] tracking-[0.208px]">
                 The Go-To Platform for Margin Trading at{" "}
                 <span className="text-spout-blue">0%</span> Rates
               </h1>
 
-              <p className="py-8 text-[#757679] font-dm-sans text-[18px] font-normal leading-[24px] tracking-[0.072px]">
+              <p className="mb-[36px] text-[#757679] font-dm-sans text-[18px] font-normal leading-[24px] tracking-[0.072px]">
                 Spout enables you to borrow against your equities at 0% APR or
                 lend your stablecoins for <br /> 10%+ APY
               </p>
 
-              <div className="pt-2 sm:pt-0 flex flex-col lg:flex-row  items-center gap-4 sm:gap-6 mb-[52px]">
+              <div className="mb-[44px] sm:pt-0 flex flex-col lg:flex-row  items-center gap-4 sm:gap-6 ">
                 <Link
                   href="/app"
                   className="flex h-9 px-4 py-3 justify-center items-center gap-3 bg-spout-primary hover:bg-spout-primary/90 text-white font-dm-sans text-[16px] font-medium leading-normal rounded-[4.766px] transition-all"
