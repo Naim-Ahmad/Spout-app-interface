@@ -22,7 +22,7 @@ export function HeroSection() {
         {/* Main content */}
         <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:ps-16 pt-6 sm:pt-12 lg:pt-0 pb-16 flex flex-col lg:flex-row gap-10 xl:gap-[80px] justify-center items-center">
           {/* Left column */}
-          <div className="lg:max-w-[840px] sm:mb-12">
+          <div className="lg:max-w-[840px]">
             <div className="">
               <h1 className="  mb-[16px] text-[#004040] font-pt-serif text-[52px] font-normal leading-[72px] tracking-[0.208px]">
                 The Go-To Platform for Margin Trading at{" "}
