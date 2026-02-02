@@ -41,7 +41,7 @@ export default function HomePage() {
           <div className="relative z-10 w-full">
             <HowSpoutWorks />
           </div>
-          <div className="h-[100px] w-screen bg-transparent border-t-2 border-b-2 border-[#F3F4F6] "></div>
+          <div className="h-[100px] w-screen bg-transparent border-b-2 border-[#F3F4F6] "></div>
 
           {/* Proof of Reserve Section */}
           <div className="relative z-10 w-full">

@@ -120,9 +120,9 @@ export function HowSpoutWorks() {
         </div>
 
         {/* Progress Bar */}
-        <div className="max-w-[1176px] mx-auto">
+        <div className="border-b-2 border-[#F3F4F6] ">
           <div className="relative">
-            <div className="relative w-[1178px] h-[10px] rounded-[24px] bg-gray-200 me-auto">
+            <div className="relative max-w-[1178px] mx-auto h-[10px] rounded-[24px] bg-gray-200 me-auto">
               <div
                 className="absolute inset-y-0 left-0"
                 ref={progressRef}
@@ -135,10 +135,10 @@ export function HowSpoutWorks() {
           </div>
 
           {/* Carousel */}
-          <div className="relative overflow-hidden ">
+          <div className="relative overflow-hidden max-w-[1175px] mx-auto">
             <div
               ref={trackRef}
-              className="flex flex-nowrap will-change-transform transform-gpu flex-shrink-0"
+              className="flex flex-nowrap will-change-transform transform-gpu flex-shrink-0 pe-1"
             >
               {steps.map((step, i) => (
                 <div key={i} className="min-w-[392px] flex-shrink-0">
