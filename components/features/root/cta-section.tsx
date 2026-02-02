@@ -98,14 +98,18 @@ export function CTASection() {
                 onChange={handleEmailChange}
                 onBlur={handleEmailBlur}
                 placeholder="Enter your email to join our mailing list"
-                className={`flex h-[44px] pt-[14px] pr-[88px] pb-[14px] pl-[20px] items-center w-[395px] border text-[14px] border-gray-300 rounded-sm py-3 px-5 outline-none text-[#6E6E6E] font-dm-sans text-sm not-italic font-normal leading-4 ${
+                className={`flex h-[44px] pt-[14px] pr-[88px] pb-[14px] pl-[20px] items-center w-[395px] border text-[14px] border-gray-300 rounded-sm py-3 px-5 outline-none text-[#6E6E6E] font-dm-sans text-sm not-italic font-normal leading-4 focus-visible:border-primary focus-visible:border-2 ${
                   error ? "border-2 border-red-300 focus-visible:ring-red-400" : ""
                 }`}
                 disabled={loading}
               />
-              <button className="text-[#FFF] font-['DM_Sans'] text-[20px] not-italic font-medium leading-normal flex w-[92px] h-[44px] pt-[10px] pr-[12px] pb-[10px] pl-[16px] justify-center items-center gap-[10px] rounded-[6px] border-[1px] border-solid border-[#A7C6ED] bg-[#004040]">
+
+        {!joined ? (
+         <button className="text-[#FFF] font-['DM_Sans'] text-[20px] not-italic font-medium leading-normal flex w-[92px] h-[44px] pt-[10px] pr-[12px] pb-[10px] pl-[16px] justify-center items-center gap-[10px] rounded-[6px] border-[1px] border-solid border-[#A7C6ED] bg-[#004040]">
                 Join
-              </button>
+          </button>
+        ) : null}
+              
             </form>
               {joined && (
                 <div className="flex items-center justify-center w-full mt-2 flex-nowrap whitespace-nowrap">
