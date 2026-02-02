@@ -104,9 +104,10 @@ export function HowSpoutWorks() {
 
   return (
     <section className="w-full">
-      <div ref={componentRef} className="max-w-[1178px] mx-auto">
+      <div ref={componentRef} >
         {/* Header */}
-        <div className="flex w-[769px] flex-col justify-center items-center gap-[16px] text-center mx-auto py-20">
+        <div className="py-20 border-b-2 border-[#F3F4F6]">
+          <div className="max-w-[769px] flex flex-col justify-center items-center gap-[16px] text-center mx-auto ">
           <h2 className="text-[#004040] font-['PT_Serif'] text-[48px] not-italic font-normal leading-[56px] tracking-[0.192px]">
             How Spout works
           </h2>
@@ -114,12 +115,13 @@ export function HowSpoutWorks() {
             Spout bridges the gap between traditional finance and DeFi by
             tokenizing investment-grade corporate bonds.
           </p>
+          </div>
+        
         </div>
 
         {/* Progress Bar */}
-        <div ref={componentRef}>
-          <div className="">
-            <div className="h-[1px] w-screen bg-transparent border-t-2 border-[#F3F4F6]"></div>
+        <div className="max-w-[1176px] mx-auto">
+          <div className="relative">
             <div className="relative w-[1178px] h-[10px] rounded-[24px] bg-gray-200 me-auto">
               <div
                 className="absolute inset-y-0 left-0"
@@ -133,7 +135,7 @@ export function HowSpoutWorks() {
           </div>
 
           {/* Carousel */}
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden ">
             <div
               ref={trackRef}
               className="flex flex-nowrap will-change-transform transform-gpu flex-shrink-0"
