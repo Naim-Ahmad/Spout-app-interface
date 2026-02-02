@@ -63,7 +63,7 @@ export function ProofOfReserveLanding() {
             <div className="pt-5 inline-grid gap-y-[41px] gap-x-[108px] grid-rows-[repeat(3,fit-content(100%))] grid-cols-[repeat(2,fit-content(100%))]">
               {logos.map((logo) => (
                 <div
-                  className="relative rounded-[2.5px] flex justify-center items-center bg-white h-[59.819px] w-[208.511px] border-[1.709px] border-[#DEE9F8] drop-shadow-[filter: drop-shadow(0 4px 13.9px rgba(0, 0, 0, 0.05))]"
+                  className="relative rounded-[2.5px] flex justify-center items-center bg-white h-[59.819px] w-[208.511px] border-[2.5px] border-[#DEE9F8] drop-shadow-[filter: drop-shadow(0 4px 13.9px rgba(0, 0, 0, 0.05))]"
                   key={logo.id}
                 >
                   <Image src={logo.src} alt={logo.alt} objectFit="contain" />
