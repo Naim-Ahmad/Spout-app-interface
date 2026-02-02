@@ -57,32 +57,26 @@ export function InTheNews() {
         <div className="w-screen bg-transparent border-t border-b mt-[70px] border-[#F3F4F6] "></div>
 
         {/* News Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-8 sm:mb-12 lg:mb-0 max-w-[1178px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-8 sm:mb-12 lg:mb-0 max-w-[1178px] mx-auto pr-[2px]">
           {newsItems.map((item, index) => (
             <div className="flex w-full" key={index}>
-              <div className=" rounded-none">
+              <div className=" rounded-none w-full">
                 {/* Card Content with rounded corners */}
                 <div className="overflow-hidden rounded-none">
                   {/* Logo Area */}
                   <div
-                    className={`h-32 sm:h-40 lg:h-48 flex ${index === 1 ? "bg-black" : ""} items-center justify-center p-4 sm:p-6 lg:p-8`}
+                    className={`h-32 sm:h-40 lg:h-[225px] flex ${index === 1 ? "bg-black" : ""} items-center justify-center px-8 relative`}
                   >
-                    <Image
-                      src={item.logo}
-                      alt={item.publication}
-                      width={400}
-                      height={120}
-                      className=" h-auto max-h-20 sm:max-h-24 lg:max-h-32 object-contain "
-                    />
+                    <Image src={item.logo} alt={item.publication} />
                   </div>
 
                   {/* Publication Info */}
-                  <div className="p-3 sm:p-4 md:p-6 border-t border-[#F3F4F6] flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-2 md:gap-4">
+                  <div className="px-[16px] py-[22px] border-t border-[#F3F4F6] flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-2 md:gap-4">
                     <Link
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border border-solid border-[#A7C6ED] bg-[rgba(167,198,237,0.35)] flex items-center  gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 md:px-4 tracking-[-0.064px] leading-[28px]  text-[#004040] font-dm-sans text-[16px] font-[500] flex-shrink-0 "
+                      className="border-[1px]  border-solid h-[32px] border-[#A7C6ED] bg-[rgba(167,198,237,0.35)] flex items-center  gap-1 sm:gap-2 p-[10px] tracking-[-0.064px] leading-[28px]  text-[#004040] font-dm-sans text-[16px] font-[500] flex-shrink-0 "
                     >
                       <Image
                         src="/svg-assets/landingpage/spout-book.svg"
@@ -116,7 +110,7 @@ export function InTheNews() {
               </div>
 
               <div
-                className={`${gradientMap[item.gradient] ?? ""} h-[297px] w-[22px]`}
+                className={`${gradientMap[item.gradient] ?? ""} h-full w-[22px]`}
               ></div>
             </div>
           ))}

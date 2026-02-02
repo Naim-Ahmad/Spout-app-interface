@@ -6,12 +6,7 @@ import step3 from "@/assets/images/step-3.svg";
 import step4 from "@/assets/images/step-4.svg";
 import step5 from "@/assets/images/step-5.svg";
 import Image from "next/image";
-
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useEffect, useRef, useState } from "react";
 
 const steps = [
   {
@@ -51,114 +46,102 @@ const steps = [
   },
 ];
 
+const INTERVAL = 5000;
+
 export function HowSpoutWorks() {
-  const componentRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const progressRef = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { margin: "-100px" });
 
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      if (!trackRef.current || !componentRef.current) return;
+  const [activeIndex, setActiveIndex] = useState(0);
 
-      const calculateScrollDistance = () => {
-        const trackWidth = trackRef.current?.scrollWidth || 0;
+  const x = useMotionValue("0%");
 
-        return trackWidth - 1178;
-      };
-      const scrollDistance = calculateScrollDistance();
+  const CARDS_PER_VIEW = 3;
+  const TOTAL_SLIDES = steps.length - CARDS_PER_VIEW + 1; // 3 slides
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: componentRef.current,
-          pin: true,
-          start: "top top",
+  useEffect(() => {
+    if (!inView) return;
 
-          end: () => `+=${scrollDistance}`,
-          scrub: 1.5,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev === TOTAL_SLIDES - 1 ? 0 : prev + 1));
+    }, INTERVAL);
 
-      tl.to(
-        trackRef.current,
-        {
-          x: () => -scrollDistance,
-          ease: "none",
-        },
-        0,
-      );
+    return () => clearInterval(timer);
+  }, [inView]);
 
-      tl.to(
-        progressRef.current,
-        {
-          width: "100%",
-          ease: "none",
-        },
-        0,
-      );
-    }, componentRef);
+  useEffect(() => {
+    animate(x, `-${activeIndex * (100 / CARDS_PER_VIEW)}%`, {
+      type: "spring",
+      stiffness: 100,
+      damping: 28,
+      mass: 0.8,
+      restDelta: 0.001,
+      restSpeed: 0.01,
+    });
+  }, [activeIndex]);
 
-    return () => ctx.revert();
-  }, []);
+  // progressPercent
+  const progressPercent = ((activeIndex + 1) / TOTAL_SLIDES) * 100;
 
   return (
-    <section className="w-full">
-      <div ref={componentRef} className="max-w-[1178px] mx-auto">
+    <section ref={ref} className="w-full pt-20 ">
+      <div className="px-6 lg:px-0">
         {/* Header */}
-        <div className="flex w-[769px] flex-col justify-center items-center gap-[16px] text-center mx-auto py-20">
-          <h2 className="text-[#004040] font-['PT_Serif'] text-[48px] not-italic font-normal leading-[56px] tracking-[0.192px]">
-            How Spout works
-          </h2>
-          <p className="text-[#757679] font-['DM_Sans'] text-[16px] not-italic font-normal leading-[24px] tracking-[0.064px]">
+        <div className="flex w-[769px] flex-col justify-center items-center mx-auto mb-20">
+          <h2 className="section-heading">How Spout works</h2>
+          <p className="text-[#757679] font-dm-sans text-base not-italic font-normal mt-[-6px] leading-6 tracking-[0.064px]">
             Spout bridges the gap between traditional finance and DeFi by
-            tokenizing investment-grade corporate bonds, providing stable yields
-            while maintaining the benefits of blockchain technology.
+            tokenizing investment-grade corporate bonds.
           </p>
         </div>
 
-        {/* Progress Bar */}
-        <div ref={componentRef}>
-          <div className="">
-            <div className="h-[1px] w-screen bg-transparent border-t-2 border-[#F3F4F6]"></div>
-            <div className="relative w-[1178px] h-[10px] rounded-[24px] bg-gray-200 me-auto">
-              <div
-                className="absolute inset-y-0 left-0"
-                ref={progressRef}
-                style={{
-                  background:
-                    "linear-gradient(90deg, #DDFF87 0%, #0057FF 100%)",
-                }}
-              />
-            </div>
+        <div className="w-screen bg-transparent border-t border-b mt-[-16px] border-[#F3F4F6] "></div>
+
+        <div className="max-w-[1178px] mx-auto ">
+          {/* Progress Bar */}
+          <div className="relative h-[10px] rounded-[24px] bg-gray-200 overflow-hidden">
+
+            {/* Masked gradient */}
+            <motion.div
+              className="absolute inset-y-0 left-0"
+              animate={{ width: `${progressPercent}%` }}
+              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }} // smooth ease
+              style={{
+                background: "linear-gradient(90deg, #DDFF87 0%, #0057FF 100%)",
+              }}
+            />
+
+            {/* Background track */}
+            <motion.div
+              className="absolute inset-y-0 right-0 bg-gray-200"
+              animate={{ width: `${100 - progressPercent}%` }}
+            />
           </div>
 
-          {/* Carousel */}
+          {/*Carousel viewport*/}
           <div className="relative overflow-hidden">
-            <div
-              ref={trackRef}
-              className="flex flex-nowrap will-change-transform transform-gpu flex-shrink-0"
-            >
+            <motion.div className="flex will-change-transform" style={{ x }}>
               {steps.map((step, i) => (
-                <div key={i} className="min-w-[392px] flex-shrink-0">
-                  <div className="flex flex-col w-[392px] h-[519px] border-r-[2px] border-[#F3F4F6] bg-[#FFF]">
-                    <div className=" flex w-[392px] pt-[10px] pr-[313px] pb-[10px] pl-[20px] items-center text-[#191B20] font-['DM_Mono'] text-[14px] not-italic font-normal leading-[20px]">
+                <div
+                  key={`${step.title}-${i}`}
+                  className="w-1/3 flex-shrink-0 border border-[#F3F4F6]"
+                >
+                  <div className="relative z-10">
+                    <div className="text-[#191B20] font-dm-mono text-[14px] font-normal leading-[20px] py-4 px-6">
                       {step.label}
                     </div>
-
-                    <div className="mb-8 w-[392px] h-[274px] inline-flex justify-end items-center bg-black">
+                    <div className="flex justify-center items-center mb-8 relative h-[274px]">
                       <Image
                         src={step.image}
                         alt={step.title}
-                        className="object-cover "
+                        className="mx-auto object-cover"
                       />
                     </div>
-
-                    <div className="flex flex-col items-start gap-[8px] self-stretch px-4">
-                      <h3 className="text-[#004040] font-['PT_Serif'] text-[24px] not-italic font-normal leading-[34px] tracking-[0.096px]">
+                    <div className="px-6 pb-8">
+                      <h3 className="text-[#004040] font-pt-serif text-[24px] font-normal leading-[34px] tracking-[0.096px] pb-2">
                         {step.title}
                       </h3>
-                      <p className="text-[#757679] self-stretch font-['DM_Sans'] text-[15px] not-italic font-normal leading-[24px] tracking-[0.06px]">
+                      <p className="text-[#757679] font-dm-sans text-[15px] font-normal leading-[24px] tracking-[0.06px]">
                         {step.description}
                       </p>
                     </div>

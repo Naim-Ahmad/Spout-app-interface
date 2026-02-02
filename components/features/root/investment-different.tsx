@@ -48,7 +48,9 @@ export function InvestmentDifferent() {
       <div className="w-full  px-4 sm:px-8 lg:px-0 pb-8 lg:pb-0">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-[#004040] text-center font-['PT_Serif'] text-[48px] not-italic font-normal leading-[56px] tracking-[0.192px]">Smarter On-chain Investing</h2> 
+          <h2 className="text-[#004040] text-center font-['PT_Serif'] text-[48px] not-italic font-normal leading-[56px] tracking-[0.192px]">
+            Smarter On-chain Investing
+          </h2>
           <p className="pt-5 text-[#757679] text-center font-['DM_Sans'] text-[16px] not-italic font-normal leading-[28px] tracking-[-0.064px]">
             Consistent returns from regulated investment-grade securities, with
             instant trading
@@ -60,7 +62,7 @@ export function InvestmentDifferent() {
         <div className="w-screen bg-transparent border-t border-b border-[#F3F4F6] "></div>
 
         {/* Features Grid */}
-        <div className="max-w-[1178px] mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-0 mb-8 sm:mb-12 lg:mb-0">
+        <div className="max-w-[1176px] mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-0 mb-8 sm:mb-12 lg:mb-0">
           {features.map((feature, index) => (
             <div key={index} className="flex ">
               <div
