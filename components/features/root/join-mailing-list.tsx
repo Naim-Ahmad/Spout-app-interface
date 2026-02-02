@@ -87,7 +87,7 @@ export function JoinMailingList() {
           onChange={handleEmailChange}
           onBlur={handleEmailBlur}
           autoComplete="email"
-          className={`text-[#9F9F9F] w-[395px] flex h-[44px] py-[14px] pr-[88px] pl-[20px] items-center font-dm-sans text-sm not-italic font-normal leading-4 outline-none border-[#E2E2E2] border rounded-[6px] focus-visible:border-primary focus-visible:border-2  ${
+          className={`text-[#9F9F9F] w-[395px] flex h-[44px] py-[14px] pr-[88px] pl-[20px] items-center font-dm-sans text-sm not-italic font-normal leading-4 outline-none border-[#E2E2E2] border rounded-[6px] focus-visible:border-primary focus-visible:border-2 ${
             error ? "border-2 border-red-300 focus-visible:ring-red-400" : ""
           }`}
           disabled={loading}
@@ -115,6 +115,8 @@ export function JoinMailingList() {
           </motion.div>
         ) : null}
       </AnimatePresence>
+    
+    </form>
       {joined && (
         <div className="flex items-center justify-center w-full mt-2 flex-nowrap whitespace-nowrap">
           <CheckCircle className="h-8 w-8 text-emerald-600 mr-2" />
@@ -123,7 +125,6 @@ export function JoinMailingList() {
           </span>
         </div>
       )}
-    </form>
 
       {error && !joined && (
         <div className="w-full text-start text-red-500 text-xs mt-2 ">
